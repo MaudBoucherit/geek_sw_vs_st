@@ -21,6 +21,6 @@ Remember that commit messages are the way to remember what was done, and keep me
 
 ### Directory Structure
 
-Keep all documents in the correct folder, when in doubt, ask the other contributors (perhaps in an issue?).  Remember to cite any sources in the `doc\references\README.md`, which documents any citations.
+Keep all documents in the correct folder, when in doubt, ask the other contributors (perhaps in an issue?).  Remember to cite any sources in the `REFERENCES.md`, which documents any citations.
 
 _This document adapted from a previous project_
