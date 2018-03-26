@@ -2,7 +2,7 @@
 This project is investigating the influence of self-identified geekiness on Star Trek and Star Wars fandom.
 
 ### Questions
-- Self-identified Geekiness:
+- How would you rate your degree of geekiness?
 
 #### Star Wars-related
 ![](images/sw_logo.png)
@@ -21,11 +21,9 @@ This project is investigating the influence of self-identified geekiness on Star
 #### Star Wars Vs. Star Trek
 - Overall, are you more familiar with Star Wars or Star Trek universe?
 - You're stuck on a deserted island, with a TV and only one complete set of movies/TV episodes/books/games to entertain you for the rest of your life. 
-Which universe would you choose?
-
 
 ### Confounding Variables
-- Age:
-- Gender:
-- Continent:
-- Job/Education Sector: 
+- What is your age?
+- What is your gender?
+- Which continent would you identify yourself with?
+- What is the main sector of your job/education background? 
