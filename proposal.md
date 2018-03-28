@@ -19,6 +19,8 @@ This project is investigating the influence of self-identified geekiness on Star
 - How would you rate your degree of fandom?
 
 ### Star Wars Vs. Star Trek
+![](images/sw_vs_st.png)
+
 - Overall, are you more familiar with Star Wars or Star Trek universe?
 - You're stuck on a deserted island, with a TV and only one complete set of movies/TV episodes/books/games to entertain you for the rest of your life.
 
@@ -28,7 +30,7 @@ This project is investigating the influence of self-identified geekiness on Star
 - Which continent would you identify yourself with?
 - What is the main sector of your job/education background?
 
-We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample. 
+We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample.
 
 ## Analysis Strategy
 
