@@ -27,7 +27,7 @@ This project is investigating the influence of self-identified geekiness on Star
 - What is the main sector of your job/education background?
 
 ## About confounding variables
-
+We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample.
 
 ## Analysis Strategy
 Our main interest is in identifying the effect of self-identified geekiness to how much of a fan each participant is of Star Trek and Star Wars. We hypothesize that Star Trek will have a strong correlation with geekiness, whereas Star Wars will be more universal.
@@ -35,3 +35,5 @@ Our main interest is in identifying the effect of self-identified geekiness to h
 We also think that regardless of the above effect, participant's knowledge of the two series will strongly correlate with geekiness as well.p
 
 ## Aspects of Ethics
+
+After reading the UBC ethics code, we feel that our survey has no sensitive information, and we will not ask any personally identifying questions.  To this end, for age we will have the respondent choose from 10 year ranges.  Because of this, we feel confident enough to use Google forms as a vehicle.  As per UBC policy, we will have a paragraph (copied verbatim from the UBC page) informing the respondent that the information will be stored in a US server subject to homeland security, and have them click to acknowledge this.
