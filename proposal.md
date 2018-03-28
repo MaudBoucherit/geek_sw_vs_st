@@ -1,7 +1,7 @@
 # Self-Identified Geekiness: How is that related to Star Wars or Star Trek fandom?
 This project is investigating the influence of self-identified geekiness on Star Trek and Star Wars fandom.
 
-## Survey 
+## Survey
 - How would you rate your degree of geekiness?
 
 ### Star Wars-related
@@ -20,13 +20,13 @@ This project is investigating the influence of self-identified geekiness on Star
 
 ### Star Wars Vs. Star Trek
 - Overall, are you more familiar with Star Wars or Star Trek universe?
-- You're stuck on a deserted island, with a TV and only one complete set of movies/TV episodes/books/games to entertain you for the rest of your life. 
+- You're stuck on a deserted island, with a TV and only one complete set of movies/TV episodes/books/games to entertain you for the rest of your life.
 
 ### Confounding Variables
 - What is your age?
 - What is your gender?
 - Which continent would you identify yourself with?
-- What is the main sector of your job/education background? 
+- What is the main sector of your job/education background?
 
 ## About confounding variables
 
@@ -35,3 +35,5 @@ This project is investigating the influence of self-identified geekiness on Star
 
 
 ## Aspects of Ethics
+
+After reading the UBC ethics code, we feel that our survey has no sensitive information, and we will not ask any personally identifying questions.  To this end, for age we will have the respondent choose from 10 year ranges.  Because of this, we feel confident enough to use Google forms as a vehicle.  As per UBC policy, we will have a paragraph (copied verbatim from the UBC page) informing the respondent that the information will be stored in a US server subject to homeland security, and have them click to acknowledge this.  
