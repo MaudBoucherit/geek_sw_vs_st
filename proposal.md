@@ -17,6 +17,8 @@ This project is investigating the influence of self-identified geekiness on Star
     - If rated 9: HARDCORE QUESTION
 
 ### Star Wars Vs. Star Trek
+![](images/sw_vs_st.png)
+
 - Overall, are you more familiar with Star Wars or Star Trek universe?
 - You're stuck on a deserted island, with a TV and only one complete set of movies/TV episodes/books/games to entertain you for the rest of your life.
 
@@ -28,6 +30,7 @@ This project is investigating the influence of self-identified geekiness on Star
 - Are you currently enrolled in the MDS program at UBC.
 
 ## About confounding variables
+
 We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample.
 
 ## Analysis Strategy
