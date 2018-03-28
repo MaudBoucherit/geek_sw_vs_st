@@ -28,8 +28,7 @@ This project is investigating the influence of self-identified geekiness on Star
 - Which continent would you identify yourself with?
 - What is the main sector of your job/education background?
 
-## About confounding variables
-
+We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample. 
 
 ## Analysis Strategy
 
