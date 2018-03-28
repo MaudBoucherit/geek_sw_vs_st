@@ -25,6 +25,7 @@ This project is investigating the influence of self-identified geekiness on Star
 - What is your gender?
 - Which continent would you identify yourself with?
 - What is the main sector of your job/education background?
+- Are you currently enrolled in the MDS program at UBC.
 
 ## About confounding variables
 We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample.
@@ -32,7 +33,11 @@ We decided to incorporate confounding variables gender, age, continent and secto
 ## Analysis Strategy
 Our main interest is in identifying the effect of self-identified geekiness to how much of a fan each participant is of Star Trek and Star Wars. We hypothesize that Star Trek will have a strong correlation with geekiness, whereas Star Wars will be more universal.
 
-We also think that regardless of the above effect, participant's knowledge of the two series will strongly correlate with geekiness as well.p
+We also think that regardless of the above effect, participant's knowledge of the two series will strongly correlate with geekiness as well.
+
+We plan to perform a series of hypothesis tests on the above effects, and perform a power analysis. Depending on the distribution of our data, we will determine which sort of hypothesis test is appropriate. We will correct our p-values using the Bonferroni correction, because we are not too concerned with the *type* of error we make, and so controlling FWER should be sufficient.
+
+Finally, we are interested to see if geekiness correlates with a preference to a particular series. In order to test this we will try to fit some form of generalized linear model on a binary response (setting one series to 1 and the other to 0).
 
 ## Aspects of Ethics
 
