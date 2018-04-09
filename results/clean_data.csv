@@ -1,0 +1,68 @@
+geeky,StarWars_fandom,StarWars_knowledge,StarTrek_fandom,StarTrek_knowledge,StarWars_obscure,StarTrek_obscure,familiar,desert_island,age,gender,continent,sector,MDS
+4,3,4,3,,,NA,Star Wars,Star Trek,25,Male,North America,Finance/Economics/Business,TRUE
+3,3,3,2,,,NA,Star Wars,Star Wars,35,Female,North America,Math/Statistics,TRUE
+4,4,3,4,,,NA,Star Wars,Star Trek,25,Female,Europe,Tech,TRUE
+3,3,3,2,,,NA,Star Wars,Star Trek,25,Other,Europe,Math/Statistics,FALSE
+3,2,2,2,,,NA,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE
+3,4,4,3,,,NA,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE
+4,1,2,4,,,NA,Star Trek,Star Trek,35,Female,North America,Administration/Education,FALSE
+4,5,5,3,,Amiral Ackbar ; Star Wars VI - Le Retour du Jedi,NA,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE
+4,3,4,2,,,NA,Star Wars,Star Wars,25,Other,Europe,Math/Statistics,FALSE
+4,3,4,4,,,NA,Star Wars,Star Trek,45,Male,North America,Finance/Economics/Business,FALSE
+2,4,3,2,,,NA,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE
+2,2,1,1,,,NA,neither,neither,35,Male,North America,Administration/Education,FALSE
+4,3,3,2,,,NA,Star Wars,Star Wars,45,Female,North America,Tech,FALSE
+4,3,3,3,,,NA,Star Wars,Star Wars,45,Other,North America,Math/Statistics,FALSE
+4,3,3,2,,,NA,Star Wars,Star Wars,45,Male,North America,Tech,FALSE
+3,4,3,3,,,NA,Star Wars,Star Wars,25,Other,Europe,Math/Statistics,FALSE
+5,5,5,3,,"Admiral Ackbar in Star Wars VI, Return of the Jedi",NA,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE
+2,3,2,2,,,NA,Star Wars,Star Wars,55,Female,North America,Biology/Medicine,FALSE
+3,4,2,3,,,NA,Star Wars,Star Trek,35,Male,North America,Math/Statistics,FALSE
+5,4,3,2,,,NA,Star Wars,neither,35,Male,North America,Biology/Medicine,TRUE
+3,3,3,3,,,NA,Star Wars,Star Trek,45,Female,North America,Tech,FALSE
+3,2,1,4,,,NA,Star Trek,Star Trek,35,Male,Asia,Finance/Economics/Business,FALSE
+4,5,4,2,,,NA,Star Wars,Star Wars,25,Male,Europe,Tech,FALSE
+3,3,2,2,,,NA,Star Wars,Star Wars,25,Other,Antarctica,Biology/Medicine,TRUE
+2,1,2,1,,,NA,neither,neither,25,Female,North America,Earth science,TRUE
+3,1,3,3,,,NA,Star Wars,neither,25,Male,North America,Engineering,TRUE
+1,1,2,1,,,NA,Star Wars,neither,25,Female,North America,Chemistry/Physics,TRUE
+4,2,2,2,,,NA,neither,Star Trek,25,Male,North America,Math/Statistics,TRUE
+5,4,4,2,,,NA,Star Wars,Star Wars,25,Male,North America,Finance/Economics/Business,TRUE
+3,3,2,2,,,NA,Star Wars,Star Wars,25,Male,North America,Biology/Medicine,TRUE
+3,2,1,1,,,NA,neither,neither,25,Female,Asia,geology,TRUE
+4,3,3,2,,,NA,Star Wars,Star Wars,25,Male,North America,Biology/Medicine,TRUE
+4,3,2,3,,,NA,Star Wars,neither,25,Male,Asia,Chemistry/Physics,TRUE
+1,1,1,1,,,NA,neither,neither,35,Male,Asia,business,TRUE
+2,3,4,1,,,NA,Star Wars,Star Wars,25,Male,Europe,Finance/Economics/Business,TRUE
+5,5,3,5,,,NA,Star Trek,Star Trek,35,Female,North America,Administration/Education,FALSE
+4,4,3,4,,,NA,Star Wars,neither,25,Female,North America,Finance/Economics/Business,TRUE
+3,1,1,1,,,NA,neither,neither,25,Female,North America,Biology/Medicine,TRUE
+4,3,1,3,,,NA,neither,Star Wars,25,Female,Asia,Finance/Economics/Business,TRUE
+2,2,4,2,,,NA,neither,Star Wars,25,Female,Asia,Math/Statistics,TRUE
+4,3,3,4,,,NA,Star Trek,Star Trek,25,Female,Asia,Tech,TRUE
+4,2,2,1,,,NA,neither,neither,25,Male,South America,Finance/Economics/Business,TRUE
+1,2,2,3,,,NA,Star Wars,neither,25,Female,Asia,Math/Statistics,TRUE
+3,5,1,4,,,NA,Star Trek,Star Wars,55,Female,Antarctica,Chemistry/Physics,FALSE
+3,3,2,3,,,NA,Star Wars,Star Wars,25,Female,Asia,Math/Statistics,TRUE
+4,3,1,1,,,NA,neither,neither,25,Female,Asia,Tech,TRUE
+4,1,1,1,,,NA,neither,neither,35,Male,Asia,Chemistry/Physics,TRUE
+3,5,5,1,,Luke,NA,Star Wars,Star Wars,25,Female,Asia,Math/Statistics,TRUE
+3,3,4,3,,,NA,neither,Star Wars,25,Male,Asia,Finance/Economics/Business,TRUE
+3,4,3,3,,,NA,Star Wars,Star Wars,25,Male,Asia,Tech,TRUE
+2,3,4,1,,,NA,Star Wars,Star Wars,25,Female,North America,Tech,TRUE
+5,4,5,2,,?,NA,Star Wars,Star Trek,25,Other,Africa,Tech,TRUE
+4,1,4,3,,,NA,Star Wars,neither,25,Female,Europe,Finance/Economics/Business,TRUE
+3,3,1,3,,,NA,neither,neither,25,Male,Asia,Math/Statistics,TRUE
+2,2,4,2,,,NA,neither,neither,25,Male,Asia,Tech,TRUE
+3,1,1,1,,,NA,neither,neither,25,Male,Africa,Math/Statistics,TRUE
+4,3,2,4,,,NA,neither,Star Trek,25,Male,Asia,Tech,TRUE
+4,3,1,3,,,NA,Star Wars,Star Trek,25,Male,Asia,Tech,FALSE
+1,5,3,3,,,NA,Star Wars,neither,35,Male,North America,Tech,TRUE
+3,3,4,3,,,NA,neither,Star Wars,25,Female,Asia,Tech,TRUE
+2,2,1,2,,,NA,neither,Star Wars,25,Female,Asia,Tech,TRUE
+3,1,1,1,,,NA,neither,neither,25,Male,North America,Biology/Medicine,TRUE
+2,3,2,3,,,NA,neither,Star Wars,NA,Other,Asia,Finance/Economics/Business,TRUE
+4,3,3,2,,,NA,Star Wars,Star Wars,35,Male,North America,Tech,FALSE
+3,4,3,1,,,NA,Star Wars,Star Wars,35,Female,North America,Finance/Economics/Business,FALSE
+3,3,1,1,,,NA,neither,neither,35,Male,Oceania,Tech,TRUE
+2,3,4,3,,,NA,Star Wars,Star Trek,25,Female,North America,Engineering,TRUE

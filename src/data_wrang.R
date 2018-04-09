@@ -8,7 +8,7 @@
 # Input: a csv file, the raw data set
 # Output: a csv file, the clean data set
 #
-# Usage: Rscript src/data_wrang.R data/Geekiness_Survey.csv results/clean_data.csv
+# Usage: Rscript src/data_wrang.R data/Geekiness_Survey.csv
 
 # Libraries
 library(tidyverse)
@@ -16,7 +16,7 @@ library(glue)
 
 # Read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)
-mushrooms <- args[1]
+survey_responses <- args[1]
 out_file <- args[2]
 
 # Define main function
@@ -40,7 +40,7 @@ main <- function(){
                "sector",
                "MDS" )
   # Read raw data
-  data <- read.csv("data/Geekiness_Survey.csv",col.names = new_names) %>% 
+  data <- read.csv(survey_responses, col.names = new_names) %>% 
     select(-Timestamp, -participate) %>% 
     mutate(
       # Change discrete variables into factors
