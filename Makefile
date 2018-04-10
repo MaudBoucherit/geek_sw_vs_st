@@ -9,7 +9,7 @@ all: results/clean_data.csv
 
 ## clean data,
 results/clean_data.csv:  src/data_wrang.R
-	Rscript src/data_wrang.R data/Geekiness_Survey.csv results/clean_data.csv
+	Rscript src/data_wrang.R data/Geekiness_Survey.csv
 
 
 
