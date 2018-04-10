@@ -8,7 +8,7 @@
 # Input: a csv file, the raw data set
 # Output: a csv file, the clean data set
 #
-# Usage: Rscript src/data_wrang.R data/Geekiness_Survey.csv
+# Usage: Rscript src/data_wrang.R
 
 # Libraries
 library(tidyverse)
@@ -17,7 +17,6 @@ library(glue)
 # Read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)
 survey_responses <- args[1]
-out_file <- args[2]
 
 # Define main function
 main <- function(){
@@ -79,7 +78,7 @@ main <- function(){
   data$desert_island <- as.factor(data$desert_island)
   
   # save the clean data set
-  write_csv(data, out_file)
+  write_csv(data, "data/clean_data.csv")
 }
 
 
