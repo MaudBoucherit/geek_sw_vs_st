@@ -78,7 +78,7 @@ main <- function(){
   data$desert_island <- as.factor(data$desert_island)
   
   # save the clean data set
-  write_csv(data, "data/clean_data.csv")
+  write_csv(data, "results/clean_data.csv")
 }
 
 
