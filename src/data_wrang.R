@@ -49,7 +49,7 @@ main <- function(){
       
       # Rename the labels with number from the scale
       StarWars_knowledge = as.factor(substring(StarWars_knowledge,2,2)),
-      StarTrek_knowledge = as.factor(substring(StarWars_knowledge,2,2)),
+      StarTrek_knowledge = as.factor(substring(StarTrek_knowledge,2,2)),
       
       # Rename long labels 
       familiar = str_replace(familiar, "I am familiar with neither", "neither"),
