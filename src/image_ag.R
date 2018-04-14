@@ -1,14 +1,14 @@
-# data_wrang.R
+# image_ag.R
 # Amy Goldlist, Tyler Roberts, Maud Boucherit
 # April 2018
 #
-# This script cleans the survey raw data set. 
-# Mainly, it renames the levels of variables
+# This script produces some visualisations of 
+# our variables for EDA.
 #
-# Input: a csv file, the raw data set
-# Output: a csv file, the clean data set
+# Input: a csv file, the clean data set
+# Output: few png image, the visualisations
 #
-# Usage: Rscript src/data_wrang.R results/clean_data.csv
+# Usage: Rscript src/image_ag.R results/clean_data.csv
 
 # Libraries
 library(tidyverse)
@@ -23,7 +23,7 @@ main <- function(){
   # Import the clean data
   dat <- read.csv(clean_data)
   dat$desert_island <- factor(dat$desert_island, 
-                               levels=rev(levels(dat$desert_island)))
+                              levels=rev(levels(dat$desert_island)))
   
   # Get a view of the data
   str(dat)
@@ -125,7 +125,7 @@ main <- function(){
                        breaks = c(0.125, 0.58, 0.95), 
                        labels = c("North America", "Europe", "Asia")) +
     coord_flip() + guides(fill = FALSE) +
-    scale_fill_manual(values = c("darkgoldenrod2", "dodgerblue3", "firebrick3")) +
+    scale_fill_brewer(palette = "Dark2") +
     ggtitle("Desert Island Proportion by Continent") +
     theme_bw()
   
