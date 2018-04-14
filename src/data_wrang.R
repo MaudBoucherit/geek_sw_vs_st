@@ -46,6 +46,7 @@ main <- function(){
       geeky = as.factor(geeky),
       StarWars_fandom = as.factor(StarWars_fandom),
       StarTrek_fandom = as.factor(StarTrek_fandom),
+      continent = as.factor(continent),
       
       # Rename the labels with number from the scale
       StarWars_knowledge = as.factor(substring(StarWars_knowledge,2,2)),
@@ -54,6 +55,7 @@ main <- function(){
       # Rename long labels 
       familiar = str_replace(familiar, "I am familiar with neither", "neither"),
       familiar = str_replace(familiar, "I know everything about both!!!", "both"),
+      familiar = as.factor(familiar), 
       
       # Convert age to numeric (Part 1)
       age = str_replace(age, "Below 20",    "18"),
