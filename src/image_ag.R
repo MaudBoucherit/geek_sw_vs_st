@@ -42,94 +42,110 @@ main <- function(){
     theme_bw()
   
   # Bar plot of desert_island by familiarity
-  dat %>% 
+  p1 <- dat %>% 
     ggplot(aes(x = desert_island, fill = familiar)) +
     geom_bar(colour = "black") +
-    scale_fill_manual(values = c("darkolivegreen3", "dodgerblue3", "darkgoldenrod2", "firebrick3")) +
     theme_bw() +
-    labs(title = "Desert Island Picks by Familiarity")
+    scale_fill_manual(values = c("darkolivegreen3", "dodgerblue3", "darkgoldenrod2", "firebrick3")) +
+    guides(fill=guide_legend(title="Most Familiar With")) +
+    labs(title = "Desert Island Picks by Familiarity", y="Count", x="Desert Island Choice")
   
-  ggsave("results/figures/desert_island-familiarity.png")
+  ggsave("results/figures/desert_island-familiarity.png", p1)
   
   # Bar plot of familiarity by desert_island
   dat %>% 
     ggplot(aes(fill = desert_island, x = familiar)) +
     geom_bar(colour = "black") +
     theme_bw() +
-    labs(title = "Familiarity Picks by Desert Island")
+    labs(title = "Familiarity Picks by Desert Island", y="Desert Island Choice")
   
-  # Density plot of geekiness by desert_island
-  dat %>% 
+  # Bar plot of geekiness by desert_island
+  p2 <- dat %>% 
     ggplot(aes(fill = desert_island, x = geeky)) +
     geom_bar() +
     facet_wrap(~desert_island) +
-    xlab("Self-identified geekiness") +
+    theme_bw() + 
     scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
-    theme_bw() + guides(fill = FALSE) +
-    labs(title = "Desert Island Picks by Self-identified Geekiness")
+    guides(fill = FALSE) +
+    labs(title = "Desert Island Picks by Self-Identified Geekiness", y="Count", x="Self-Identified Geekiness")
   
-  ggsave("results/figures/desert_island-geekiness.png")
+  ggsave("results/figures/desert_island-geekiness.png", p2)
   
   # Bar plot of desert_island by geekiness
   dat %>% 
     ggplot(aes(x = desert_island, fill = geeky)) +
     geom_bar() +
     facet_wrap(~geeky) +
-    theme_bw() + guides(fill = FALSE) +
-    labs(title = "Desert Island Picks by Self-identified Geekiness")
+    theme_bw() + 
+    guides(fill = FALSE) +
+    labs(title = "Desert Island Picks by Self-identified Geekiness", y="Desert Island Choice")
   
   # Bar plot of desert_island by geekiness
-  ggplot(dat, aes(x = desert_island, fill = factor(geeky, levels = rev(levels(geeky))))) + 
-    geom_bar(position = "fill", colour = "black") +
-    scale_y_continuous("Self-identified geekiness", minor_breaks = NULL,  
-                       breaks = c(0.02, 0.12, 0.37, 0.73, 0.94), 
-                       labels = c(1, 2, 3, 4, 5)) +
-    coord_flip() + guides(fill = FALSE) +
-    theme_bw()
-  
-  # Response by gender
-  ggplot(dat, aes(x = desert_island, fill = gender)) + 
-    geom_bar(position = "fill", colour = "black") +
-    scale_y_continuous("Gender", minor_breaks = NULL,  
-                       breaks = c(0.04, 0.34, 0.8), 
-                       labels = c("Other", "Male", "Female")) +
-    coord_flip() +
-    guides(fill = FALSE) +
-    theme_bw()
+  dat %>% 
+    ggplot(aes(x = desert_island, fill = factor(geeky, levels = rev(levels(geeky))))) + 
+      geom_bar(position = "fill", colour = "black") +
+      theme_bw() +
+      scale_y_continuous("Self-identified geekiness", minor_breaks = NULL,  
+                         breaks = c(0.02, 0.12, 0.37, 0.73, 0.94), 
+                         labels = c(1, 2, 3, 4, 5)) +
+      coord_flip() + 
+      guides(fill = FALSE) +
+      labs(title="Desert Island Picks by Self-Identified Geekiness")
+      
+    
+    # Response by gender
+    dat %>% 
+      ggplot(aes(x = desert_island, fill = gender)) +
+        theme_bw() + 
+        geom_bar(position = "fill", colour = "black") +
+        scale_y_continuous("Gender", minor_breaks = NULL,  
+                           breaks = c(0.04, 0.34, 0.8), 
+                           labels = c("Other", "Male", "Female")) +
+        coord_flip() +
+        guides(fill = FALSE)
   
   # Response by age
-  ggplot(subset(dat, !is.na(age)), aes(x = desert_island, fill = factor(age, level = rev(levels(factor(age)))))) + 
-    geom_bar(position = "fill", colour = "black") +
-    scale_y_continuous("Age", minor_breaks = NULL,  
-                       breaks = c(0, 0.036, 0.735, 0.908, 0.977), 
-                       labels = c(0, 20, 30, 40, 50)) +
-    coord_flip() + guides(fill = FALSE) +
-    scale_fill_brewer(palette = "Dark2") +
-    theme_bw()
-  
-  ggsave("results/figures/desert_island-age.png")
+  p3 <- subset(dat, !is.na(age)) %>% 
+    ggplot(aes(x = desert_island, fill = factor(age, level = rev(levels(factor(age)))))) + 
+      geom_bar(position = "fill", colour = "black") +
+      theme_bw() +
+      #scale_y_continuous("Age", minor_breaks = NULL,  
+       #                  breaks = c(0, 0.036, 0.735, 0.908, 0.977), 
+        #                 labels = c(0, 20, 30, 40, 50)) +
+      coord_flip() + 
+      scale_fill_brewer(palette = "Dark2") +
+      guides(fill=guide_legend(title="Age Group")) +
+      labs(title="Desert Island Picks by Age", x="Desert Island Choice", y="Proportion Selected")
+    
+  ggsave("results/figures/desert_island-age.png", p3)
   
   # Response by MDS
-  ggplot(data, aes(x = desert_island, fill = MDS)) + 
+  dat %>% 
+  ggplot(aes(x = desert_island, fill = MDS)) + 
+    theme_bw() +
     geom_bar(position = "fill", colour = "black") +
     scale_y_continuous("Are you an MDS student?", minor_breaks = NULL,  
                        breaks = c(0.1, 0.6), 
                        labels = c("Yes", "No")) +
     coord_flip() + guides(fill = FALSE) +
-    theme_bw()
+    labs(title="Desert Island picks MDS vs. Non-MDS", y="Desert Island Choice")
   
   # Response by continent
-  ggplot(dat %>% filter(continent %in% c("North America", "Europe", "Asia")), aes(x = desert_island, fill = continent)) + 
-    geom_bar(position = "fill", colour = "black") +
-    scale_y_continuous("Continent (most identified)", minor_breaks = NULL,  
-                       breaks = c(0.125, 0.58, 0.95), 
-                       labels = c("North America", "Europe", "Asia")) +
-    coord_flip() + guides(fill = FALSE) +
-    scale_fill_brewer(palette = "Dark2") +
-    ggtitle("Desert Island Proportion by Continent") +
-    theme_bw()
+  p4 <- dat %>% 
+    filter(continent %in% c("North America", "Europe", "Asia")) %>% 
+    ggplot(aes(x = desert_island, fill = continent)) +
+      theme_bw() +
+      geom_bar(position = "fill", colour = "black") +
+      #scale_y_continuous("Continent (most identified)", minor_breaks = NULL,  
+       #                  breaks = c(0.125, 0.58, 0.95), 
+        #                 labels = c("North America", "Europe", "Asia")) +
+      coord_flip() + 
+      scale_fill_brewer(palette = "Dark2") +
+      guides(fill=guide_legend(title="Continent")) +
+      labs(title="Desert Island Proportion by Continent", x="Desert Island Choice", y="Proportion Selected")
+      
   
-  ggsave("results/figures/desert_island-continent.png")
+  ggsave("results/figures/desert_island-continent.png", p4)
   
 }
 
