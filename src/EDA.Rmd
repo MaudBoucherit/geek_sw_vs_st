@@ -2,7 +2,9 @@
 title: "Geekiness Exploratory Data Analysis"
 author: "Amy Goldlist, Maud Boucherit, Tyler Roberts"
 date: "April 14, 2018"
-output: github_document
+output:   
+  html_document:
+    keep_md: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -53,7 +55,7 @@ As well, we collected other data including:
 
 ### Exploratory Data Analysis
 
-If you would like to see the R analysis to produce there plots, please see [this Rscript](../src/image_ag.R).  As part of our analysis, we looked at relationships between our response and explanatory variables and various other responses.  Here are teh highlights of that analysis.
+If you would like to see the R analysis to produce there plots, please see [this Rscript](../src/image_ag.R).  As part of our analysis, we looked at relationships between our response and explanatory variables and various other responses.  Here are teh highlights of that analysis.  All of the analysis below is based on a sample of 174 respondants to our survey.  
 
 
 #### Age and Desert Island Choice
@@ -106,6 +108,18 @@ Over 50% of those who chose Star Wars rated themselves a 3/5 on the geekiness sc
 
 The mode for the Star Trek distribution was 4, unlike the other two groups. This might suggest that on average, people who prefer Star Trek are geekier, or at least consider themselves to be geeks more often. One way that we could formalize this more would be to measure the kurtosis in these distributions.
 
-This is where we will focus our attention in our analysis, in explaining teh differing shapes of these distributions.
+This is where we will focus our attention in our analysis, in explaining the differing shapes of these distributions.
 
 <\p>
+
+## Further Analysis 
+
+Our main interest is in identifying the effect of self-identified geekiness to how much of a fan each participant is of Star Trek and Star Wars. We hypothesize that Star Trek will have a strong correlation with geekiness, whereas Star Wars will be more universal.
+
+We also think that regardless of the above effect, participant's knowledge of the two series will strongly correlate with geekiness as well.
+
+We plan to perform a series of hypothesis tests on the above effects, and perform a power analysis. Depending on the distribution of our data, we will determine which sort of hypothesis test is appropriate. We will correct our p-values using the Bonferroni correction, because we are not too concerned with the *type* of error we make, and so controlling FWER should be sufficient.
+
+Finally, we are interested to see if geekiness correlates with a preference for a particular series. In order to test this we will try to fit some form of generalized linear model on a binary response (setting one series to 1 and the other to 0).  
+
+We are interested in exploring if propensity score matching would be a good way to mitigate the effect of our confounding variables, particularly since we have uneven group sizes.
