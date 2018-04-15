@@ -15,7 +15,7 @@ We collected data using an online survey asking users about their familiarity an
 - How would you rate your degree of knowledge about the Star Wars universe?
     - From (1) no knowledge at all to (5) expert knowledge
     - If rated 5: People are redirected to a hardcore question about Star Wars:
-    > Who first uttered the line "It's a trap!" and in what film?
+        > Who first uttered the line "It's a trap!" and in what film?
 
 ### Star Trek-related
 ![](images/st_logo.png)
@@ -24,7 +24,7 @@ We collected data using an online survey asking users about their familiarity an
 - How would you rate your degree of knowledge about the Star Trek universe?
     - From (1) no knowledge at all to (5) expert knowledge
     - If rated 5: People are redirected to a hardcore question about Star Trek:
-    > According to Klingon mythology, what is the place where all life began?
+        > According to Klingon mythology, what is the place where all life began?
 
 ### Star Wars Vs. Star Trek
 ![](images/sw_vs_st.png)
@@ -49,14 +49,20 @@ We collected data using an online survey asking users about their familiarity an
 
 We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample.
 
+We plan to look at relationships between our response and explanatory variables and these confounding variables in order to decrease any bias. To do so, we want to stratify our survey's answers according to a propensity score. 
+
 ## Analysis Strategy
+
 Our main interest is in identifying the effect of self-identified geekiness to how much of a fan each participant is of Star Trek and Star Wars. We hypothesize that Star Trek will have a strong correlation with geekiness, whereas Star Wars will be more universal.
 
 We also think that regardless of the above effect, participant's knowledge of the two series will strongly correlate with geekiness as well.
 
-We plan to perform a series of hypothesis tests on the above effects, and perform a power analysis. Depending on the distribution of our data, we will determine which sort of hypothesis test is appropriate. We will correct our p-values using the Bonferroni correction, because we are not too concerned with the *type* of error we make, and so controlling FWER should be sufficient.
+We plan to perform a series of hypothesis tests on the above effects, and perform a power analysis. Depending on the distribution of our data, we will determine which sort of hypothesis test is appropriate. We will correct our p-values using the Bonferroni correction, because we are not too concerned with the type of error we make, and so controlling FWER should be sufficient.
 
-Finally, we are interested to see if geekiness correlates with a preference to a particular series. In order to test this we will try to fit some form of generalized linear model on a binary response (setting one series to 1 and the other to 0).
+For the analysis, the answers to the Desert Island question are our response Y. The explanatory variables X are: the self-identified geekiness, how familiar/knowledgable one is of Star Wars and how familiar/knowledgable one is of Star Trek. We are interested in exploring if propensity score matching would be a good way to mitigate the effect of our confounding variables C, particularly since we have uneven group sizes.
+
+The final model should be an ordinal regression of Y on X and C.
+
 
 ## Aspects of Ethics
 
