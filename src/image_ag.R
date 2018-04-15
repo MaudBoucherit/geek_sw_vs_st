@@ -62,7 +62,7 @@ main <- function(){
   # Bar plot of geekiness by desert_island
   p2 <- dat %>% 
     ggplot(aes(fill = desert_island, x = geeky)) +
-    geom_bar() +
+    geom_density(n=5) +
     facet_wrap(~desert_island) +
     theme_bw() + 
     scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
@@ -113,7 +113,7 @@ main <- function(){
        #                  breaks = c(0, 0.036, 0.735, 0.908, 0.977), 
         #                 labels = c(0, 20, 30, 40, 50)) +
       coord_flip() + 
-      scale_fill_brewer(palette = "Dark2") +
+      scale_fill_brewer(labels=c("Less than 20", "20 to 30", "30 to 40", "40 to 50", "Greater than 50"), palette = "Dark2") +
       guides(fill=guide_legend(title="Age Group")) +
       labs(title="Desert Island Picks by Age", x="Desert Island Choice", y="Proportion Selected")
     
