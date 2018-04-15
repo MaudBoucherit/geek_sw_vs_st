@@ -2,7 +2,7 @@
 This project is investigating the influence of self-identified geekiness on Star Trek and Star Wars fandom.
 
 ## Methodology
-We collected data using an online survey asking users about their familiarity and knowledge of both series, as well as some basic demographic information, and how geeky they consider themselves. The online survey can be found [here](), and the questions are summarised in this proposal:
+We collected data using an online survey asking users about their familiarity and knowledge of both series, as well as some basic demographic information, and how geeky they consider themselves. The online survey can be found [here](https://goo.gl/forms/Jb3pCN6GVhqziVvt1), and the questions are summarised in this proposal:
 
 ### Self-Identified Geekiness
 - How would you rate your degree of geekiness?
