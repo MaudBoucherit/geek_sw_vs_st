@@ -1,33 +1,49 @@
 # Self-Identified Geekiness: How is that related to Star Wars or Star Trek fandom?
 This project is investigating the influence of self-identified geekiness on Star Trek and Star Wars fandom.
 
-## Survey
+## Methodology
+We collected data using an online survey asking users about their familiarity and knowledge of both series, as well as some basic demographic information, and how geeky they consider themselves. The online survey can be found [here](), and the questions are summarised in this proposal:
+
+### Self-Identified Geekiness
 - How would you rate your degree of geekiness?
+    - From (1) not geeky at all to (5) super geeky
 
 ### Star Wars-related
 ![](images/sw_logo.png)
 - How would you rate your degree of fandom?
+    - From (1) I hate it! to (5) I even love the prequels!
 - How would you rate your degree of knowledge about the Star Wars universe?
-    - If rated 9: HARDCORE QUESTION
+    - From (1) no knowledge at all to (5) expert knowledge
+    - If rated 5: People are redirected to a hardcore question about Star Wars:
+    > Who first uttered the line "It's a trap!" and in what film?
 
 ### Star Trek-related
 ![](images/st_logo.png)
 - How would you rate your degree of fandom?
+    - From (1) I hate it! to (5) I even love Wrath of Khan!
 - How would you rate your degree of knowledge about the Star Trek universe?
-    - If rated 9: HARDCORE QUESTION
+    - From (1) no knowledge at all to (5) expert knowledge
+    - If rated 5: People are redirected to a hardcore question about Star Trek:
+    > According to Klingon mythology, what is the place where all life began?
 
 ### Star Wars Vs. Star Trek
 ![](images/sw_vs_st.png)
 
 - Overall, are you more familiar with Star Wars or Star Trek universe?
-- You're stuck on a deserted island, with a TV and only one complete set of movies/TV episodes/books/games to entertain you for the rest of your life.
+    - Answers are: Star Wars, Star Trek, Both, Neither
+- You're stuck on a deserted island, with a TV and only one complete set of movies/TV episodes/books/games to entertain you for the rest of your life.  Which do you choose?
+    - Answers are: Star Wars, Star Trek, Neither: I will stare at the sand for the rest of my life rather than choose a quality science fiction series to watch.
 
 ### Confounding Variables
 - What is your age?
+    - Below 20, In my 20s, In my 30s, In my 40s, 50 or older
 - What is your gender?
+    - Female, Male, Non-binary, Prefer not to say, Other…
 - Which continent would you identify yourself with?
+    - North America, South America, Asia, Europe, Africa, Oceania, Antarctica
 - What is the main sector of your job/education background?
-- Are you currently enrolled in the MDS program at UBC.
+    - Tech, Finance/Economics/Business, A, ministration/Education, Biology/Medicine, Chemistry/Physics, Math/Statistics, Other…
+- Are you currently enrolled in the MDS program at UBC?
 
 ## About confounding variables
 
