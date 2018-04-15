@@ -7,6 +7,7 @@ FROM rocker/tidyverse
 
 #install R packages
 RUN Rscript -e "install.packages('glue', repos = 'http://cran.us.r-project.org')"
+RUN Rscript -e "install.packages('scales', repos = 'http://cran.us.r-project.org')"
 
 
 # install git
