@@ -8,24 +8,6 @@ output:
 ---
 
 
-
-
-```
-## Warning: package 'tidyverse' was built under R version 3.4.4
-```
-
-```
-## Warning: package 'tidyr' was built under R version 3.4.4
-```
-
-```
-## Warning: package 'purrr' was built under R version 3.4.4
-```
-
-```
-## Warning: package 'stringr' was built under R version 3.4.3
-```
-
 ## Introduction
 
 Our project seeks to explore the relationship between self-reported geekiness and a person's preference of Star Wars or Star Trek. 
