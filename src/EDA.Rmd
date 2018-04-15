@@ -2,7 +2,7 @@
 title: "Geekiness Exploratory Data Analysis"
 author: "Amy Goldlist, Maud Boucherit, Tyler Roberts"
 date: "April 14, 2018"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -23,7 +23,7 @@ We collected data using an online survey asking users about their familiarity an
 
 ### Exploratory Data Analysis
 
-![](figures/desert_island-age.png)
+![](results/figures/desert_island-age.png)
 <p>
 The above figure breaks down each age group's choice of series. Since the 20-30 age group was by far the largest group of respondents to this survey, they dominate each of the three choices. That being said, they seem to make up fewer of those who would choose Star Trek, decreasing by roughly the same amount that the 30-40 group increased for this choice.
 
@@ -32,14 +32,14 @@ While the "Less than 20" group is one of the smallest, they have a larger than u
 Finally, *nobody* among the 40-50 group chose to stare at the sand.
 <\p>
 
-![](figures/desert_island-continent.png)
+![](results/figures/desert_island-continent.png)
 <p>
 The above plot breaks down each continent's choice of series if they were stuck on a desert island.  Most people who chose Star Trek as their preferred series were located in North America, while Star Wars fans are highly concentrated in Europe relative to the other regions. Asia had the highest proportion of people who would prefer to stare at the sand for all eternity. 
 
 When looking at these results, it is important to keep in mind that this plot does not capture the differences in total number of people who selected each series, so while most of the people who chose Star Trek identify as North Americans, the absolute number of these people is still lower than those from North America who chose Star Wars, and so on.
 <\p>
 
-![](figures/desert_island-familiarity.png)
+![](results/figures/desert_island-familiarity.png)
 
 <p>
 An interesting result from the above plot is that very few people who are most familiar with Star Trek chose Star Wars as their desert island series, whereas a large number of those who were more familiar with Star Wars chose Star Trek. However, those who reported being equally familiar with both seemed evenly split between the two groups. 
@@ -48,7 +48,7 @@ Those who were not familiar with either series were mostly the ones who preferre
 
 <\p>
 
-![](figures/desert_island-geekiness.PNG)
+![](results/figures/desert_island-geekiness.png)
 
 <p>
 These plots show the distribution of self-identified geekiness facetted by the respondent's choice in series to have on a desert island.
