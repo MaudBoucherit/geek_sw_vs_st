@@ -25,3 +25,4 @@ clean:
 	rm -f results/clean_data.csv
 	rm -f results/figures/*.png
 	rm -f doc/EDA.md
+	rm -f doc/EDA.html
