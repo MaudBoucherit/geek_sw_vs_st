@@ -9,6 +9,9 @@ FROM rocker/tidyverse
 RUN Rscript -e "install.packages('glue', repos = 'http://cran.us.r-project.org')"
 RUN Rscript -e "install.packages('scales', repos = 'http://cran.us.r-project.org')"
 
+#  install the ezknitr packages
+RUN Rscript -e "install.packages('ezknitr', repos = 'https://mran.revolutionanalytics.com/snapshot/2017-12-11')"
+
 
 # install git
 RUN apt-get install -y wget
