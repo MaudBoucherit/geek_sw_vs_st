@@ -1,0 +1,26 @@
+---
+title: "Report"
+author: "Amy Goldlist, Maud, Tyler"
+date: "April 16, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+## Methodology
+
+### survey study design
+
+### data collection methods
+
+### analysis methods
+
+## results and analysis
+
+## discussion of  results
+
+## discussion of  survey/study design
