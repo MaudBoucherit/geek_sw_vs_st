@@ -12,6 +12,6 @@ The survey is located at [here](https://docs.google.com/forms/d/e/1FAIpQLSeqOI6W
 
 ### Contributing:
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 Feel free to help contribute code or other work to this project by first looking at our [contributing guidelines](CONTRIBUTING.md) and then submitting a pull request with your changes.
