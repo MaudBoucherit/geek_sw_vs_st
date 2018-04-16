@@ -8,6 +8,9 @@ output:
 ---
 
 
+
+
+
 ## Introduction
 
 Our project seeks to explore the relationship between self-reported geekiness and a person's preference of Star Wars or Star Trek. 
