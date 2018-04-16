@@ -13,9 +13,28 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Methodology
 
+We collected data using an [online survey](https://goo.gl/forms/Jb3pCN6GVhqziVvt1) asking users about their familiarity and knowledge of both series, as well as some basic demographic information, and how geeky they consider themselves. A more complete discussion of our project proposal and plans for analysis can be found [here](../proposal.md).  The key questions that we are using are:
+
 ### survey study design
 
+The main question we were concerned with was whether a person's choice of Star Wars or Star Trek is correlated with their self-reported geekiness.  In order to tease out whether the choice had to do with how familiar they were with the series, we also asked respondents to rank their knowledge and familiarity about the series on a scale from 1 to 5.  In order to differentiate if the 5s were truly fans, we had a separate skill testing question that was only triggered if respondents answered 5 to the knowledge questions.
+
+As well, we asked basic demographic questions, such as age, gender, employment sector, continent and whether or not they were an MDS student.
+
+Finally, we used humour in our questions in order to keep respondents engaged and forwarding the survey, 
+
+
 ### data collection methods
+
+We collected data by distributing an online survey.  We ditributed the survey through three main channels:
+
+- 1 All UBC MDS students completed the survey during designated class time
+
+- 2 We sent the survey to all [Maud put program name in here].  Since this program is in France, we hoped to get a more multicultural sample.
+
+- 3 We posted it on Facebook and let Facebook's algorithm ahare as it would.  We later found that our survey was circulated around a Vancouver Game company.  In order to get it to the top of Facebook feeds, we attempted to game their algorithm using the following text: "She said yes! It's twins!!! Here's one little trick, Congrats!! (now that I've hopefully gamed the algorithm enough to get to the top of your feed). Feel like filling out a survey? I promise not to steal your data, and you'd be having fun and helping me with a project."  
+
+It should be noted that this method of sampling falls squarely under the header of "convenience sampling", and our sample is skewed towards the tech community.  
 
 ### analysis methods
 
