@@ -13,8 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Methodology
 
-We collected data using an [online survey](https://goo.gl/forms/Jb3pCN6GVhqziVvt1) asking users about their familiarity and knowledge of both series, as well as some basic demographic information, and how geeky they consider themselves. A more complete discussion of our project proposal and plans for analysis can be found [here](../proposal.md).  The key questions that we are using are:
-
+We collected data using an [online survey](https://goo.gl/forms/Jb3pCN6GVhqziVvt1) asking users about their familiarity and knowledge of both series, as well as some basic demographic information, and how geeky they consider themselves.
 ### survey study design
 
 The main question we were concerned with was whether a person's choice of Star Wars or Star Trek is correlated with their self-reported geekiness.  In order to tease out whether the choice had to do with how familiar they were with the series, we also asked respondents to rank their knowledge and familiarity about the series on a scale from 1 to 5.  In order to differentiate if the 5s were truly fans, we had a separate skill testing question that was only triggered if respondents answered 5 to the knowledge questions.
@@ -36,10 +35,61 @@ We collected data by distributing an online survey.  We ditributed the survey th
 
 It should be noted that this method of sampling falls squarely under the header of "convenience sampling", and our sample is skewed towards the tech community.  
 
+### the survey
+
+#### Self-Identified Geekiness
+- How would you rate your degree of geekiness?
+    - From (1) not geeky at all to (5) super geeky
+
+#### Star Wars-related
+![](images/sw_logo.png)
+- How would you rate your degree of fandom?
+    - From (1) I hate it! to (5) I even love the prequels!
+- How would you rate your degree of knowledge about the Star Wars universe?
+    - From (1) no knowledge at all to (5) expert knowledge
+    - If rated 5: People are redirected to a hardcore question about Star Wars:
+        > Who first uttered the line "It's a trap!" and in what film?
+
+#### Star Trek-related
+![](images/st_logo.png)
+
+
+- How would you rate your degree of fandom?
+    - From (1) I hate it! to (5) I even love Wrath of Khan!
+- How would you rate your degree of knowledge about the Star Trek universe?
+    - From (1) no knowledge at all to (5) expert knowledge
+    - If rated 5: People are redirected to a hardcore question about Star Trek:
+        > According to Klingon mythology, what is the place where all life began?
+
+#### Star Wars Vs. Star Trek
+![](images/sw_vs_st.png)
+
+- Overall, are you more familiar with Star Wars or Star Trek universe?
+    - Answers are: Star Wars, Star Trek, Both, Neither
+- You're stuck on a deserted island, with a TV and only one complete set of movies/TV episodes/books/games to entertain you for the rest of your life.  Which do you choose?
+    - Answers are: Star Wars, Star Trek, Neither: I will stare at the sand for the rest of my life rather than choose a quality science fiction series to watch.
+
+#### Confounding Variables
+- What is your age?
+    - Below 20, In my 20s, In my 30s, In my 40s, 50 or older
+- What is your gender?
+    - Female, Male, Non-binary, Prefer not to say, Other…
+- Which continent would you identify yourself with?
+    - North America, South America, Asia, Europe, Africa, Oceania, Antarctica
+- What is the main sector of your job/education background?
+    - Tech, Finance/Economics/Business, A, ministration/Education, Biology/Medicine, Chemistry/Physics, Math/Statistics, Other…
+- Are you currently enrolled in the MDS program at UBC?
+
+
 ### analysis methods
+We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample.
+
+We plan to look at relationships between our response and explanatory variables and these confounding variables in order to decrease any bias. To do so, we want to stratify our survey's answers according to a propensity score. 
 
 ## results and analysis
 
 ## discussion of  results
 
 ## discussion of  survey/study design
+
+In our original survey, we did not leave a space for "the arts" under employment sector.  As a result, we had a lot of write in "other" categories, thus making analysis difficult.  
