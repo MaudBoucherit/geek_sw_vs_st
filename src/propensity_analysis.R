@@ -12,8 +12,8 @@
 
 ########################################################
 ## Response = desert_island
-## Explanatory = geeky
-## Confounders = age, familiar, continent, (MDS????)
+## Explanatory = geeky, SW and ST related questions
+## Confounders = age, continent, gender
 #########################################################
 
 
@@ -31,6 +31,19 @@ clean_data <- read.csv("results/clean_data.csv")
 
 # str(clean_data)
 
+
+# Read in command line arguments
+#args <- commandArgs(trailingOnly = TRUE)
+#clean_data <- args[1]
+
+clean_data <- read.csv("results/clean_data.csv")
+
+# str(clean_data)
+
+###############################################
+###############################################
+
+## Amy'S version
 
 ##########################################
 ## Create glm for propensity coefficients
@@ -62,3 +75,52 @@ fit2 <- nnet::multinom(familiar~geeky + propensity,data = clean_data)
 
 summary(fit2)
 
+###############################################
+###############################################
+
+## Maud's version
+
+##########################################
+## Create glm for propensity coefficients
+##########################################
+
+# On the confounding variables
+propensity <- glm(geeky ~ age + continent + gender, 
+            family = poisson, data = clean_data)
+
+# Add propensity score to the data
+pred <- predict(propensity, newdata = clean_data)
+clean_data <- clean_data %>% 
+  mutate(propensity = cut(pred, breaks=c(0, quantile(pred[-63], (1:4)/5), 1)))
+
+
+##################################
+## Make a new model!
+#################################
+
+# Creating score variables summarizing information related to SW & ST
+clean_data$sw_score <- clean_data$StarWars_fandom + clean_data$StarWars_knowledge + 
+            2.5*(clean_data$familiar %in% c("Star Wars", "both"))
+clean_data$st_score <- clean_data$StarTrek_fandom + clean_data$StarTrek_knowledge + 
+            2.5*(clean_data$familiar %in% c("Star Trek", "both"))
+
+# Fit a model where the success is Star Wars
+clean_data$sw_success <- (clean_data$desert_island == "Star Wars")
+sw_success <- glm(sw_success ~ geeky + sw_score + st_score, 
+            family = binomial, data = clean_data)
+summary(sw_success)
+
+# Fit a model where the success is Star Trek
+clean_data$st_success <- (clean_data$desert_island == "Star Trek")
+st_success <- glm(st_success ~ geeky + sw_score + st_score, 
+                  family = binomial, data = clean_data)
+summary(st_success)
+
+# Fit a model where the success is none of them
+clean_data$no_success <- (clean_data$desert_island == "neither")
+no_success <- glm(no_success ~ geeky + sw_score + st_score, 
+                  family = binomial, data = clean_data)
+summary(no_success)
+
+# Fit a multinomial model
+## TODO
