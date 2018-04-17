@@ -9,11 +9,27 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+
 ```
+
+```{r loading, include = FALSE}
+## load libraries
+library(tidyverse)
+library(scales)
+library(cowplot)
+ 
+## load in data
+dat <- read.csv("../results/clean_data.csv")
+dat$desert_island <- factor(dat$desert_island, 
+                              levels=rev(levels(dat$desert_island)))
+```
+
+
 
 ## Introduction
 
-The series "Star Wars" and "Star Trek" attract a lot of comparison, possibly because they both start with the word "Star", the series "Star Wars" and "Star Trek".  In our personal experience, we feel that the geekier a person
+The series "Star Wars" and "Star Trek" attract a lot of comparison, possibly because they both start with the word "Star", the series "Star Wars" and "Star Trek".  In our personal experience, we feel that the geekier a person identifies as, the more strongly they feel about this question.  [EXPAND]
 
 ## Methodology
 
@@ -45,7 +61,7 @@ It should be noted that this method of sampling falls squarely under the header 
 After reading the UBC ethics code, we feel that our survey has no sensitive information, and we will not ask any personally identifying questions.  To this end, for age we will have the respondent choose from 10 year ranges.  Because of this, we feel confident enough to use Google forms as a vehicle.  As per UBC policy, we will have a paragraph (copied verbatim from the UBC page) informing the respondent that the information will be stored in a US server subject to homeland security, and have them click to acknowledge this.
 
 
-### the survey
+### The Survey
 
 #### Self-Identified Geekiness
 - How would you rate your degree of geekiness?
@@ -62,6 +78,7 @@ After reading the UBC ethics code, we feel that our survey has no sensitive info
 
 #### Star Trek-related
 ![](../images/st_logo.png)
+
 
 
 - How would you rate your degree of fandom?
@@ -103,23 +120,115 @@ Methods we explored are logistic regression, both binomial and multinomial, and 
 
 ### Exploratory Data Analysis
 
-If you would like to see the R analysis to produce there plots, please see [this Rscript](../src/image_ag.R).  As part of our analysis, we looked at relationships between our response and explanatory variables and various other responses.  Here are teh highlights of that analysis.  All of the analysis below is based on a sample of 174 respondants to our survey.  
+If you would like to see the R analysis to produce there plots, please see [this Rscript](../src/image_ag.R).  As part of our analysis, we looked at relationships between our response and explanatory variables and various other responses.  Here are some highlights of that analysis.  All of the analysis below is based on a sample of 174 respondants to our survey.  
+
+#### Geekiness and Desert Island Choice
+
+
+The focus of our analysis is the effect of Geekiness on the variable we have called "Desert Island Choice".  
+
+```{r desert_island-geekiness, echo = FALSE}
+  # Bar plot of geekiness by desert_island
+  p2 <- dat %>% 
+    ggplot(aes(fill = desert_island, x = geeky)) +
+    geom_density(n=5) +
+    facet_wrap(~desert_island) +
+    theme_bw() + 
+    scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
+    guides(fill = FALSE) +
+    labs(title = "Desert Island Picks by Self-Identified Geekiness", y="Count", x="Self-Identified Geekiness")
+
+p2
+```
+
+
+
+These plots show the distribution of self-identified geekiness facetted by the respondent's choice in series to have on a desert island.
+
+Unsurprisingly, those who chose neither, who would prefer to stare out to sea or at patterns in the sand, generally rated themselves lower on the geekiness scale; with nearly 40% of such respondents rating themselves 1 or 2 out of 5, although the mode here appears to be a 3 as well. It is surprising that at least one person who rated themselves  5/5 in geekiness chose to watch neither of the series if stuck for eternity on a desert island.
+
+Over 50% of those who chose Star Wars rated themselves a 3/5 on the geekiness scale although the distribution appears to be left skewed, with more people in this group rating themselves 4 than those rating themselves 2.
+
+The mode for the Star Trek distribution was 4, unlike the other two groups. This might suggest that on average, people who prefer Star Trek are geekier, or at least consider themselves to be geeks more often. One way that we could formalize this more would be to measure the kurtosis in these distributions.
+
+This is where we will focus our attention in our analysis, in explaining the differing shapes of these distributions.
+
 
 
 #### Age and Desert Island Choice
 
-![](../results/figures/desert_island-age.png)
-<p>
+An important confounding variable is age.  As we can see from the mosaic plot below, therer is a clear effect.
+
+```{r Age-desert-island, echo = FALSE}
+ p3 <- subset(dat, !is.na(age)) %>% 
+    ggplot(aes(x = desert_island, fill = factor(age, level = rev(levels(factor(age)))))) + 
+      geom_bar(position = "fill", colour = "black") +
+      theme_bw() +
+      #scale_y_continuous("Age", minor_breaks = NULL,  
+       #                  breaks = c(0, 0.036, 0.735, 0.908, 0.977), 
+        #                 labels = c(0, 20, 30, 40, 50)) +
+      coord_flip() + 
+      scale_fill_brewer(labels=c("Less than 20", "20 to 30", "30 to 40", "40 to 50", "Greater than 50"), palette = "Dark2") +
+      guides(fill=guide_legend(title="Age Group")) +
+      labs(title="Desert Island Picks by Age", x="Desert Island Choice", y="Proportion Selected")
+
+###  This may not be the correct graph, but here goes:
+
+age_geekiness <- subset(dat, !is.na(age)) %>% 
+    ggplot(aes(x = geeky, fill = factor(age, level = rev(levels(factor(age)))))) + 
+      geom_bar(position = "fill", colour = "black") +
+      theme_bw() +
+      #scale_y_continuous("Age", minor_breaks = NULL,  
+       #                  breaks = c(0, 0.036, 0.735, 0.908, 0.977), 
+        #                 labels = c(0, 20, 30, 40, 50)) +
+      coord_flip() + 
+      scale_fill_brewer(labels=c("Less than 20", "20 to 30", "30 to 40", "40 to 50", "Greater than 50"), palette = "Dark2") +
+      guides(fill=guide_legend(title="Age Group")) +
+      labs(title="Geekiness Picks by Age", x="Geekiness", y="Proportion Selected")
+
+legend <- get_legend(p3)
+
+cowplot::plot_grid(p3+ theme(legend.position="none"), 
+                   age_geekiness+ theme(legend.position="none"),
+                   rel_widths = c(1,1,.3),
+                   #align = "h",
+                   ncol = 3,
+                   legend)
+
+
+```
+
+
+
 The above figure breaks down each age group's choice of series. Since the 20-30 age group was by far the largest group of respondents to this survey, they dominate each of the three choices. That being said, they seem to make up fewer of those who would choose Star Trek, decreasing by roughly the same amount that the 30-40 group increased for this choice.
 
 While the "Less than 20" group is one of the smallest, they have a larger than usual proportion among those who chose neither.
 
 Finally, *nobody* among the 40-50 group chose to stare at the sand.
 
-Given these results, we feel that it would be prudent to include age as a confounding variable in our analysis.
-<\p>
+Given these results, we feel that it is prudent to include age as a confounding variable in our analysis.
+
 
 #### Continent and Desert Island Choice
+
+```{r}
+  # Response by continent
+  p4 <- dat %>% 
+    filter(continent %in% c("North America", "Europe", "Asia")) %>% 
+    ggplot(aes(x = desert_island, fill = continent)) +
+      theme_bw() +
+      geom_bar(position = "fill", colour = "black") +
+      #scale_y_continuous("Continent (most identified)", minor_breaks = NULL,  
+       #                  breaks = c(0.125, 0.58, 0.95), 
+        #                 labels = c("North America", "Europe", "Asia")) +
+      coord_flip() + 
+      scale_fill_brewer(palette = "Dark2") +
+      guides(fill=guide_legend(title="Continent")) +
+      labs(title="Desert Island Proportion by Continent", x="Desert Island Choice", y="Proportion Selected")
+
+p4
+```
+
 
 ![](../results/figures/desert_island-continent.png)
 <p>
@@ -143,22 +252,6 @@ Those who were not familiar with either series were mostly the ones who preferre
 
 <\p>
 
-#### Geekiness and Desert Island Choice
-
-![](../results/figures/desert_island-geekiness.png)
-
-<p>
-These plots show the distribution of self-identified geekiness facetted by the respondent's choice in series to have on a desert island.
-
-Unsurprisingly, those who chose neither, who would prefer to stare out to sea or at patterns in the sand, generally rated themselves lower on the geekiness scale; with nearly 40% of such respondents rating themselves 1 or 2 out of 5, although the mode here appears to be a 3 as well. It is surprising that at least one person who rated themselves  5/5 in geekiness chose to watch neither of the series if stuck for eternity on a desert island.
-
-Over 50% of those who chose Star Wars rated themselves a 3/5 on the geekiness scale although the distribution appears to be left skewed, with more people in this group rating themselves 4 than those rating themselves 2.
-
-The mode for the Star Trek distribution was 4, unlike the other two groups. This might suggest that on average, people who prefer Star Trek are geekier, or at least consider themselves to be geeks more often. One way that we could formalize this more would be to measure the kurtosis in these distributions.
-
-This is where we will focus our attention in our analysis, in explaining the differing shapes of these distributions.
-
-<\p>
 
 
 ## discussion of  results
