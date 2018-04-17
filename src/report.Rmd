@@ -188,6 +188,7 @@ age_geekiness <- subset(dat, !is.na(age)) %>%
 
 legend <- get_legend(p3)
 
+### THis is an experiment!
 cowplot::plot_grid(p3+ theme(legend.position="none"), 
                    age_geekiness+ theme(legend.position="none"),
                    rel_widths = c(1,1,.3),
@@ -230,27 +231,36 @@ p4
 ```
 
 
-![](../results/figures/desert_island-continent.png)
-<p>
 The above plot breaks down each continent's choice of series if they were stuck on a desert island.  Most people who chose Star Trek as their preferred series were located in North America, while Star Wars fans are highly concentrated in Europe relative to the other regions. Asia had the highest proportion of people who would prefer to stare at the sand for all eternity. 
 
 When looking at these results, it is important to keep in mind that this plot does not capture the differences in total number of people who selected each series, so while most of the people who chose Star Trek identify as North Americans, the absolute number of these people is still lower than those from North America who chose Star Wars, and so on.
 
 Given this effect, continent is another confounder that will be included in our analysis.
-<\p>
+
 
 #### Familiarity and Desert Island Choice
 
-![](../results/figures/desert_island-familiarity.png)
+```{r desert_island-familiarity, echo = FALSE}
 
-<p>
+ # Bar plot of desert_island by familiarity
+p1 <- dat %>% 
+    ggplot(aes(x = desert_island, fill = familiar)) +
+    geom_bar(colour = "black") +
+    theme_bw() +
+    scale_fill_manual(values = c("darkolivegreen3", "dodgerblue3", "darkgoldenrod2", "firebrick3")) +
+    guides(fill=guide_legend(title="Most Familiar With")) +
+    labs(title = "Desert Island Picks by Familiarity", y="Count", x="Desert Island Choice")
+
+p1
+```
+
+
+
 It makes intuitive sense that a person's familiarity with various series would influence their choice of series, and indeed it seems to be so.
 
 An interesting result from the above plot is that very few people who are most familiar with Star Trek chose Star Wars as their desert island series, whereas a large number of those who were more familiar with Star Wars chose Star Trek. However, those who reported being equally familiar with both seemed evenly split between the two groups. 
 
 Those who were not familiar with either series were mostly the ones who preferred to stare at the sand for eternity, and there were *zero* of those who were most familiar with Star Trek in that category.  Familiarity is another confounder which we choose to include in our analysis.
-
-<\p>
 
 
 
