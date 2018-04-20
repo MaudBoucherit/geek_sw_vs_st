@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## load libraries
 library(tidyverse)
 library(scales)
-library(cowplot)
+library(cowplot)  ### maybe try a different one?
  
 ## load in data
 dat <- read.csv("../results/clean_data.csv")
@@ -29,30 +29,32 @@ dat$desert_island <- factor(dat$desert_island,
 
 ## Introduction
 
-The series "Star Wars" and "Star Trek" attract a lot of comparison, possibly because they both start with the word "Star", the series "Star Wars" and "Star Trek".  In our personal experience, we feel that the geekier a person identifies as, the more strongly they feel about this question.  [EXPAND]
+The series "Star Wars" and "Star Trek" attract a lot of comparison, possibly because they both start with the word "Star".  In our personal experience, we feel that the geekier a person identifies as, the more strongly they feel about this question.  In order to explore this in a more rigorous fashion, we created a survey to gather data about the subject, hen analysed the data.  After looking at the data, we explored a model that we like to call the "rare disease" model, in which we posit that while preferring Star Trek is in the minority across all categories, being geekier increases the odds of choosing Star Trek over other alternatives.  We borrowed the methodology from statistical methods developed for studying relatively rare diseases, hence the name.  In this vein, we will use mosaic plots to explore the data, and log odds ratios as an analytical tool.
 
 ## Methodology
 
-We collected data using an [online survey](https://goo.gl/forms/Jb3pCN6GVhqziVvt1) asking users about their familiarity and knowledge of both series, as well as some basic demographic information, and how geeky they consider themselves.
+We collected data using an [online survey](https://goo.gl/forms/Jb3pCN6GVhqziVvt1) asking users about their familiarity and knowledge of both series, as well as some basic demographic information, and how geeky they consider themselves.  The online nature was chosen for convenience, and as a criteria of the course this project is for.  We hoped that in our analysis we would be able to compensate from the no-random method of choosing respondants.
 
 ### survey study design
 
-The main question we were concerned with was whether a person's choice of Star Wars or Star Trek is correlated with their self-reported geekiness.  In order to tease out whether the choice had to do with how familiar they were with the series, we also asked respondents to rank their knowledge and familiarity about the series on a scale from 1 to 5.  In order to differentiate if the 5s were truly fans, we had a separate skill testing question that was only triggered if respondents answered 5 to the knowledge questions.
+The main question we were concerned with was whether a person's choice of Star Wars or Star Trek is correlated with their self-reported geekiness.  In order to tease out whether the choice had to do with how familiar they were with the series, we also asked respondents to rank their knowledge and familiarity about the series on a traditional likert scale from 1 to 5.  In order to differentiate if the 5s were truly experts, we had a separate skill testing question that was only triggered if respondents answered 5 to the knowledge questions.  The main responce question asks respondants what series they would choose, if stuck on a desert island.  We call this their "desert island choice".
 
-As well, we asked basic demographic questions, such as age, gender, employment sector, continent and whether or not they were an MDS student.
+Our main explanatory variable is "Geekiness", which we measured on a 5 point likert scale.  We decided to omit a definition of geekiness, understanding that people's intrinsic understnading of the term is inherantly tied in with how they rank themselves.  This was a deliberate choice, and therefore we will refer to the "self-reported geekiness" level, as we have no objective way to truly assess what level people are.
 
-Finally, we used humour in our questions in order to keep respondents engaged and forwarding the survey.  
+In order to adjust for possible confounders introduced by the nature of the survey, we asked basic demographic questions, such as age, gender, employment sector, continent and whether or not they were an MDS student.  We chose to leave the age in 10 year ranges, in order to protect the anonymity of our respondents.  We deliberately asked for gender identification, and gave many options, in order not to conform to putdated gender norms.  We did however, merge our results into 'male', 'female', and 'other' for better analysis.  For location, we chose to ask about continent they most identified with, in order to allow people who have lived in multiple locations to dedide which was most important to their identity,
+
+Finally, we used humour in our questions in order to keep respondents engaged and forwarding the survey.  We understand that this is not everybod's preference, but we ended up with a significantly larger sample than we had planned for (around 180 respondants vs an etimated 45), which helped gather more data, particulary in different age groups and continents.    
 
 
 ### data collection methods
 
-We collected data by distributing an online survey.  We ditributed the survey through three main channels:
+We collected data by distributing an online survey.  We distributed the survey through three main channels:
 
 - 1 All UBC MDS students completed the survey during designated class time
 
 - 2 We sent the survey to all [Maud put program name in here].  Since this program is in France, we hoped to get a more multicultural sample.
 
-- 3 We posted it on Facebook and let Facebook's algorithm ahare as it would.  We later found that our survey was circulated around a Vancouver Game company.  In order to get it to the top of Facebook feeds, we attempted to game their algorithm using the following text: "She said yes! It's twins!!! Here's one little trick, Congrats!! (now that I've hopefully gamed the algorithm enough to get to the top of your feed). Feel like filling out a survey? I promise not to steal your data, and you'd be having fun and helping me with a project."  
+- 3 We posted it on Facebook and let Facebook's algorithm share as it would.  We later found that our survey was circulated around a Vancouver Game company.  In order to get it to the top of Facebook feeds, we attempted to game their algorithm using the following text: "She said yes! It's twins!!! Here's one little trick, Congrats!! (now that I've hopefully gamed the algorithm enough to get to the top of your feed). Feel like filling out a survey? I promise not to steal your data, and you'd be having fun and helping me with a project."  
 
 It should be noted that this method of sampling falls squarely under the header of "convenience sampling", and our sample is skewed towards the tech community.  
 
@@ -120,12 +122,12 @@ Methods we explored are logistic regression, both binomial and multinomial, and 
 
 ### Exploratory Data Analysis
 
-If you would like to see the R analysis to produce there plots, please see [this Rscript](../src/image_ag.R).  As part of our analysis, we looked at relationships between our response and explanatory variables and various other responses.  Here are some highlights of that analysis.  All of the analysis below is based on a sample of 174 respondants to our survey.  
+If you would like to see the R analysis to produce there plots, please see [this Rscript](../src/image_ag.R).  As part of our analysis, we looked at relationships between our response and explanatory variables and various other responses.  Here are some highlights of that analysis.  All of the analysis below is based on a sample of 174 respondents to our survey.  
 
 #### Geekiness and Desert Island Choice
 
 
-The focus of our analysis is the effect of Geekiness on the variable we have called "Desert Island Choice".  
+The focus of our analysis is the effect of geekiness on the variable we have called "Desert Island Choice".  
 
 ```{r desert_island-geekiness, echo = FALSE}
   # Bar plot of geekiness by desert_island
@@ -143,7 +145,7 @@ p2
 
 
 
-These plots show the distribution of self-identified geekiness facetted by the respondent's choice in series to have on a desert island.
+These plots show the distribution of self-identified geekiness faceted by the respondent's choice in series to have on a desert island.
 
 Unsurprisingly, those who chose neither, who would prefer to stare out to sea or at patterns in the sand, generally rated themselves lower on the geekiness scale; with nearly 40% of such respondents rating themselves 1 or 2 out of 5, although the mode here appears to be a 3 as well. It is surprising that at least one person who rated themselves  5/5 in geekiness chose to watch neither of the series if stuck for eternity on a desert island.
 
@@ -157,7 +159,7 @@ This is where we will focus our attention in our analysis, in explaining the dif
 
 #### Age and Desert Island Choice
 
-An important confounding variable is age.  As we can see from the mosaic plot below, therer is a clear effect.
+An important confounding variable is age.  As we can see from the mosaic plot below, there is a clear effect.
 
 ```{r Age-desert-island, echo = FALSE}
  p3 <- subset(dat, !is.na(age)) %>% 
@@ -268,4 +270,4 @@ Those who were not familiar with either series were mostly the ones who preferre
 
 ## discussion of  survey/study design
 
-In our original survey, we did not leave a space for "the arts" under employment sector.  As a result, we had a lot of write in "other" categories, thus making analysis difficult. We also chose to narrow our focus to Star Trek vs Star Wars, and not include other science fiction series, such as "Doctor Who".  This did annoy some of our respondents, who did not want to choose.  As well, some respondents felt that we should have dealt with the "geek vs nerd" dichotomy, which is not something we have an opinion on, but apprantly people do.
+In our original survey, we did not leave a space for "the arts" under employment sector.  As a result, we had a lot of write in "other" categories, thus making analysis difficult. We also chose to narrow our focus to Star Trek vs Star Wars, and not include other science fiction series, such as "Doctor Who".  This did annoy some of our respondents, who did not want to choose.  As well, some respondents felt that we should have dealt with the "geek vs nerd" dichotomy, which is not something we have an opinion on, but apparently people do.
