@@ -32,13 +32,7 @@ clean_data <- read.csv("results/clean_data.csv")
 # str(clean_data)
 
 
-# Read in command line arguments
-#args <- commandArgs(trailingOnly = TRUE)
-#clean_data <- args[1]
 
-clean_data <- read.csv("results/clean_data.csv")
-
-# str(clean_data)
 
 ###############################################
 ###############################################
@@ -71,7 +65,9 @@ clean_data <- clean_data %>%
 #fit2 <- glm(clean_data$familiar~clean_data$geeky + clean_data$propensity,family = "multinomial")
 
 
-fit2 <- nnet::multinom(familiar~geeky + propensity,data = clean_data)
+
+### note:  I changed this just to see,  It's...  ok?
+fit2 <- nnet::multinom(desert_island~geeky + propensity,data = clean_data)
 
 summary(fit2)
 
@@ -124,3 +120,56 @@ summary(no_success)
 
 # Fit a multinomial model
 ## TODO
+
+
+###########################################################################
+## Here I used the nnet package, which uses the power of a neural network.  
+###########################################################################
+
+
+multi<- nnet::multinom(desert_island ~ geeky + sw_score + st_score, 
+                       family = binomial, data = clean_data)
+summary(multi)
+
+##lookign around
+attributes(multi)
+
+
+## predict stuff
+## gives probabilities, adding "probs"
+predict(multi,clean_data,"probs")
+
+## gives the highest probability, like we want.
+
+##success rate:
+mean(clean_data$desert_island==(predict(multi,clean_data)))
+
+##69%.  That's...  ok, I guess?
+
+
+###########################################################################
+## Here I used the MASS, because it has an ordered logit model 
+###########################################################################
+
+library(MASS)  ##note, this masks dplyr select, so we should load it first in the future.
+
+### this is an ordered logit model:
+## name means Proportional Ordered Logistic Regression
+
+polr_model <- polr(desert_island ~ geeky + sw_score + st_score, data = clean_data, method = "logistic", Hess = TRUE)
+
+##look:
+polr_model
+
+summary(polr_model)
+
+###########################################################################
+## And now let's add some propensity scores! 
+###########################################################################
+
+polr_prop <- polr(desert_island ~ geeky + sw_score + st_score + propensity, data = clean_data, method = "logistic", Hess = TRUE)
+
+summary(polr_prop)
+
+
+###  Uh.. this shows that geekiness has very little effect. Interesting!
