@@ -117,12 +117,17 @@ Below is the complete survey, including the images we included:
 - Are you currently enrolled in the MDS program at UBC?
 
 
-### Analysis Methods
+### Analysis Methods 
+
+[**this is very rough and totally needs work**]
 We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample.  [**Add more, probably**]
 
-We plan to look at relationships between our response and explanatory variables and these confounding variables in order to decrease any bias. To do so, we want to stratify our survey's answers according to a propensity score. 
+We planed to look at relationships between our response and explanatory variables and these confounding variables in order to decrease any bias. To do so, we want to stratify our survey's answers according to a propensity score. 
 
 Methods we explored are logistic regression, both binomial, ordinal and multinomial, and propensity score matching.
+
+Since we were asking subjective questions, we chose to use likert scales for many varaibles.  Dealing with Likert scales can be difficult, as ordinal data can be categorized as both categorical or quantitative data, depending on the analysis used.  In our research, we found that there is no clear consensus as to how to treat such data in analysis.  In recent years, there has been more arguments in favour of using parametric methods to deal with ordinal data, particularly when several likert scale questions are grouped to give a more balanced score.  To this end, we have grouped several of our questions into one common score, and used conventional methods to analyse the data.
+
 
 **EXPAND THIS PART!!!**
 
@@ -158,7 +163,7 @@ p2
 ```{r}
 ### option 2
 
-#Or is a Bar plot of geekiness by desert_island better?  TA seems to think so
+#Or is a Bar plot of geekiness by desert_island better?  
 
 dat %>% 
     ggplot(aes(fill = desert_island, x = geeky)) +
@@ -213,6 +218,23 @@ dat %>%
       guides(fill=guide_legend(title="Continent")) +
       labs(title="Desert Island Proportion by Geekiness", x="Proportion Selected", y="Desert Island Choice")
 
+
+### or what if we group stuff?
+dat %>% 
+    filter(desert_island != "neither") %>% 
+    mutate(geeky = ifelse(geeky %in% c(1,2), "not geeky", ifelse(geeky %in% c(4,5),"geeky", "neutral"))) %>% 
+    ggplot(aes(fill = desert_island, x = geeky)) +
+      theme_bw() +
+      geom_bar(position = "fill") +
+      scale_fill_manual(values = c("darkgoldenrod2", "dodgerblue3")) +
+      coord_flip() + 
+      #scale_fill_brewer(palette = "Dark2") +
+      guides(fill=guide_legend(title="Continent")) +
+      labs(title="Desert Island Proportion by Geekiness", x="Proportion Selected", y="Desert Island Choice")
+
+### This shows no effect.  So, not super interesting
+
+
 ```
 
 **Notes to Maud and Tyler: Is this really increasing?  I'm not sure we can say more than it's less popular amond the 1s....**
@@ -222,7 +244,7 @@ Though theses plots don't seem to show a clear trend, we posit that that this is
 
 #### Age and Desert Island Choice
 
-An important confounding variable is age.  As we can see from the mosaic plot below, there is a clear effect.
+An important confounding variable is age.  As we can see from the mosaic plot below, there is a clear effect of age on both desert island choice and geekiness.
 
 ```{r Age-desert-island, echo = FALSE}
  p3 <- subset(dat, !is.na(age)) %>% 
@@ -261,7 +283,7 @@ cowplot::plot_grid(p3+ theme(legend.position="none"),
                    ncol = 3,
                    legend)
 
-### THis is an experiment!
+### THis is worse!!
 cowplot::plot_grid(p3+ theme(legend.position="none"), 
                    age_geekiness,
                    rel_widths = c(2,3),
@@ -284,6 +306,8 @@ Given these results, we feel that it is prudent to include age as a confounding 
 
 #### Continent and Desert Island Choice
 
+When we looked at the continent, we found a clear trend that Star Trek is more popular in North America than the other continents.  Our working theory is that Star Trek was never 
+
 ```{r}
   # Response by continent
   p4 <- dat %>% 
@@ -300,6 +324,8 @@ Given these results, we feel that it is prudent to include age as a confounding 
       labs(title="Desert Island Proportion by Continent", x="Desert Island Choice", y="Proportion Selected")
 
 p4
+
+
 ```
 
 
@@ -309,8 +335,28 @@ When looking at these results, it is important to keep in mind that this plot do
 
 Given this effect, continent is another confounder that will be included in our analysis.
 
+```{r}
+##let's try this in reverse...  I think it'll be interesting:
+
+
+dat %>% 
+    filter(continent %in% c("North America", "Europe", "Asia")) %>% 
+    ggplot(aes(fill = desert_island, x = continent)) +
+      theme_bw() +
+      geom_bar(position = "fill", colour = "black") +               
+      labels = c("North America", "Europe", "Asia")) +
+      coord_flip() + 
+      scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
+      guides(fill=guide_legend(title="Desert Island Choice")) +
+      labs(title="Desert Proportion by Continent", x="Continent", y="Proportion Selected")
+
+```
+
+
 
 #### Familiarity and Desert Island Choice
+
+**Here I think we should use Maud's combined score**
 
 ```{r desert_island-familiarity, echo = FALSE}
 
@@ -341,3 +387,5 @@ Those who were not familiar with either series were mostly the ones who preferre
 ## discussion of  survey/study design
 
 In our original survey, we did not leave a space for "the arts" under employment sector.  As a result, we had a lot of write in "other" categories, thus making analysis difficult. We also chose to narrow our focus to Star Trek vs Star Wars, and not include other science fiction series, such as "Doctor Who".  This did annoy some of our respondents, who did not want to choose.  As well, some respondents felt that we should have dealt with the "geek vs nerd" dichotomy, which is not something we have an opinion on, but apparently people do.
+
+**expand**
