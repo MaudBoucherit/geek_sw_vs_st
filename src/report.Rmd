@@ -194,6 +194,8 @@ We designed the Star Wars score in a similar fashion.  By doing this, we hoped t
 
 We also asked those who indicated that they were a 5 in either Star Trek or Star Wars knowledge to answer an obscure trivia question to prove that they were as knowledgable as they claimed. We then adjusted the knowledge scores of those who correctly answered upwards to a 6 to better reflect their degree of knowledge about the series. Of those who were asked, only one person correctly answered the Star Wars question, and two correctly answered the Star Trek question. This will slightly impact their aggregated score as calculated above.
 
+Throughout the rest of this report, we will refer to these scores as "awareness" or "attitude towards <series>".
+
 
 ***PREVIOUS COMMENT (some might be reusable)***
 It makes intuitive sense that a person's familiarity with various series would influence their choice of series, and indeed it seems to be so.
@@ -206,11 +208,19 @@ Those who were not familiar with either series were mostly the ones who preferre
 ![](../results/figures/scores-desert_island.png)
 
 
+The left box in the figure above shows the CDF for Star Trek scores for each of the three desert island choices. We can see that for those who choose neither or Star Wars, the vast majority (75%) of repsondents scored below 0.25. On the other hand, those who chose Star Trek were more uniformly distributed; with 75% of respondents falling below 0.75 rather than 0.25.
+
+The right box instead shows the Star Wars scores, and contrary to the previous plot, each of the CDFs appear to be relatively uniform. Unsurprisingly, the 'neither' group has a larger proportion of people with lower scores, but Star Wars and Star Trek are very similar for nearly all scores.
+
+One thing that this plot suggests is that people who prefer Star Trek may be more of sci-fi fans in general, rather than just enjoying a particular series, as they appear to be equally knowledgable about both series (in fact, these plots suggest that on average, Star Trek fans have higher Star Wars scores than they do Star Trek scores). People who chose Star Wars on the other hand scored only marginally better than the 'neither' group for Star Trek familiar
+
 **Amy likes this first one best!**
 
 ![](../results/figures/scores-geekiness.png)
 
-Comment HERE !!!!
+The above plots show us the CDFs of the two score functions, grouped by self-reported geekiness this time. It is unsurprising that they appear to be ordered according to geekiness, i.e., 1 has lower scores than 2, has lower scores than 3, etc. However, there is quite a stark difference between the two series.
+
+For Star Trek awareness, we 
 
 
 ![](../results/figures/scores-average.png)
