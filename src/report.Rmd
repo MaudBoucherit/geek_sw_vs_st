@@ -176,6 +176,8 @@ dat %>%
 
 ```
 
+These plots show the distribution of self-identified geekiness faceted by the respondent's choice in series to have on a desert island.
+
 Unsurprisingly, those who chose neither, and who would prefer to stare at patterns in the sand, generally rated themselves lower on the geekiness scale: nearly 40% of such respondents rated themselves 1 or 2 out of 5, although the mode is 3. It is surprising that at least one person who rated themselves  5/5 in geekiness chose to watch neither of the series if stuck for eternity on a desert island.
 
 Over 50% of those who chose Star Wars rated themselves a 3/5 on the geekiness scale. The distribution seems to be left-skewed, with more people in this group rating themselves 4 than those rating themselves 2.
