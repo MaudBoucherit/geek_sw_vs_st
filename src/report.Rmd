@@ -294,7 +294,7 @@ clean_data <- clean_data %>%
 
 ```
 
-Now we use the (continuous) propensity scores as a factor in our analysis.  This model uses _propotional odds logistic regression_, as an ordered logistic regression. We chose this model to take into account that there is an ordering to the desert island scores, with neither being the lowest, and Star Trek being the highest.  We  explored other methods, but in the end feel that ignoring the ordered nature of this variable lost too much data:  Below is the result of our model:
+Now we use the (continuous) propensity scores as a factor in our analysis.  This model uses _propotional odds logistic regression (polr)_. We chose this model to take into account that there is an ordering to the desert island scores, with neither being the lowest, and Star Trek being the highest.  We  explored other methods, but in the end feel that ignoring the ordered nature of this variable lost too much data:  Below is the result of our model:
 
 ```{r polr_model, echo = FALSE}
 polr_model <- MASS::polr(desert_island ~ geeky +propensity, data = clean_data, method = "logistic", Hess = TRUE)
@@ -304,14 +304,22 @@ summary(polr_model)
 
 #### Interpretation of these results
 
+Becuase this is an multinomial distribution, we have two intercepts:  This is because a polr model is modeling the probability of going from one category to the next; that is, moving from "neither" to "Star Wars", and from "Star Wars" to "Star Trek."  Also note that we are modelling the _log odds ratio_, not the simple probability.
 
-Looking at these results, it is clear that once we adjust for our confounding variables, there is not enough evidence to show that geekiness has an effect on choice of desert island viewing material.
 
-```{r}
-exp(coef(polr_model))
+
+Looking at these results, it is clear that once we adjust for our confounding variables, there is not enough evidence to show that geekiness has an effect on choice of desert island viewing material. We can see that the log odds ratio increases by only 0.014 for every increase in geekiness. With a standard error of 0.1598, it is clear that there is no statistical result here. Most of the percieved effect from fitting a model just with geekiness scores is due to the confounding variables: 
+
+```{r plain_model, echo = FALSE}
+
+summary(MASS::polr(desert_island ~ geeky, data = clean_data, method = "logistic", Hess = TRUE))
 ```
+ Above see he results of fitting a polr model to the geekiness value, without accounting for the confounders.  In this model there seems to be an effect, but our analysis above shows that this is the result of confounding variables.
+ 
+ 
+#### Conclusion to Anlaysis
 
-
+By including confounding variables, we were not able to show a significant effect of geekiness on desert island choice.  
 
 
 ## Discussion of  Survey/Study Design
