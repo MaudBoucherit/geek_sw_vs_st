@@ -64,7 +64,7 @@ main <- function(){
   age_plot <- subset(dat, !is.na(age)) %>% 
     ggplot(aes(fill = factor(age, level = rev(levels(factor(age)))))) + 
     theme_bw() +
-    scale_fill_brewer(labels=c("Younger than 20", "20 to 30", "30 to 40", "40 to 50", "Older than 50"), palette = "Dark2")
+    scale_fill_brewer(labels=c("Older than 50", "40 to 50", "30 to 40", "20 to 30", "Younger than 20"), palette = "Dark2")
   
   # Plot of age proportion by Self-reported Geekiness
   ## with the common title, and the common legend
@@ -73,7 +73,8 @@ main <- function(){
     labs(title="Proportions by Age Group", x="Self-reported Geekiness", y="Proportion") +
     guides(fill = guide_legend(title = "  Age: ", 
                                title.position = "left", 
-                               ncol = 5))  +
+                               ncol = 5,
+                               reverse=TRUE))  +
     theme(legend.position = c(0, -.2), legend.justification = c(0,0))
   
   # Plot of age proportion by Desert Island Choice
