@@ -61,7 +61,12 @@ Below is the complete survey, including the images we displayed:
     - From (1) not geeky at all to (5) super geeky
 
 #### Star Wars-related
-![](../images/sw_logo.png)
+
+<h5 align="center">
+  <br>
+<img src="../images/sw_logo.png" alt="sw_vs_st" width="200"></a>
+<br>
+</h5>
 
 
 - How would you rate your degree of fandom?
@@ -72,7 +77,12 @@ Below is the complete survey, including the images we displayed:
         > Who first uttered the line "It's a trap!" and in what film?
 
 #### Star Trek-related
-![](../images/st_logo.png)
+
+<h5 align="center">
+  <br>
+<img src="../images/st_logo.png" alt="sw_vs_st" width="200"></a>
+<br>
+</h5>
 
 
 - How would you rate your degree of fandom?
@@ -83,7 +93,13 @@ Below is the complete survey, including the images we displayed:
         > According to Klingon mythology, what is the place where all life began?
 
 #### Star Wars Vs. Star Trek
-![](../images/sw_vs_st.png)
+
+<h5 align="center">
+  <br>
+<img src="../images/sw_vs_st.png" alt="sw_vs_st" width="400"></a>
+<br>
+</h5>
+
 
 
 - Overall, are you more familiar with Star Wars or Star Trek universe?
@@ -133,7 +149,12 @@ As part of our analysis, we looked at relationships between our response and exp
 
 The focus of our analysis is the effect of geekiness on the variable we have called "Desert Island Choice".  
 
-![](../results/figures/desert_island-geekiness.png)
+
+<h5 align="center">
+  <br>
+<img src="../results/figures/desert_island-geekiness.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
 
 These plots show the distribution of self-identified geekiness faceted by the respondent's choice in series to have on a desert island.
@@ -146,7 +167,11 @@ The mode of the Star Trek distribution is 4, unlike the other two groups. This m
 
 This is where we will focus our attention during our analysis, in explaining the differing shapes of these distributions.
 
-![](../results/figures/geekiness-desert_island.png)
+<h5 align="center">
+  <br>
+<img src="../results/figures/geekiness-desert_island.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
 
 As we can see on the above mosaic plot, the proportion of those choosing neither increases as the self-reported geekiness decreases. More than 60% of the people who self-reported a geekiness of 1 chose neither. It appears that the proportion of those choosing Star Trek increases with the geekiness. The proportion of people who prefer Star Trek among those who self-reported a geekiness of 1 is especially low.
@@ -156,7 +181,12 @@ As we can see on the above mosaic plot, the proportion of those choosing neither
 
 An important confounding variable is age.  As we can see from the mosaic plot below, there is a clear effect of age on both desert island choice and geekiness.
 
-![](../results/figures/distributions-age.png)
+<h5 align="center">
+  <br>
+<img src="../results/figures/distributions-age.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
+
 
 
   The above bar plots break down each level of geekiness and desert island choice by age group. Since the 20-30 age group is by far the largest group of respondents to this survey, they dominate each distribution. While the "Younger than 20" group is one of the smallest, they have a larger than usual proportion among those who chose neither.  Except that, we can't really see any pattern in the age group distribution by geekiness. The relationship is not totally uniform, but it is not monotone either.
@@ -170,7 +200,12 @@ For the desert island choice, respondents choosing neither are overall younger a
 
 When we looked at the continent, we found a clear trend that Star Trek is more popular in North America than in the other continents.  Our working theory is that Star Trek was mostly an American trend, and never really caught on in Asia or Europe
 
-![](../results/figures/distributions-continent.png)
+
+<h5 align="center">
+  <br>
+<img src="../results/figures/distributions-continent.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
 
 The above bar plots break down each level of geekiness and desert island choice by continent.
@@ -200,18 +235,31 @@ An interesting result from the above plot is that very few people who are most f
 
 Those who were not familiar with either series were mostly the ones who preferred to stare at the sand for eternity, and there were *zero* of those who were most familiar with Star Trek in that category. Familiarity is another confounder which we choose to include in our analysis.
 
+<h5 align="center">
+  <br>
+<img src="../results/figures/scores-desert_island.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
-![](../results/figures/scores-desert_island.png)
 
 
 **Amy likes this first one best!**
 
-![](../results/figures/scores-geekiness.png)
+<h5 align="center">
+  <br>
+<img src="../results/figures/scores-geekiness.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
+
 
 Comment HERE !!!!
 
+<h5 align="center">
+  <br>
+<img src="../results/figures/scores-average.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
-![](../results/figures/scores-average.png)
 
 Comment HERE !!!
 
