@@ -13,6 +13,7 @@
 # Libraries
 library(tidyverse)
 library(scales)
+library(cowplot)
 
 # Read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)
@@ -41,21 +42,21 @@ main <- function(){
       labs(title = "Desert Island Picks by Self-Identified Geekiness",
            y="Percentage", x="Self-reported Geekiness")
   
-  ggsave("results/figures/desert_island-geekiness.png", p1)
+  ggsave("results/figures/desert_island-geekiness.png", p1, height = 4, units = "in")
   
   
   # Distribution of desert_island by geekiness
   p2 <- dat %>% 
     ggplot(aes(fill = desert_island, x = geeky)) +
     theme_bw() +
-    geom_bar(position = "fill") +
+    geom_bar(position = "fill", colour = "black") +
     scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
     scale_y_continuous(labels = percent) +
     guides(fill=guide_legend(title="Desert Island \nChoice")) +
     labs(title="Desert Island Distribution by Geekiness",
          x="Self-reported Geekiness", y="Percentage")
   
-  ggsave("results/figures/geekiness-desert_island.png", p2)
+  ggsave("results/figures/geekiness-desert_island.png", p2, height = 4, units = "in")
   
   
   # Distributions of esert_island and geekiness by age
@@ -92,7 +93,7 @@ main <- function(){
                      ncol = 2,
                      legend)
     
-  ggsave("results/figures/distributions-age.png", p3)
+  ggsave("results/figures/distributions-age.png", p3, height = 4, units = "in")
   
   
   
@@ -131,7 +132,7 @@ main <- function(){
                      ncol = 2,
                      legend)
   
-  ggsave("results/figures/distributions-continent.png", p4)
+  ggsave("results/figures/distributions-continent.png", p4, height = 4, units = "in")
   
   
   # Star Wars and Star Trek score related to geekiness and desert island
@@ -146,7 +147,7 @@ main <- function(){
       labs(title = "Score Cumulative Density Function by Universe",
            x = "Score", y = "Cumulative Density", colour = "Desert \nIsland ") 
   
-  ggsave("results/figures/scores-desert_island.png", p5)
+  ggsave("results/figures/scores-desert_island.png", p5, height = 4, units = "in")
   
   
   # Score distribution for desert island
@@ -161,7 +162,7 @@ main <- function(){
       labs(title = "Score Cumulative Density Function by Universe",
            x = "Score", y = "Cumulative Density", colour = "Geekiness") 
   
-  ggsave("results/figures/scores-geekiness.png", p6)
+  ggsave("results/figures/scores-geekiness.png", p6, height = 4, units = "in")
   
   
   # Average scores
@@ -191,7 +192,7 @@ main <- function(){
   p7 <- cowplot::plot_grid(avg_geeky, avg_desert, 
                      rel_widths = c(1, .9))
   
-  ggsave("results/figures/scores-average.png", p7)
+  ggsave("results/figures/scores-average.png", p7, height = 4, units = "in")
   
   
 }
