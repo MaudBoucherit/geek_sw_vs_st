@@ -79,12 +79,13 @@ main <- function(){
   data$desert_island[! data$desert_island %in% c("Star Wars", "Star Trek")] <- "neither"
   data$desert_island <- as.factor(data$desert_island)
   
-  data$sw_score <- as.numeric(paste(data$StarWars_fandom)) + 
+  ## create combined scores.
+  data$sw_score <- (as.numeric(paste(data$StarWars_fandom)) + 
     as.numeric(paste(data$StarWars_knowledge)) + 
-    2.5*(data$familiar %in% c("Star Wars", "both"))
-  data$st_score <- as.numeric(paste(data$StarTrek_fandom)) + 
+    2.5*(data$familiar %in% c("Star Wars", "both")))/12.5
+  data$st_score <- (as.numeric(paste(data$StarTrek_fandom)) + 
     as.numeric(paste(data$StarTrek_knowledge)) + 
-    2.5*(data$familiar %in% c("Star Trek", "both"))
+    2.5*(data$familiar %in% c("Star Trek", "both")))/12.5
   
   # save the clean data set
   write_csv(data, "results/clean_data.csv")

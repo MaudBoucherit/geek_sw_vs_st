@@ -2,10 +2,10 @@
 
 ## Amy, Tyler and Maud
 
-### Cleans the data and produces some EDA plots and....
+### Cleans the data and produces some EDA plots and creates a report
 
 ##run top to bottom
-all: doc/EDA.md doc/report.md
+all:  doc/report.md doc/EDA.md
 
 ## clean data,
 results/clean_data.csv:  src/data_wrang.R data/Geekiness_Survey.csv
