@@ -147,7 +147,7 @@ The focus of our analysis is the effect of geekiness on the variable we have cal
 
 dat %>% 
     ggplot(aes(fill = desert_island, x = geeky)) +
-    geom_bar()+
+    geom_bar() + 
     facet_wrap(~desert_island) +
     theme_bw() + 
     scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
@@ -177,10 +177,9 @@ dat %>%
       coord_flip() + 
       #scale_fill_brewer(palette = "Dark2") +
       guides(fill=guide_legend(title="Desert Island Choice")) +
-      labs(title="Desert Island Proportion by Geekiness", x="Geekiness", y="Proportion Selected")
-
+      labs(title="Desert Island Proportion by Geekiness", x="Self-reported Geekiness", y="Proportion")
 ```
-As we can see on the above mosaic plot, the proportion of those choosing Star Trek appears to be increasing as geekiness increases.
+As we can see on the above mosaic plot, the proportion of those chooseing neither increases as the self-reported geekiness decreases. It appears that the proportion of those choosing Star Trek increases as geekiness increases. 
 
 ```{r}
 ### but what if we get rid of the neithers?
@@ -224,50 +223,40 @@ Though theses plots don't seem to show a clear trend, we posit that this is due 
 
 An important confounding variable is age.  As we can see from the mosaic plot below, there is a clear effect of age on both desert island choice and geekiness.
 
-```{r Age-desert-island, echo = FALSE}
- p3 <- subset(dat, !is.na(age)) %>% 
-    ggplot(aes(x = desert_island, fill = factor(age, level = rev(levels(factor(age)))))) + 
-      geom_bar(position = "fill", colour = "black") +
-      theme_bw() +
-      #scale_y_continuous("Age", minor_breaks = NULL,  
-       #                  breaks = c(0, 0.036, 0.735, 0.908, 0.977), 
-        #                 labels = c(0, 20, 30, 40, 50)) +
-      coord_flip() + 
-      scale_fill_brewer(labels=c("Less than 20", "20 to 30", "30 to 40", "40 to 50", "Greater than 50"), palette = "Dark2") +
-      guides(fill=guide_legend(title="Age Group")) +
-      labs(title="Desert Island Picks by Age", x="Desert Island Choice", y="Proportion Selected")
 
-###  This may not be the correct graph, but here goes:
+```{r age-plots, echo = FALSE}
+# General plot template for the age plots
+age_plot <- subset(dat, !is.na(age)) %>% 
+  ggplot(aes(fill = factor(age, level = rev(levels(factor(age)))))) + 
+    theme_bw() +
+    scale_fill_brewer(labels=c("Less than 20", "20 to 30", "30 to 40", "40 to 50", "Greater than 50"), palette = "Dark2")
 
-age_geekiness <- subset(dat, !is.na(age)) %>% 
-    ggplot(aes(x = geeky, fill = factor(age, level = rev(levels(factor(age)))))) + 
-      geom_bar(position = "fill", colour = "black") +
-      theme_bw() +
-      #scale_y_continuous("Age", minor_breaks = NULL,  
-       #                  breaks = c(0, 0.036, 0.735, 0.908, 0.977), 
-        #                 labels = c(0, 20, 30, 40, 50)) +
-      coord_flip() + 
-      scale_fill_brewer(labels=c("Less than 20", "20 to 30", "30 to 40", "40 to 50", "Greater than 50"), palette = "Dark2") +
-      guides(fill=guide_legend(title="Age Group")) +
-      labs(title="Geekiness Picks by Age", x="Geekiness", y="Proportion Selected")
+# Plot of age proportion by Self-reported Geekiness
+## with the common title, and the common legend
+age_geekiness <- age_plot +
+  geom_bar(aes(x = geeky), position = "fill", colour = "black") +
+  labs(title="Proportions by Age Group", x="Self-reported Geekiness", y="Proportion") +
+  guides(fill = guide_legend(title = "  Age: ", 
+                             title.position = "left", 
+                             ncol = 5))  +
+  theme(legend.position = c(0, -.2), legend.justification = c(0,0))
 
-legend <- get_legend(p3)
+# Plot of age proportion by Desert Island Choice
+age_desert <- age_plot + 
+  geom_bar(aes(x = desert_island), position = "fill", colour = "black") +
+  labs(title=" ", x="Desert Island Choice", y="") +
+  theme(plot.margin = unit(c(.2,.2,.3,-.5), "cm"))
 
-### THis is an experiment! -- I think the two greens is a little confusing.
-cowplot::plot_grid(p3+ theme(legend.position="none"), 
-                   age_geekiness+ theme(legend.position="none"),
-                   rel_widths = c(1,1,.3),
-                   #align = "h",
-                   ncol = 3,
+# Define the common legend
+legend <- get_legend(age_geekiness)
+
+# Display both plots at once
+cowplot::plot_grid(age_geekiness + theme(legend.position="none"), 
+                   age_desert + theme(legend.position="none"),
+                   rel_widths = c(1, .7),
+                   rel_heights = c(1, .1),
+                   ncol = 2,
                    legend)
-
-### THis is worse!!
-cowplot::plot_grid(p3+ theme(legend.position="none"), 
-                   age_geekiness,
-                   rel_widths = c(2,3),
-                   #align = "h",
-                   ncol = 3)
-
 
 ```
 
@@ -284,22 +273,40 @@ Given these results, we feel that it is prudent to include age as a confounding 
 
 When we looked at the continent, we found a clear trend that Star Trek is more popular in North America than in the other continents.  Our working theory is that Star Trek was mostly an American trend, and never really caught on in Asia or Europe
 
-```{r}
-  # Response by continent
-  p4 <- dat %>% 
-    filter(continent %in% c("North America", "Europe", "Asia")) %>% 
-    ggplot(aes(x = desert_island, fill = continent)) +
-      theme_bw() +
-      geom_bar(position = "fill", colour = "black") +
-      #scale_y_continuous("Continent (most identified)", minor_breaks = NULL,  
-       #                  breaks = c(0.125, 0.58, 0.95), 
-        #                 labels = c("North America", "Europe", "Asia")) +
-      coord_flip() + 
-      scale_fill_brewer(palette = "Dark2") +
-      guides(fill=guide_legend(title="Continent")) +
-      labs(title="Desert Island Proportion by Continent", x="Desert Island Choice", y="Proportion Selected")
+```{r continent-plots, echo = FALSE}
+# General plot template for the continent plots
+cont_plot <- dat %>% 
+  filter(continent %in% c("North America", "Europe", "Asia")) %>% 
+  ggplot(aes(fill = continent)) +
+    theme_bw() +
+    scale_fill_brewer(palette = "Dark2")
 
-p4
+# Plot of continent proportion by Self-reported Geekiness
+## with the common title, and the common legend
+cont_geekiness <- cont_plot +
+  geom_bar(aes(x = geeky), position = "fill", colour = "black") +
+  labs(title="Proportions by Continent", x="Self-reported Geekiness", y="Proportion") +
+  guides(fill = guide_legend(title = "Continent: ", 
+                             title.position = "left", 
+                             ncol = 3))  +
+  theme(legend.position = c(.3, -.2), legend.justification = c(0,0))
+
+# Plot of age proportion by Desert Island Choice
+cont_desert <- cont_plot + 
+  geom_bar(aes(x = desert_island), position = "fill", colour = "black") +
+  labs(title=" ", x="Desert Island Choice", y="") +
+  theme(plot.margin = unit(c(.2,.2,.3,-.5), "cm"))
+
+# Define the common legend
+legend <- get_legend(cont_geekiness)
+
+# Display both plots at once
+cowplot::plot_grid(cont_geekiness + theme(legend.position="none"), 
+                   cont_desert + theme(legend.position="none"),
+                   rel_widths = c(1, .7),
+                   rel_heights = c(1, .1),
+                   ncol = 2,
+                   legend)
 
 
 ```
@@ -310,7 +317,7 @@ When looking at these results, it is important to keep in mind that this plot do
 
 Given this effect, continent is another confounder that we included in our analysis.
 
-```{r}
+```{r, echo = FALSE}
 ##let's try this in reverse...  I think it'll be interesting:
 
 
@@ -319,11 +326,22 @@ dat %>%
     ggplot(aes(fill = desert_island, x = continent)) +
       theme_bw() +
       geom_bar(position = "fill", colour = "black") +               
-      labels = c("North America", "Europe", "Asia") +
+      #labels = c("North America", "Europe", "Asia")) +
       coord_flip() + 
       scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
       guides(fill=guide_legend(title="Desert Island Choice")) +
       labs(title="Desert Proportion by Continent", x="Continent", y="Proportion Selected")
+
+dat %>% 
+    filter(continent %in% c("North America", "Europe", "Asia")) %>% 
+    ggplot(aes(fill = as.factor(geeky), x = continent)) +
+      theme_bw() +
+      geom_bar(position = "fill", colour = "black") +               
+      #labels = c("North America", "Europe", "Asia")) +
+      coord_flip() + 
+      scale_fill_brewer(palette = "Dark2") +
+      guides(fill=guide_legend(title="Self-reported Geekiness")) +
+      labs(title="Geekiness Proportion by Continent", x="Continent", y="Proportion Selected")
 
 ```
 
