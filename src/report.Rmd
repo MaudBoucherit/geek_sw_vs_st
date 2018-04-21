@@ -240,14 +240,11 @@ After looking at various models, we chose a plain linear mode for our propensity
 # Linear model of self-reported geekiness against the confounders
 propensity <- lm(geeky ~ gender + age + continent, data = clean_data)
 summary(propensity)
-
 ```
 
 We note that none of the results from this analysis is especially significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced dataset.
 
-
 ```{r add_scores, echo = FALSE}
-
 # Add propensity score to the data
 pred <- predict(propensity, newdata = clean_data)
 clean_data <- clean_data %>%
@@ -257,12 +254,10 @@ clean_data <- clean_data %>%
 
 Now we use the continuous propensity scores as a factor in our analysis.  This model uses _proportional odds logistic regression (polr)_. We chose this model to take into account that there is an ordering to the desert island scores, with neither being the lowest.  According to our belief, Star Trek would be the highest because it is more correlated with the level of self-reported geekiness.  We  explored other methods, but in the end feel that ignoring the ordered nature of this variable lost too much data.  Below is the result of our model:
 
-```{r polr_model, echo = FALSE}
+```{r polr_model}
 polr_model <- MASS::polr(
-  desert_island ~ geeky + sw_score + st_score + propensity, 
-  data = clean_data, 
-  method = "logistic", 
-  Hess = TRUE)
+  desert_island ~ geeky + st_score + sw_score + propensity, 
+  data = clean_data, method = "logistic", Hess = TRUE)
 
 summary(polr_model)
 ```
