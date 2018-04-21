@@ -150,6 +150,7 @@ The focus of our analysis is the effect of geekiness on the variable we have cal
 
 ![](../results/figures/desert_island-geekiness.png)
 
+
 These plots show the distribution of self-identified geekiness faceted by the respondent's choice in series to have on a desert island.
 
 Unsurprisingly, those who chose neither, and who would prefer to stare at patterns in the sand, generally rated themselves lower on the geekiness scale: nearly 40% of such respondents rated themselves 1 or 2 out of 5, although the mode is 3. It is surprising that at least one person who rated themselves  5/5 in geekiness chose to watch neither of the series if stuck for eternity on a desert island.
@@ -162,9 +163,8 @@ This is where we will focus our attention during our analysis, in explaining the
 
 ![](../results/figures/geekiness-desert_island.png)
 
-As we can see on the above mosaic plot, the proportion of those choosing neither increases as the self-reported geekiness decreases. More than 60% of the people who self-reported a geekiness of 1 chose neither. 
 
-It appears that the proportion of those choosing Star Trek increases with the geekiness. The proportion of people who prefer Star Trek among those who self-reported a geekiness of 1 is especially low. 
+As we can see on the above mosaic plot, the proportion of those choosing neither increases as the self-reported geekiness decreases. More than 60% of the people who self-reported a geekiness of 1 chose neither. It appears that the proportion of those choosing Star Trek increases with the geekiness. The proportion of people who prefer Star Trek among those who self-reported a geekiness of 1 is especially low. 
 
 
 #### Age and Desert Island Choice
@@ -173,17 +173,14 @@ An important confounding variable is age.  As we can see from the mosaic plot be
 
 ![](../results/figures/distributions-age.png)
 
-The above bar plots break down each level of geekiness and desert island choice by age group. Since the 20-30 age group is by far the largest group of respondents to this survey, they dominate each distribution. 
 
-While the "Less than 20" group is one of the smallest, they have a larger than usual proportion among those who chose neither. But they tend to grade themselves as geeky (3) to really geeky (5). Except that, we can't really see any pattern in the age group distribution by geekiness. The relationship is not totally uniform, but it is not monotone either.
+The above bar plots break down each level of geekiness and desert island choice by age group. Since the 20-30 age group is by far the largest group of respondents to this survey, they dominate each distribution. While the "Less than 20" group is one of the smallest, they have a larger than usual proportion among those who chose neither. But they tend to grade themselves as geeky (3) to really geeky (5). Except that, we can't really see any pattern in the age group distribution by geekiness. The relationship is not totally uniform, but it is not monotone either.
 
 For the desert island choice, respondants choosing neithe are overall younger and those choosing Star Trek are older: 
 - people below 30 count for 81% in the neither group, 73% for Star Wars and 45% for StarTrek,
 - people above 40 count for 2% in the neither group, 9% for Star Wars and 18% for StarTrek.
 
-Finally, *nobody* among the 40-50 group chose to stare at the sand.
-
-Given these results, we feel that it is prudent to include age as a confounding variable in our analysis.
+Finally, *nobody* among the 40-50 group chose to stare at the sand.  Given these results, we feel that it is prudent to include age as a confounding variable in our analysis.
 
 
 #### Continent and Desert Island Choice
@@ -192,15 +189,14 @@ When we looked at the continent, we found a clear trend that Star Trek is more p
 
 ![](../results/figures/distributions-continent.png)
 
+
 The above bar plots break down each level of geekiness and desert island choice by continent. 
 
-The proportion of Asian increases as the geekiness decreases. On the contrary, the proportion of Northern Americans increases with the geekiness. So compared to Europeans, Asians are overall less geeky, and Northern Americans are overall geekier. 
+There appears to be an inverse correlation between being Asian, and being Geeky. On the contrary, the proportion of North Americans increases with the geekiness. So compared to Europeans, Asians are overall less geeky, and Northern Americans are overall geekier. 
 
-Nearly 50% of the people who chose Star Trek as their preferred series were located in North America, while Star Wars fans are highly concentrated in Europe relative to the other regions. People who would prefer to stare at the sand for all eternity have the highest proportion of Asian. 
+Nearly 50% of the people who chose Star Trek as their preferred series were located in North America, while Star Wars fans are highly concentrated in Europe relative to the other regions. People who would prefer to stare at the sand for all eternity have the highest proportion of Asians. 
 
-When looking at these results, it is important to keep in mind that this plot does not capture the differences in total number of people who selected each series. So while most of the people who chose Star Trek identify as North Americans, the absolute number of these people is still lower than those from North America who chose Star Wars, and so on.
-
-Given this effect, continent is another confounder that we included in our analysis.
+When looking at these results, it is important to keep in mind that this plot does not capture the differences in total number of people who selected each series. So while most of the people who chose Star Trek identify as North Americans, the absolute number of these people is still lower than those from North America who chose Star Wars, and so on. Given this effect, continent is another confounder that we included in our analysis.
 
 
 #### Familiarity and Desert Island Choice
@@ -215,7 +211,8 @@ Those who were not familiar with either series were mostly the ones who preferre
 
 ![](../results/figures/scores-desert_island.png)
 
-Comment HERE !!!!
+
+**Amy likes this first one best!**
 
 ![](../results/figures/scores-geekiness.png)
 
