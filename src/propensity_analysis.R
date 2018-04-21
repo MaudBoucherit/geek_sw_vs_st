@@ -23,21 +23,58 @@ library(tidyverse)
 library(nnet)
 
 
-# Read in command line arguments
-#args <- commandArgs(trailingOnly = TRUE)
-#clean_data <- args[1]
-
+# Import the clean data
 clean_data <- read.csv("results/clean_data.csv")
 
-# str(clean_data)
 
+###############################################
+###############################################
 
+## Final version (the one in the report)
+# 
+# First fit a linear regression on geekiness by confounders.
+# Then fit a POLR (proportional odds logistic regression) on 
+# desert island by geekiness, SW and ST scores, and propensity.
+# 
+##
+
+##########################################
+## Build lm for propensity coefficients
+##########################################
+
+# Linear model of self-reported geekiness against the confounders
+propensity <- lm(geeky ~ gender + age + continent, data = clean_data)
+summary(propensity)
+
+# Add propensity score to the data
+pred <- predict(propensity, newdata = clean_data)
+clean_data <- clean_data %>%
+  mutate(propensity = pred)
+
+#########################################################
+## Build a POLR on our response by expalantory/propensity
+#########################################################
+
+polr_model <- MASS::polr(
+  desert_island ~ geeky + st_score + sw_score + propensity,
+  data = clean_data, method = "logistic", Hess = TRUE)
+
+summary(polr_model)
+
+# Compare without propensity
+summary(MASS::polr(desert_island ~ geeky + sw_score + st_score, 
+                   data = clean_data, method = "logistic", Hess = TRUE))
 
 
 ###############################################
 ###############################################
 
-## Amy'S version
+## First version
+# 
+# First fit a Poisson GLM on geekiness by confounders.
+# Then fit a nnet model on desert island by geekiness and propensity.
+# 
+##
 
 ##########################################
 ## Create glm for propensity coefficients
@@ -55,26 +92,29 @@ clean_data <- clean_data %>%
   mutate(propensity= predict(fit1, newdata=clean_data))
 
 
-
 ##################################
-## Make a new model!
+## Fit a nnet model
 #################################
 
-## fit
+## fit a multinomial model
 #fit2 <- glmnet::glmnet(clean_data$familiar~clean_data$geeky + clean_data$propensity,family = "multinomial")
 #fit2 <- glm(clean_data$familiar~clean_data$geeky + clean_data$propensity,family = "multinomial")
-
-
-
-### note:  I changed this just to see,  It's...  ok?
 fit2 <- nnet::multinom(desert_island~geeky + propensity,data = clean_data)
 
 summary(fit2)
 
+
 ###############################################
 ###############################################
 
-## Maud's version
+## Second version
+# 
+# First fit a Poisson GLM on geekiness by confounders.
+# Then fit a bunch of binomial GLM on desert island 
+# by geekiness and propensity, with success being each
+# of the three levels.
+# 
+##
 
 ##########################################
 ## Create glm for propensity coefficients
@@ -112,14 +152,22 @@ no_success <- glm(no_success ~ geeky + sw_score + st_score,
                   family = binomial, data = clean_data)
 summary(no_success)
 
-# Fit a multinomial model
-## TODO
 
+###############################################
+###############################################
+
+## Third version
+# 
+# Fit a nnet model on desert island by geekiness and SW/ST scores.
+# Try some prediction functions.
+# Fit a POLR model on the same variables.
+# Add some propensity.
+# 
+##
 
 ###########################################################################
 ## Here I used the nnet package, which uses the power of a neural network.  
 ###########################################################################
-
 
 multi<- nnet::multinom(desert_island ~ geeky + sw_score + st_score, 
                        family = binomial, data = clean_data)
@@ -128,8 +176,6 @@ summary(multi)
 ##lookign around
 attributes(multi)
 
-
-## predict stuff
 ## gives probabilities, adding "probs"
 predict(multi,clean_data,"probs")
 
@@ -137,8 +183,7 @@ predict(multi,clean_data,"probs")
 
 ##success rate:
 mean(clean_data$desert_island==(predict(multi,clean_data)))
-
-##69%.  That's...  ok, I guess?
+## 69%
 
 
 ###########################################################################
@@ -149,7 +194,6 @@ library(MASS)  ##note, this masks dplyr select, so we should load it first in th
 
 ### this is an ordered logit model:
 ## name means Proportional Ordered Logistic Regression
-
 polr_model <- polr(desert_island ~ geeky + sw_score + st_score, data = clean_data, method = "logistic", Hess = TRUE)
 
 ##look:
@@ -158,12 +202,11 @@ polr_model
 summary(polr_model)
 
 ###########################################################################
-## And now let's add some propensity scores! 
+## And now let's add some propensity scores 
 ###########################################################################
 
 polr_prop <- polr(desert_island ~ geeky + sw_score + st_score + propensity, data = clean_data, method = "logistic", Hess = TRUE)
 
 summary(polr_prop)
 
-
-###  Uh.. this shows that geekiness has very little effect. Interesting!
+###  This shows that geekiness has very little effect. 
