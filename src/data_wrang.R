@@ -39,7 +39,7 @@ main <- function(){
                "sector",
                "MDS" )
   # Read raw data
-  data <- read.csv(survey_responses, col.names = new_names) %>% 
+  data <- read.csv("data/Geekiness_Survey.csv", col.names = new_names) %>% 
     select(-Timestamp, -participate) %>% 
     mutate(
       # Change discrete variables into factors
@@ -78,6 +78,13 @@ main <- function(){
   data$desert_island <- as.character(data$desert_island)
   data$desert_island[! data$desert_island %in% c("Star Wars", "Star Trek")] <- "neither"
   data$desert_island <- as.factor(data$desert_island)
+  
+  data$sw_score <- as.numeric(paste(data$StarWars_fandom)) + 
+    as.numeric(paste(data$StarWars_knowledge)) + 
+    2.5*(data$familiar %in% c("Star Wars", "both"))
+  data$st_score <- as.numeric(paste(data$StarTrek_fandom)) + 
+    as.numeric(paste(data$StarTrek_knowledge)) + 
+    2.5*(data$familiar %in% c("Star Trek", "both"))
   
   # save the clean data set
   write_csv(data, "results/clean_data.csv")
