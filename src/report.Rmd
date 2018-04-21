@@ -299,7 +299,9 @@ propensity <- lm(geeky ~ gender + age + continent, data = clean_data)
 summary(propensity)
 ```
 
-We note that most of the results from this analysis is especially significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced dataset. However, there do appear to be significant effects as a result of gender. Both GenderMale and GenderOther are significant, indicating that there is some negative correlation with being female and geekiness, at least in our sample.
+We note that most of the results from this analysis is particulraly significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced dataset. 
+
+However, there do appear to be significant effects as a result of gender. Both GenderMale and GenderOther are significant, indicating that there is some negative correlation with being female and geekiness, at least in our sample.
 
 ```{r add_scores, echo = FALSE}
 # Add propensity score to the data
@@ -316,7 +318,11 @@ polr_model <- MASS::polr(
   desert_island ~ geeky + st_score + sw_score + propensity, 
   data = clean_data, method = "logistic", Hess = TRUE)
 
-summary(polr_model)
+polr_summ <- summary(polr_model)
+
+paste("The residual deviance for our model not including propensity is:", polr_summ$deviance)
+
+paste("The AIC score for the model not including propensity is: ", extractAIC(polr_model)[2])
 
 ```
 
@@ -339,21 +345,31 @@ Looking at our computed p-values, neither geekiness, nor propensity was signific
 
 ```{r plain_model, echo = FALSE}
 
-summary(MASS::polr(desert_island ~ geeky + sw_score + st_score, data = clean_data, method = "logistic", Hess = TRUE))
+non_confounder <- MASS::polr(desert_island ~ geeky + sw_score + st_score, data = clean_data, method = "logistic", Hess = TRUE)
+
+non_conf_summ <- summary(non_confounder)
+
+paste("The residual deviance for our model not including propensity is:", non_conf_summ$deviance)
+
+paste("The AIC score for the model not including propensity is: ", extractAIC(non_confounder)[2])
 ```
  
-Above are the results of fitting a polr model to the geekiness value, without accounting for the confounders.  In this model, there seems to be an effect, but the one above shows that this is in fact just the result of confounding variables. Looking at the significant variables from our propensity score model, it seems that Gender has the largest effect here, and likely explains most of the differences in desert island choice that our model is picking up on.
+Above are the results of fitting a polr model to the geekiness value, without accounting for the confounders.  In this model, there seems to be an effect, but the one above shows that this is in fact just the result of confounding variables. 
+
+For this model, we get higher residual deviance as well as higher AIC, telling us that not only does this model perform worse, but it performs worse enough that it does not make up for being able to further simplify it by removing an additional explanatory variable.
+
+Looking at the significant variables from our propensity score model, it seems that Gender has the largest effect here, and likely explains most of the differences in desert island choice that our model is picking up on.
 
 
 #### Conclusion to Analysis
 
-By including confounding variables, we were not able to show a significant effect of geekiness on desert island choice. 
+By including confounding variables, we were not able to show a significant effect of geekiness on desert island choice. It seems that most of the effect we saw from geekiness came as a result of gender, which resulted in our non-significant coefficients.
 
 In modelling our propensity score we chose to use a standard linear model. Some possible alternatives were using count data or ordinal regression, however when using these methods interpretation of our results became somewhat messy, and as mentioned above, our research showed that there is no consensus that this would be the correct way to analyze data from Likert scales.
 
 While selecting the model to use for our final analysis, we tried out a number of different types of models which can be found in [this script](../src/propensity_analysis.R). 
 
-We settled on the polr model because it was a relatively simple extension to logistic regression which seemed to handle the issues we ran into beacause of ordinal data, while not significantly changing our results. It was also relatively simple to interpret, similar to logistic regression, which is probably one of the most important factors for an analysis like this.
+We settled on the polr model for a few reasons. First of all, we used AIC to compare a number of different models and this seemed to get the lowest score. Moreover, it was a relatively simple extension to logistic regression and seemed to do a good job at encorporating the ordinal nature of the data, while not significantly changing our results. It was also relatively simple to interpret; similar to logistic regression, which is probably one of the most important factors for an analysis like this.
 
 
 ## Discussion of  Survey/Study Design
