@@ -3,8 +3,9 @@ title: "Report"
 author: "Amy Goldlist, Maud Boucherit, Tyler Roberts"
 date: "April 16, 2018"
 output:
-  html_document: 
+  html_document:
     keep_md: yes
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -225,11 +226,11 @@ Comment HERE !!!
 library(tidyverse)
 
 ## load in data
-clean_data <- read.csv("../results/clean_data.csv")
+clean_data <- read.csv("results/clean_data.csv")
 
 
 ## I'm manually making Star Trek be number 2.
-clean_data$desert_island <- factor(dat$desert_island, levels=c("neither", "Star Wars", "Star Trek"))
+clean_data$desert_island <- factor(clean_data$desert_island, levels=c("neither", "Star Wars", "Star Trek"))
 ```
 
 
