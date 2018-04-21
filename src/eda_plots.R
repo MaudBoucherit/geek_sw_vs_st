@@ -44,73 +44,106 @@ main <- function(){
   ggsave("results/figures/desert_island-geekiness.png", p1)
   
   
-  # Bar plot of geekiness by desert_island
+  # Distribution of desert_island by geekiness
   p2 <- dat %>% 
     ggplot(aes(fill = desert_island, x = geeky)) +
-    geom_density(n=5) +
-    facet_wrap(~desert_island) +
-    theme_bw() + 
-    scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
-    guides(fill = FALSE) +
-    labs(title = "Desert Island Picks by Self-Identified Geekiness", y="Count", x="Self-Identified Geekiness")
-  
-  ggsave("results/figures/desert_island-geekiness.png", p2)
-  
-     
-    
-    # Response by gender
-    dat %>% 
-      ggplot(aes(x = desert_island, fill = gender)) +
-        theme_bw() + 
-        geom_bar(position = "fill", colour = "black") +
-        scale_y_continuous("Gender", minor_breaks = NULL,  
-                           breaks = c(0.04, 0.34, 0.8), 
-                           labels = c("Other", "Male", "Female")) +
-        coord_flip() +
-        guides(fill = FALSE)
-  
-  # Response by age
-  p3 <- subset(dat, !is.na(age)) %>% 
-    ggplot(aes(x = desert_island, fill = factor(age, level = rev(levels(factor(age)))))) + 
-      geom_bar(position = "fill", colour = "black") +
-      theme_bw() +
-      #scale_y_continuous("Age", minor_breaks = NULL,  
-       #                  breaks = c(0, 0.036, 0.735, 0.908, 0.977), 
-        #                 labels = c(0, 20, 30, 40, 50)) +
-      coord_flip() + 
-      scale_fill_brewer(labels=c("Less than 20", "20 to 30", "30 to 40", "40 to 50", "Greater than 50"), palette = "Dark2") +
-      guides(fill=guide_legend(title="Age Group")) +
-      labs(title="Desert Island Picks by Age", x="Desert Island Choice", y="Proportion Selected")
-    
-  ggsave("results/figures/desert_island-age.png", p3)
-  
-  # Response by MDS
-  dat %>% 
-  ggplot(aes(x = desert_island, fill = MDS)) + 
     theme_bw() +
-    geom_bar(position = "fill", colour = "black") +
-    scale_y_continuous("Are you an MDS student?", minor_breaks = NULL,  
-                       breaks = c(0.1, 0.6), 
-                       labels = c("Yes", "No")) +
-    coord_flip() + guides(fill = FALSE) +
-    labs(title="Desert Island picks MDS vs. Non-MDS", y="Desert Island Choice")
+    geom_bar(position = "fill") +
+    scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
+    scale_y_continuous(labels = percent) +
+    guides(fill=guide_legend(title="Desert Island \nChoice")) +
+    labs(title="Desert Island Distribution by Geekiness",
+         x="Self-reported Geekiness", y="Percentage")
+  
+  ggsave("results/figures/geekiness-desert_island.png", p2)
+  
+  
+  # Distributions of esert_island and geekiness by age
+  # General plot template for the age plots
+  age_plot <- subset(dat, !is.na(age)) %>% 
+    ggplot(aes(fill = factor(age, level = rev(levels(factor(age)))))) + 
+    theme_bw() +
+    scale_fill_brewer(labels=c("Less than 20", "20 to 30", "30 to 40", "40 to 50", "Greater than 50"), palette = "Dark2")
+  
+  # Plot of age proportion by Self-reported Geekiness
+  ## with the common title, and the common legend
+  age_geekiness <- age_plot +
+    geom_bar(aes(x = geeky), position = "fill", colour = "black") +
+    labs(title="Proportions by Age Group", x="Self-reported Geekiness", y="Proportion") +
+    guides(fill = guide_legend(title = "  Age: ", 
+                               title.position = "left", 
+                               ncol = 5))  +
+    theme(legend.position = c(0, -.2), legend.justification = c(0,0))
+  
+  # Plot of age proportion by Desert Island Choice
+  age_desert <- age_plot + 
+    geom_bar(aes(x = desert_island), position = "fill", colour = "black") +
+    labs(title=" ", x="Desert Island Choice", y="") +
+    theme(plot.margin = unit(c(.2,.2,.3,-.5), "cm"))
+  
+  # Define the common legend
+  legend <- get_legend(age_geekiness)
+  
+  # Display both plots at once
+  p3 <- cowplot::plot_grid(age_geekiness + theme(legend.position="none"), 
+                     age_desert + theme(legend.position="none"),
+                     rel_widths = c(1, .7),
+                     rel_heights = c(1, .1),
+                     ncol = 2,
+                     legend)
+    
+  ggsave("results/figures/distributions-age.png", p3)
+  
+  
   
   # Response by continent
-  p4 <- dat %>% 
+  # General plot template for the continent plots
+  cont_plot <- dat %>% 
     filter(continent %in% c("North America", "Europe", "Asia")) %>% 
-    ggplot(aes(x = desert_island, fill = continent)) +
+    ggplot(aes(fill = continent)) +
       theme_bw() +
-      geom_bar(position = "fill", colour = "black") +
-      #scale_y_continuous("Continent (most identified)", minor_breaks = NULL,  
-       #                  breaks = c(0.125, 0.58, 0.95), 
-        #                 labels = c("North America", "Europe", "Asia")) +
-      coord_flip() + 
-      scale_fill_brewer(palette = "Dark2") +
-      guides(fill=guide_legend(title="Continent")) +
-      labs(title="Desert Island Proportion by Continent", x="Desert Island Choice", y="Proportion Selected")
-      
+      scale_fill_brewer(palette = "Dark2")
   
-  ggsave("results/figures/desert_island-continent.png", p4)
+  # Plot of continent proportion by Self-reported Geekiness
+  ## with the common title, and the common legend
+  cont_geekiness <- cont_plot +
+    geom_bar(aes(x = geeky), position = "fill", colour = "black") +
+      labs(title="Proportions by Continent", x="Self-reported Geekiness", y="Proportion") +
+      guides(fill = guide_legend(title = "Continent: ", 
+                                 title.position = "left", 
+                                 ncol = 3))  +
+      theme(legend.position = c(.3, -.2), legend.justification = c(0,0))
+  
+  # Plot of age proportion by Desert Island Choice
+  cont_desert <- cont_plot + 
+    geom_bar(aes(x = desert_island), position = "fill", colour = "black") +
+      labs(title=" ", x="Desert Island Choice", y="") +
+      theme(plot.margin = unit(c(.2,.2,.3,-.5), "cm"))
+  
+  # Define the common legend
+  legend <- get_legend(cont_geekiness)
+  
+  # Display both plots at once
+  p4 <- cowplot::plot_grid(cont_geekiness + theme(legend.position="none"), 
+                     cont_desert + theme(legend.position="none"),
+                     rel_widths = c(1, .7),
+                     rel_heights = c(1, .1),
+                     ncol = 2,
+                     legend)
+  
+  ggsave("results/figures/distributions-continent.png", p4)
+  
+  
+  # Star Wars and Star Trek score related to geekiness and desert island
+  p5 <- dat %>% 
+    ggplot(aes(x = desert_island, fill = familiar)) +
+    geom_bar(colour = "black") +
+    theme_bw() +
+    scale_fill_manual(values = c("darkolivegreen3", "dodgerblue3", "darkgoldenrod2", "firebrick3")) +
+    guides(fill=guide_legend(title="Most Familiar With")) +
+    labs(title = "Desert Island Picks by Familiarity", y="Count", x="Desert Island Choice")
+  
+  ggsave("results/figures/distributions-scores.png", p5)
   
 }
 
