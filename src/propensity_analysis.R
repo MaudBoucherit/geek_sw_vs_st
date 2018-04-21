@@ -6,7 +6,7 @@
 # Uses code from Paul Gustafson lecture notes as inspiration
 #
 # Input: a csv file, the clean data set
-# Output: ???
+# Output: some model summary if needed
 #
 # Usage: Rscript src/propensity_analysis.R results/clean_data.csv
 
@@ -210,3 +210,28 @@ polr_prop <- polr(desert_island ~ geeky + sw_score + st_score + propensity, data
 summary(polr_prop)
 
 ###  This shows that geekiness has very little effect. 
+
+
+###############################################
+###############################################
+
+## Other propensity score tests
+# 
+# Fit a Poisson GLM on geekiness by confounders, and SW/ST scores.
+# Fit a linear regression on geekiness by confounders, and SW/ST scores.
+# Calculate the propensity score.
+# 
+##
+
+### Poisson GLM of geekiness by confounders and SW/ST scores
+pois_model <- glm(geeky ~ age + familiar + continent + sw_score + st_score, family = poisson, data = clean_data)
+summary(pois_model)
+
+
+### Linear regression of geekiness by confounders and SW/ST scores
+lm_model <- lm(geeky ~ age + familiar + continent + sw_score + st_score, data = clean_data)
+summary(lm_mod)
+
+# Get the propensity sore
+lm_pred <- predict(lm_model, newdata = clean_data)
+lm_pred
