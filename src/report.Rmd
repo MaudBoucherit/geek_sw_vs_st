@@ -60,7 +60,12 @@ Below is the complete survey, including the images we displayed:
     - From (1) not geeky at all to (5) super geeky
 
 #### Star Wars-related
-![](../images/sw_logo.png)
+
+<h5 align="center">
+  <br>
+<img src="../images/sw_logo.png" alt="sw_vs_st" width="200"></a>
+<br>
+</h5>
 
 
 - How would you rate your degree of fandom?
@@ -71,7 +76,12 @@ Below is the complete survey, including the images we displayed:
         > Who first uttered the line "It's a trap!" and in what film?
 
 #### Star Trek-related
-![](../images/st_logo.png)
+
+<h5 align="center">
+  <br>
+<img src="../images/st_logo.png" alt="sw_vs_st" width="200"></a>
+<br>
+</h5>
 
 
 - How would you rate your degree of fandom?
@@ -82,7 +92,13 @@ Below is the complete survey, including the images we displayed:
         > According to Klingon mythology, what is the place where all life began?
 
 #### Star Wars Vs. Star Trek
-![](../images/sw_vs_st.png)
+
+<h5 align="center">
+  <br>
+<img src="../images/sw_vs_st.png" alt="sw_vs_st" width="400"></a>
+<br>
+</h5>
+
 
 
 - Overall, are you more familiar with Star Wars or Star Trek universe?
@@ -132,7 +148,12 @@ As part of our analysis, we looked at relationships between our response and exp
 
 The focus of our analysis is the effect of geekiness on the variable we have called "Desert Island Choice".  
 
-![](../results/figures/desert_island-geekiness.png)
+
+<h5 align="center">
+  <br>
+<img src="../results/figures/desert_island-geekiness.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
 
 These plots show the distribution of self-identified geekiness faceted by the respondent's choice in series to have on a desert island.
@@ -145,7 +166,11 @@ The mode of the Star Trek distribution is 4, unlike the other two groups. This m
 
 This is where we will focus our attention during our analysis, in explaining the differing shapes of these distributions.
 
-![](../results/figures/geekiness-desert_island.png)
+<h5 align="center">
+  <br>
+<img src="../results/figures/geekiness-desert_island.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
 
 As we can see on the above mosaic plot, the proportion of those choosing neither increases as the self-reported geekiness decreases. More than 60% of the people who self-reported a geekiness of 1 chose neither. It appears that the proportion of those choosing Star Trek increases with the geekiness. The proportion of people who prefer Star Trek among those who self-reported a geekiness of 1 is especially low.
@@ -155,7 +180,12 @@ As we can see on the above mosaic plot, the proportion of those choosing neither
 
 An important confounding variable is age.  As we can see from the mosaic plot below, there is a clear effect of age on both desert island choice and geekiness.
 
-![](../results/figures/distributions-age.png)
+<h5 align="center">
+  <br>
+<img src="../results/figures/distributions-age.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
+
 
 
   The above bar plots break down each level of geekiness and desert island choice by age group. Since the 20-30 age group is by far the largest group of respondents to this survey, they dominate each distribution. While the "Younger than 20" group is one of the smallest, they have a larger than usual proportion among those who chose neither.  Except that, we can't really see any pattern in the age group distribution by geekiness. The relationship is not totally uniform, but it is not monotone either.
@@ -169,7 +199,12 @@ For the desert island choice, respondents choosing neither are overall younger a
 
 When we looked at the continent, we found a clear trend that Star Trek is more popular in North America than in the other continents.  Our working theory is that Star Trek was mostly an American trend, and never really caught on in Asia or Europe
 
-![](../results/figures/distributions-continent.png)
+
+<h5 align="center">
+  <br>
+<img src="../results/figures/distributions-continent.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
 
 The above bar plots break down each level of geekiness and desert island choice by continent.
@@ -201,8 +236,12 @@ An interesting result from the above plot is that very few people who are most f
 
 Those who were not familiar with either series were mostly the ones who preferred to stare at the sand for eternity, and there were *zero* of those who were most familiar with Star Trek in that category. Familiarity is another confounder which we choose to include in our analysis.
 
+<h5 align="center">
+  <br>
+<img src="../results/figures/scores-desert_island.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
-![](../results/figures/scores-desert_island.png)
 
 
 The left box in the figure above shows the CDF for Star Trek scores for each of the three desert island choices. We can see that for those who choose neither or Star Wars, the vast majority (75%) of repsondents scored below 0.25. On the other hand, those who chose Star Trek were more uniformly distributed; with 75% of respondents falling below 0.75 rather than 0.25.
@@ -213,7 +252,11 @@ One thing that this plot suggests is that people who prefer Star Trek may be mor
 
 **Amy likes this first one best!**
 
-![](img src="../results/figures/scores-geekiness.png")
+<h5 align="center">
+  <br>
+<img src="../results/figures/scores-geekiness.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
 
 The above plots show us the CDFs of the two score functions, grouped by self-reported geekiness this time. It is unsurprising that they appear to be ordered according to geekiness, i.e., 1 has lower scores than 2, has lower scores than 3, etc. However, there is still quite a stark difference between the two series.
@@ -224,8 +267,12 @@ For Star Wars awareness, there is more variation between the different levels of
 
 Comparing the two plots, it is interesting that for Star Trek, the median for each geekiness category is below a score of 0.5, whereas for Star Wars, nearly all categories have a median above 0.5.
 
+<h5 align="center">
+  <br>
+<img src="../results/figures/scores-average.png" alt="sw_vs_st" width="500"></a>
+<br>
+</h5>
 
-![](../results/figures/scores-average.png)
 
 The above plots look at the *average* of the two series scores against geekiness and desert island choice, rather than a single series score. This should give us an idea of how these groups would rate on overall attitude towards sci-fi. 
 
@@ -254,48 +301,16 @@ We wanted to deal with our confounding variables outside of our main model, so w
 After looking at various models, we chose a plain linear mode for our propensity scores.  Despite the fact that we have ordinal data, we found that modelling it as a continuous variable gave us the most sensible results for analysis.  We are looking for a correlation between geekiness and confounding variables, so we don't have multi-correlation later in our main model.
 
 ```{r propensity_lm}
-## Create a linear model using our main explanatory variable against the confounders.
-propensity <- lm(geeky ~ age + familiar + continent + sw_score + st_score, data = clean_data)
-
+# Linear model of self-reported geekiness against the confounders
+propensity <- lm(geeky ~ gender + age + continent, data = clean_data)
+summary(propensity)
 ```
 
 We note that none of the results from this analysis is especially significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced dataset.
 
-```{R DELETE_THIS, include = FALSE}
-
-### NOTE TO MAUD AND TYLER:  I'm just getting this set up, feel free to change!  I just want more structure!
-
-#summary(propensity)
-
-#propensity
-
-### NOTE TO M& T:  how does this differ from a Poisson regression
-pois_model <- glm(geeky ~ age + familiar + continent + sw_score + st_score, family = poisson, data = clean_data)
-
-#summary(pois_model)
-
-## Not too different, so I say use above.
-
-
-###Now I'm just being silly.  What if we just do a regular lm???
-lm_model <- lm(geeky ~ age + familiar + continent + sw_score + st_score, data = clean_data)
-
-summary(lm_model)
-
-lm_pred <- predict(lm_model, newdata = clean_data)
-
-lm_pred
-
-```
-
-
-
-
 ```{r add_scores, echo = FALSE}
-
 # Add propensity score to the data
 pred <- predict(propensity, newdata = clean_data)
-
 clean_data <- clean_data %>%
   mutate(propensity = pred)
 
@@ -303,8 +318,10 @@ clean_data <- clean_data %>%
 
 Now we use the continuous propensity scores as a factor in our analysis.  This model uses _proportional odds logistic regression (polr)_. We chose this model to take into account that there is an ordering to the desert island scores, with neither being the lowest.  According to our belief, Star Trek would be the highest because it is more correlated with the level of self-reported geekiness.  We  explored other methods, but in the end feel that ignoring the ordered nature of this variable lost too much data.  Below is the result of our model:
 
-```{r polr_model, echo = FALSE}
-polr_model <- MASS::polr(desert_island ~ geeky + propensity, data = clean_data, method = "logistic", Hess = TRUE)
+```{r polr_model}
+polr_model <- MASS::polr(
+  desert_island ~ geeky + st_score + sw_score + propensity, 
+  data = clean_data, method = "logistic", Hess = TRUE)
 
 summary(polr_model)
 ```
@@ -317,7 +334,7 @@ These results show that once we adjust for our confounding variables, there is n
 
 ```{r plain_model, echo = FALSE}
 
-summary(MASS::polr(desert_island ~ geeky, data = clean_data, method = "logistic", Hess = TRUE))
+summary(MASS::polr(desert_island ~ geeky + sw_score + st_score, data = clean_data, method = "logistic", Hess = TRUE))
 ```
  Above are the results of fitting a polr model to the geekiness value, without accounting for the confounders.  In this model, there seems to be an effect, but our analysis above shows that this is, in fact, the result of confounding variables.
 
