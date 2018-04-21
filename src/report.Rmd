@@ -47,24 +47,24 @@ Our main explanatory variable is "Geekiness", and it was measured on a 5 point L
 
 In order to adjust for possible confounders introduced by the nature of the survey, we asked basic demographic questions such as age, gender, employment sector, continent, and whether they were an MDS student.  We chose 10-year ranges for the age to protect the anonymity of our respondents.  We deliberately asked for gender identification with many options, in order not to conform to outdated gender norms.  However, we did merge our results into "male", "female", and "other" for better analysis.  For location, we chose to ask about the continent they most identified with to allow people who have lived in multiple locations to decide which was most important to their identity.
 
-Finally, we used humour in our questions to keep respondents engaged and forwarding the survey.  We understand that this is not everybody's preference, but we ended up with a significantly larger sample than we had planned (around 180 respondents vs an estimated 45).  We were able to gather data for a large variety of age and continent.
+Finally, we used humour in our questions to keep respondents engaged and forwarding the survey.  We understand that this is not everybody's preference, but we ended up with a significantly larger sample than we had planned (around 180 respondents vs an estimated 45).  We were able to gather data for a large variety of age ranges and continents.
 
 
 ### Data Collection Methods
 
 We collected data by distributing an online survey.  We shared the survey through three main channels:
 
-- 1 All UBC MDS students completed the survey during the designated class time
+-  All UBC MDS students completed the survey during the designated class time
 
-- 2 We sent the survey to all Ensai (National School of Statistics and Data Analysis) students.  Since this program is in France, we hoped to get a more multicultural sample.
+-  We sent the survey to all Ensai (National School of Statistics and Data Analysis) students.  Since this program is in France, we hoped to get a more multicultural sample.
 
-- 3 We posted it on Facebook and let Facebook's algorithm share as it would.  In order to get it to the top of Facebook feeds, we attempted to game their algorithm using the following text: "She said yes! It's twins!!! Here's one little trick, Congrats!! (now that I've hopefully gamed the algorithm enough to get to the top of your feed). Feel like filling out a survey? I promise not to steal your data, and you'd be having fun and helping me with a project."  
+-  We posted it on Facebook and let Facebook's algorithm share as it would.  In order to get it to the top of Facebook feeds, we attempted to game their algorithm using the following text: "She said yes! It's twins!!! Here's one little trick, Congrats!! (now that I've hopefully gamed the algorithm enough to get to the top of your feed). Feel like filling out a survey? I promise not to steal your data, and you'd be having fun and helping me with a project."  
 
 This method of sampling falls squarely under the header of "convenience sampling", and our sample is skewed towards the tech community.  
 
 ### Aspects of Ethics
 
-After reading the UBC ethics code, we feel that our survey has no sensitive information, and we will not ask any personally identifying questions.  To this end, we will have the respondent choose from 10-year ranges for their age.  Because of this, we feel confident enough to use Google forms as a vehicle.  As per UBC policy, we will have a paragraph (copied verbatim from the UBC page for legal reasons) informing the respondent that the information will be stored in a US server subject to homeland security, and have them click to acknowledge this:
+After reading the UBC ethics code, we felt that our survey has no sensitive information, and we did not ask any personally identifying questions.  To this end, we had the respondent choose from 10-year ranges for their age.  Because of this, we feel confident enough to use Google forms as a vehicle.  As per UBC policy, we had a paragraph (copied verbatim from the UBC page for legal reasons) informing the respondent that the information will be stored in a US server subject to homeland security, and have them click to acknowledge this:
 
 > "This online survey company is hosted by a web survey company located in the USA (Google) and as such is subject to U.S. laws, in particular, the US Patriot Act which allows authorities access to the records of internet service providers. If you choose to participate in the survey, you understand that your responses to the survey questions will be stored and accessed in the USA. The security and privacy policy for Google can be found at the following link: https://policies.google.com/"
 
