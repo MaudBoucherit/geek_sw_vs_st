@@ -239,44 +239,13 @@ After looking at various models, we chose a plain linear mode for our propensity
 
 ```{r propensity_lm}
 ## Create a linear model using our main explanatory variable against the confounders.
-propensity <- lm(geeky ~ age + familiar + continent + sw_score + st_score, data = clean_data)
-
+propensity <- lm(geeky ~ age + continent + gender, data = clean_data)
+summary(propensity)
 ```
 
 We note that none of the results from this analysis is especially significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced dataset.
 
-```{R DELETE_THIS, include = FALSE}
-
-### NOTE TO MAUD AND TYLER:  I'm just getting this set up, feel free to change!  I just want more structure!
-
-#summary(propensity)
-
-#propensity
-
-### NOTE TO M& T:  how does this differ from a Poisson regression
-pois_model <- glm(geeky ~ age + familiar + continent + sw_score + st_score, family = poisson, data = clean_data)
-
-#summary(pois_model)
-
-## Not too different, so I say use above.
-
-
-###Now I'm just being silly.  What if we just do a regular lm???
-lm_model <- lm(geeky ~ age + familiar + continent + sw_score + st_score, data = clean_data)
-
-summary(lm_model)
-
-lm_pred <- predict(lm_model, newdata = clean_data)
-
-lm_pred
-
-```
-
-
-
-
 ```{r add_scores, echo = FALSE}
-
 # Add propensity score to the data
 pred <- predict(propensity, newdata = clean_data)
 
@@ -287,8 +256,10 @@ clean_data <- clean_data %>%
 
 Now we use the continuous propensity scores as a factor in our analysis.  This model uses _proportional odds logistic regression (polr)_. We chose this model to take into account that there is an ordering to the desert island scores, with neither being the lowest.  According to our belief, Star Trek would be the highest because it is more correlated with the level of self-reported geekiness.  We  explored other methods, but in the end feel that ignoring the ordered nature of this variable lost too much data.  Below is the result of our model:
 
-```{r polr_model, echo = FALSE}
-polr_model <- MASS::polr(desert_island ~ geeky + propensity, data = clean_data, method = "logistic", Hess = TRUE)
+```{r polr_model}
+polr_model <- MASS::polr(
+  desert_island ~ geeky + st_score + sw_score + propensity, 
+  data = clean_data, method = "logistic", Hess = TRUE)
 
 summary(polr_model)
 ```
