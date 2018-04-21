@@ -299,7 +299,7 @@ propensity <- lm(geeky ~ gender + age + continent, data = clean_data)
 summary(propensity)
 ```
 
-We note that none of the results from this analysis is especially significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced dataset.
+We note that most of the results from this analysis is especially significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced dataset. However, there do appear to be significant effects as a result of gender. Both GenderMale and GenderOther are significant, indicating that there is some negative correlation with being female and geekiness, at least in our sample.
 
 ```{r add_scores, echo = FALSE}
 # Add propensity score to the data
@@ -317,24 +317,43 @@ polr_model <- MASS::polr(
   data = clean_data, method = "logistic", Hess = TRUE)
 
 summary(polr_model)
+
+```
+
+
+```{r}
+polr_df <- as.data.frame(test$coefficients)
+
+polr_df %>% 
+  mutate(Coefficients= c("geeky", "st_score", "sw_score", "propensity", "neither | Star Wars", "Star Wars | Star Trek"), p_value = 1 - pt(`t value`, 176)) %>% 
+  select(Coefficients, Value, `Std. Error`, `t value`, p_value)
 ```
 
 #### Interpretation of these results
 
 We have two intercepts.  This is because the regression is modelling the probability of going from one category to the next, that is, moving from "neither" to "Star Wars", and from "Star Wars" to "Star Trek".  Also, note that we are modelling the _log odds ratio_ and not the probability.  
 
-These results show that once we adjust for our confounding variables, there is not enough evidence to show that geekiness has an effect on the choice of desert island viewing material. The log odds ratio increases by only 0.014 for a unit increase in geekiness. With a standard error of 0.1598, there is no statistical result here. Most of the perceived effect of fitting a model just with geekiness scores is due to the confounding variables:
+These results show that once we adjust for our confounding variables, there is not enough evidence to show that geekiness has an effect on the choice of desert island viewing material. The log odds ratio increases by only 0.014 for a unit increase in geekiness. With a standard error of 0.1598, there is no statistical result here. Most of the perceived effect of fitting a model just with geekiness scores is due to the confounding variables.
+
+Looking at our computed p-values, neither geekiness, nor propensity was significant, inidicating that neither of the main effects we sought to identify caused a significant amount of variation in the response. On the other hand, we do see a significant coefficient for `st_score` and `sw_score  suggesting to us that people who score highly in these categories are likely to pick at least one of the series to watch on a desert island, as opposed to neither. However, this result is not particularly surprising, as these people who scored highly in awareness for a series are likely to consider themselves fans of that series.
 
 ```{r plain_model, echo = FALSE}
 
 summary(MASS::polr(desert_island ~ geeky + sw_score + st_score, data = clean_data, method = "logistic", Hess = TRUE))
 ```
- Above are the results of fitting a polr model to the geekiness value, without accounting for the confounders.  In this model, there seems to be an effect, but our analysis above shows that this is, in fact, the result of confounding variables.
+ 
+Above are the results of fitting a polr model to the geekiness value, without accounting for the confounders.  In this model, there seems to be an effect, but the one above shows that this is in fact just the result of confounding variables. Looking at the significant variables from our propensity score model, it seems that Gender has the largest effect here, and likely explains most of the differences in desert island choice that our model is picking up on.
 
 
 #### Conclusion to Analysis
 
-By including confounding variables, we were not able to show a significant effect of geekiness on desert island choice.  
+By including confounding variables, we were not able to show a significant effect of geekiness on desert island choice. 
+
+In modelling our propensity score we chose to use a standard linear model. Some possible alternatives were using count data or ordinal regression, however when using these methods interpretation of our results became somewhat messy, and as mentioned above, our research showed that there is no consensus that this would be the correct way to analyze data from Likert scales.
+
+While selecting the model to use for our final analysis, we tried out a number of different types of models which can be found in [this script](../src/propensity_analysis.R). 
+
+We settled on the polr model because it was a relatively simple extension to logistic regression which seemed to handle the issues we ran into beacause of ordinal data, while not significantly changing our results. It was also relatively simple to interpret, similar to logistic regression, which is probably one of the most important factors for an analysis like this.
 
 
 ## Discussion of  Survey/Study Design
