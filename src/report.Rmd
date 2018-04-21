@@ -216,11 +216,19 @@ One thing that this plot suggests is that people who prefer Star Trek may be mor
 
 **Amy likes this first one best!**
 
-![](../results/figures/scores-geekiness.png)
+<img src="../results/figures/scores-geekiness.png", alt="scores_geekiness")
+</a>
+<br>
+</h5> 
 
-The above plots show us the CDFs of the two score functions, grouped by self-reported geekiness this time. It is unsurprising that they appear to be ordered according to geekiness, i.e., 1 has lower scores than 2, has lower scores than 3, etc. However, there is quite a stark difference between the two series.
 
-For Star Trek awareness, we 
+The above plots show us the CDFs of the two score functions, grouped by self-reported geekiness this time. It is unsurprising that they appear to be ordered according to geekiness, i.e., 1 has lower scores than 2, has lower scores than 3, etc. However, there is still quite a stark difference between the two series.
+
+For Star Trek awareness, we see a fairly tight grouping for all groups below a score of 0.375, at which point those who rated themselves a 5 in geekiness appear to have quite a few people with high scores, while the rest of the categories remain fairly grouped together. 
+
+For Star Wars awareness, there is more variation between the different levels of geekiness, but they all appear to have scored higher here than for Star Trek. We posit that this is because Star Wars has been more prevalent in pop culture in the past 20 years, which is when a majority of our respondents were growing up.
+
+Comparing the two plots, it is interesting that for Star Trek, the median for each geekiness category is below a score of 0.5, whereas for Star Wars, nearly all categories have a median above 0.5.
 
 
 ![](../results/figures/scores-average.png)
@@ -235,7 +243,7 @@ Comment HERE !!!
 library(tidyverse)
 
 ## load in data
-clean_data <- read.csv("results/clean_data.csv")
+clean_data <- read.csv("../results/clean_data.csv")
 
 ## I'm manually making Star Trek be number 2.
 clean_data$desert_island <- factor(clean_data$desert_island, levels=c("neither", "Star Wars", "Star Trek"))
