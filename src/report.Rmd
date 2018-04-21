@@ -143,7 +143,7 @@ If you would like to see the R code to produce these plots, please see [this Rsc
 
 The focus of our analysis is the effect of geekiness on the variable we have called "Desert Island Choice".  
 
-![](../results/desert_island-geekiness.png)
+![](../results/figures/desert_island-geekiness.png)
 
 These plots show the distribution of self-identified geekiness faceted by the respondent's choice in series to have on a desert island.
 
@@ -155,7 +155,7 @@ The mode of the Star Trek distribution is 4, unlike the other two groups. This m
 
 This is where we will focus our attention during our analysis, in explaining the differing shapes of these distributions.
 
-![](../results/geekiness-desert_island.png)
+![](../results/figures/geekiness-desert_island.png)
 
 As we can see on the above mosaic plot, the proportion of those choosing neither increases as the self-reported geekiness decreases. More than 60% of the people who self-reported a geekiness of 1 chose neither. 
 
@@ -166,7 +166,7 @@ It appears that the proportion of those choosing Star Trek increases with the ge
 
 An important confounding variable is age.  As we can see from the mosaic plot below, there is a clear effect of age on both desert island choice and geekiness.
 
-![](../results/distributions-age.png)
+![](../results/figures/distributions-age.png)
 
 The above bar plots break down each level of geekiness and desert island choice by age group. Since the 20-30 age group is by far the largest group of respondents to this survey, they dominate each distribution. 
 
@@ -185,7 +185,7 @@ Given these results, we feel that it is prudent to include age as a confounding 
 
 When we looked at the continent, we found a clear trend that Star Trek is more popular in North America than in the other continents.  Our working theory is that Star Trek wasn't as exported to other continents than Star Wars.
 
-![](../results/distributions-continent.png)
+![](../results/figures/distributions-continent.png)
 
 The above bar plots break down each level of geekiness and desert island choice by continent. 
 
@@ -208,16 +208,16 @@ An interesting result from the above plot is that very few people who are most f
 Those who were not familiar with either series were mostly the ones who preferred to stare at the sand for eternity, and there were *zero* of those who were most familiar with Star Trek in that category.  Familiarity is another confounder which we choose to include in our analysis.
 
 
-![](../results/scores-desert_island.png)
+![](../results/figures/scores-desert_island.png)
 
 Comment HERE !!!!
 
-![](../results/scores-geekiness.png)
+![](../results/figures/scores-geekiness.png)
 
 Comment HERE !!!!
 
 
-![](../results/scores-average.png)
+![](../results/figures/scores-average.png)
 
 Comment HERE !!!
 
