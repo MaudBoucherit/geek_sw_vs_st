@@ -216,10 +216,7 @@ One thing that this plot suggests is that people who prefer Star Trek may be mor
 
 **Amy likes this first one best!**
 
-<img src="../results/figures/scores-geekiness.png", alt="scores_geekiness")
-</a>
-<br>
-</h5> 
+![](img src="../results/figures/scores-geekiness.png")
 
 
 The above plots show us the CDFs of the two score functions, grouped by self-reported geekiness this time. It is unsurprising that they appear to be ordered according to geekiness, i.e., 1 has lower scores than 2, has lower scores than 3, etc. However, there is still quite a stark difference between the two series.
@@ -233,8 +230,11 @@ Comparing the two plots, it is interesting that for Star Trek, the median for ea
 
 ![](../results/figures/scores-average.png)
 
-Comment HERE !!!
+The above plots look at the *average* of the two series scores against geekiness and desert island choice, rather than a single series score. This should give us an idea of how these groups would rate on overall attitude towards sci-fi. 
 
+We again see that there is a relationship between higher geekiness and higher awareness of sci-fi series overall, with there being a significant gap between the 5s and the rest of the groups. 
+
+On the desert island plot, we see that the Star Trek CDF is a little more uniform than the Star Wars one which looks to be a good approximation of a Normal CDF.
 
 ## Discussion of Results
 
