@@ -79,11 +79,13 @@ Below is the complete survey, including the images we displayed:
 
 #### Star Wars-related
 ![](../images/sw_logo.png)
+
+
 - How would you rate your degree of fandom?
     - From (1) I hate it! to (5) I even love the prequels!
 - How would you rate your degree of knowledge about the Star Wars universe?
     - From (1) no knowledge at all to (5) expert knowledge
-    - If rated 5: People are redirected to a hardcore question about Star Wars:
+    - If rated 5: People are redirected to a difficult question about Star Wars:
         > Who first uttered the line "It's a trap!" and in what film?
 
 #### Star Trek-related
@@ -94,11 +96,12 @@ Below is the complete survey, including the images we displayed:
     - From (1) I hate it! to (5) I even love Wrath of Khan!
 - How would you rate your degree of knowledge about the Star Trek universe?
     - From (1) no knowledge at all to (5) expert knowledge
-    - If rated 5: People are redirected to a hardcore question about Star Trek:
+    - If rated 5: People are redirected to a difficult question about Star Trek:
         > According to Klingon mythology, what is the place where all life began?
 
 #### Star Wars Vs. Star Trek
 ![](../images/sw_vs_st.png)
+
 
 - Overall, are you more familiar with Star Wars or Star Trek universe?
     - Answers are: Star Wars, Star Trek, Both, Neither
@@ -119,6 +122,8 @@ Below is the complete survey, including the images we displayed:
 
 ### Analysis Methods 
 
+The raw survey data can be found [here](../data/Geekiness_Survey.csv).  In order to prepare the data for analysis, we cleaned the data.  If you are interested in the R code, it can be found [here](../src/data_wrang.R).  The [final cleaned dataset](../results/clean_data.csv) is available as well. 
+
 [**this is very rough and totally needs work**]
 We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample.  [**Add more, probably**]
 
@@ -136,7 +141,7 @@ Since we were asking subjective questions, we chose to use Likert scales for man
 
 ### Exploratory Data Analysis
 
-If you would like to see the R code to produce these plots, please see [this Rscript](../src/image_ag.R). [**If the images end up here, we can direct this to the Rmd file**]  As part of our analysis, we looked at relationships between our response and explanatory/confounding variables.  Here are some highlights of that analysis.  All of the analysis below is based on a sample of [**174, OR MORE??**] respondents to our survey.  
+If you would like to see the R code to produce these plots, please see [this Rscript](../src/eda_plots.R).  As part of our analysis, we looked at relationships between our response and explanatory/confounding variables.  Here are some highlights of that analysis.  All of the analysis below is based on a sample of 180 respondents to our survey.  
 
 
 #### Geekiness and Desert Island Choice
