@@ -120,13 +120,13 @@ Below is the complete survey, including the images we displayed:
 ### Analysis Methods 
 
 [**this is very rough and totally needs work**]
-We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample.  [**Add more, probably**]
+We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample. We suspected that most younger people would prefer Star Wars over Star Trek, because of when when these series were released, and the video quality of the original releases. We also suspected that people in the tech industry or sciences would be likely to have a high geekiness score, as well as an affinity for at least one of the two sci-fi series. We included gender and continent as well, because, while we didn't have any particular hypotheses about these factors, we wanted to ensure that we were able to capture any effect that they mightve had, and controlled for it in our experiment. [**Add more, probably**]
 
-We planned to look at relationships between our response and explanatory variables and to model the effect of these confounding variables to decrease any bias. To do so, we want to stratify our survey's answers according to a propensity score. 
+We planned to look at relationships between our response and explanatory variables and to model the effect of these confounding variables to decrease any bias. To do so, we want to stratify our survey's answers according to a propensity score. The response we were most interested in was the respondent's choice in sci-fi series if they were stranded on a desert island. We felt that posing the question in this way would encourage even those respondent's who did not particularly enjoy either series to make a decision between the two, at the risk of being bored for all eternity.
 
 Methods we explored are logistic regressions, both binomial, ordinal and multinomial, and propensity score matching.
 
-Since we were asking subjective questions, we chose to use Likert scales for many variables.  Dealing with Likert scales can be difficult as ordinal data can be both categorical or quantitative data depending on the analysis used.  In our research, we found that there is no clear consensus as to how to treat such data in the analysis.  In recent years, there have been more arguments in favour of using parametric methods to deal with ordinal data, particularly when several Likert scale questions are grouped to give a more balanced score.  To this end, we have aggregated several questions into one common score and used conventional methods to analyse the data.
+Since we were asking subjective questions, we chose to use Likert scales for many variables.  Dealing with Likert scales can be difficult as ordinal data can be both categorical or quantitative data depending on the analysis used.  In our research, we found that there is no clear consensus as to how to treat such data in the analysis.  In recent years, there have been more arguments in favour of using parametric methods to deal with ordinal data, particularly when several Likert scale questions are grouped to give a more balanced score.  To this end, we have aggregated the questions regarding each series into a scoring metric for each series, and used conventional methods to analyse the data with these scores.
 
 
 **EXPAND THIS PART!!!**
@@ -143,27 +143,7 @@ If you would like to see the R code to produce these plots, please see [this Rsc
 
 The focus of our analysis is the effect of geekiness on the variable we have called "Desert Island Choice".  
 
-```{r desert_island-geekiness, echo = FALSE}
-
-  
-  ## changed the y label to proportion
-
-  p2 <- dat %>% 
-    ggplot(aes(fill = desert_island, x = geeky)) +
-    geom_density(n=5) +
-    facet_wrap(~desert_island) +
-    theme_bw() + 
-    scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
-    guides(fill = FALSE) +
-    labs(title = "Desert Island Picks by Self-Identified Geekiness", y="Proportion", x="Self-Identified Geekiness")
-
-p2
-```
-
 ```{r}
-### option 2
-
-#Or is a Bar plot of geekiness by desert_island better?  
 
 dat %>% 
     ggplot(aes(fill = desert_island, x = geeky)) +
@@ -178,7 +158,7 @@ dat %>%
 
 These plots show the distribution of self-identified geekiness faceted by the respondent's choice in series to have on a desert island.
 
-Unsurprisingly, those who chose neither, and who would prefer to stare at patterns in the sand, generally rated themselves lower on the geekiness scale: nearly 40% of such respondents rated themselves 1 or 2 out of 5, although the mode is 3. It is surprising that at least one person who rated themselves  5/5 in geekiness chose to watch neither of the series if stuck for eternity on a desert island.
+Unsurprisingly, those who chose neither, generally rated themselves lower on the geekiness scale: nearly 40% of such respondents rated themselves 1 or 2 out of 5, although the mode is 3. It is surprising that at least one person who rated themselves  5/5 in geekiness chose to watch neither of the series if stuck for eternity on a desert island.
 
 Over 50% of those who chose Star Wars rated themselves a 3/5 on the geekiness scale. The distribution seems to be left-skewed, with more people in this group rating themselves 4 than those rating themselves 2.
 
@@ -197,7 +177,7 @@ dat %>%
       coord_flip() + 
       #scale_fill_brewer(palette = "Dark2") +
       guides(fill=guide_legend(title="Desert Island Choice")) +
-      labs(title="Desert Island Proportion by Geekiness", x="Proportion Selected", y="Desert Island Choice")
+      labs(title="Desert Island Proportion by Geekiness", x="Geekiness", y="Proportion Selected")
 
 ```
 As we can see on the above mosaic plot, the proportion of those choosing Star Trek appears to be increasing as geekiness increases.
@@ -214,10 +194,10 @@ dat %>%
       coord_flip() + 
       #scale_fill_brewer(palette = "Dark2") +
       guides(fill=guide_legend(title="Continent")) +
-      labs(title="Desert Island Proportion by Geekiness", x="Proportion Selected", y="Desert Island Choice")
+      labs(title="Desert Island Proportion by Geekiness", x="Geekiness", y="Proportion Selected")
 
 
-### or what if we group stuff?
+### or what if we group stuff? -- I think the first plot works better, we can use it to make an comment about
 dat %>% 
     filter(desert_island != "neither") %>% 
     mutate(geeky = ifelse(geeky %in% c(1,2), "not geeky", ifelse(geeky %in% c(4,5),"geeky", "neutral"))) %>% 
@@ -228,7 +208,7 @@ dat %>%
       coord_flip() + 
       #scale_fill_brewer(palette = "Dark2") +
       guides(fill=guide_legend(title="Continent")) +
-      labs(title="Desert Island Proportion by Geekiness", x="Proportion Selected", y="Desert Island Choice")
+      labs(title="Desert Island Proportion by Geekiness", x="Geekiness", y="Proportion Selected")
 
 ### This shows no effect.  So, not super interesting
 
@@ -237,7 +217,7 @@ dat %>%
 
 **Notes to Maud and Tyler: Is this really increasing?  I'm not sure we can say more than it's less popular amond the 1s....**
 
-Though theses plots don't seem to show a clear trend, we posit that this is due to the confounding variables and the uneven sample sizes.  
+Though theses plots don't seem to show a clear trend, we posit that this is due to the confounding variables and the uneven sample sizes which can't be seen on this plot. At the very least, it appears that those who rated themselves a 1 in geekiness choose Star Trek less frequently.
 
 
 #### Age and Desert Island Choice
@@ -273,7 +253,7 @@ age_geekiness <- subset(dat, !is.na(age)) %>%
 
 legend <- get_legend(p3)
 
-### THis is an experiment!
+### THis is an experiment! -- I think the two greens is a little confusing.
 cowplot::plot_grid(p3+ theme(legend.position="none"), 
                    age_geekiness+ theme(legend.position="none"),
                    rel_widths = c(1,1,.3),
@@ -295,14 +275,14 @@ The above figure breaks down each age group's choice of series. Since the 20-30 
 
 While the "Less than 20" group is one of the smallest, they have a larger than usual proportion among those who chose neither.
 
-Finally, *nobody* among the 40-50 group chose to stare at the sand.
+Finally, *nobody* among the 40-50 group chose neither.
 
 Given these results, we feel that it is prudent to include age as a confounding variable in our analysis.
 
 
 #### Continent and Desert Island Choice
 
-When we looked at the continent, we found a clear trend that Star Trek is more popular in North America than in the other continents.  Our working theory is that Star Trek was never ...
+When we looked at the continent, we found a clear trend that Star Trek is more popular in North America than in the other continents.  Our working theory is that Star Trek was mostly an American trend, and never really caught on in Asia or Europe
 
 ```{r}
   # Response by continent
@@ -324,7 +304,7 @@ p4
 
 ```
 
-The above plot breaks down each continent's choice of series if they were stuck on a desert island.  Most people who chose Star Trek as their preferred series were located in North America, while Star Wars fans are highly concentrated in Europe relative to the other regions. Asia had the highest proportion of people who would prefer to stare at the sand for all eternity. 
+The above plot breaks down each continent's choice of series if they were stuck on a desert island.  Most people who chose Star Trek as their preferred series were located in North America, while Star Wars fans are highly concentrated in Europe relative to the other regions. Asia had the highest proportion of people who would prefer neither series. 
 
 When looking at these results, it is important to keep in mind that this plot does not capture the differences in total number of people who selected each series. So while most of the people who chose Star Trek identify as North Americans, the absolute number of these people is still lower than those from North America who chose Star Wars, and so on.
 
@@ -339,7 +319,7 @@ dat %>%
     ggplot(aes(fill = desert_island, x = continent)) +
       theme_bw() +
       geom_bar(position = "fill", colour = "black") +               
-      labels = c("North America", "Europe", "Asia")) +
+      labels = c("North America", "Europe", "Asia") +
       coord_flip() + 
       scale_fill_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
       guides(fill=guide_legend(title="Desert Island Choice")) +
@@ -371,10 +351,10 @@ It makes intuitive sense that a person's familiarity with various series would i
 
 An interesting result from the above plot is that very few people who are most familiar with Star Trek chose Star Wars as their desert island series, whereas a large number of those who were more familiar with Star Wars chose Star Trek. However, those who reported being equally familiar with both seemed evenly split between the two groups. 
 
-Those who were not familiar with either series were mostly the ones who preferred to stare at the sand for eternity, and there were *zero* of those who were most familiar with Star Trek in that category.  Familiarity is another confounder which we choose to include in our analysis.
+Those who were not familiar with either series were mostly the ones who chose neither on a desert island, and there were *zero* of those who were most familiar with Star Trek in that category.  Familiarity is another confounder which we choose to include in our analysis.
 
 
-## discussion of  results
+## discussion of Results
 
 ## discussion of  survey/study design
 
