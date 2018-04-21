@@ -123,17 +123,21 @@ Below is the complete survey, including the images we displayed:
 
 The raw survey data can be found [here](../data/Geekiness_Survey.csv).  In order to prepare the data for analysis, we cleaned the data.  If you are interested in the R code, it can be found [here](../src/data_wrang.R).  The [final cleaned dataset](../results/clean_data.csv) is available as well.
 
-[**this is very rough and totally needs work**]
-We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample. We suspected that most younger people would prefer Star Wars over Star Trek, because of when these series were released, and the video quality of the original releases. We also suspected that people in the tech industry or sciences would be likely to have a high geekiness score, as well as an affinity for at least one of the two sci-fi series. We included gender and continent as well, because, while we didn't have any particular hypotheses about these factors, we wanted to ensure that we were able to capture any effect that they might have had, and controlled for it in our experiment. [**Add more, probably**]
+We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample. We suspected that most younger people would prefer Star Wars over Star Trek, because of when these series were released, and the video quality of the original releases. We also suspected that people in the tech industry or sciences would be likely to have a high geekiness score, as well as an affinity for at least one of the two sci-fi series. We included gender and continent as well, because, while we didn't have any particular hypotheses about these factors, we wanted to ensure that we were able to capture any effect that they might have had, and controlled for it in our experiment.
 
-We planned to look at relationships between our response and explanatory variables and to model the effect of these confounding variables to decrease any bias. To do so, we want to stratify our survey's answers according to a propensity score. The response we were most interested in was the respondent's choice in sci-fi series if they were stranded on a desert island. We felt that posing the question in this way would encourage even those respondent's who did not particularly enjoy either series to make a decision between the two, at the risk of being bored for all eternity.
+So first, we looked at relationships between our response and explanatory variables and how to model the effect of these confounding variables to decrease any bias. The confounding variables we used are age, continent and gender.   
+
+The response we were most interested in was the respondent's choice in sci-fi series if they were stranded on a desert island. We felt that posing the question in this way would encourage even those respondent's who did not particularly enjoy either series to make a decision between the two, at the risk of being bored for all eternity.   
+
+The explanatory variables are the self-reported geekiness, and custom-made awareness scores for both Star Wars and Star Trek.
 
 Methods we explored are logistic regressions, both binomial, ordinal and multinomial, and propensity score matching.
 
 Since we were asking subjective questions, we chose to use Likert scales for many variables.  Dealing with Likert scales can be difficult as ordinal data can be both categorical or quantitative data depending on the analysis used.  In our research, we found that there is no clear consensus as to how to treat such data in the analysis.  In recent years, there have been more arguments in favour of using parametric methods to deal with ordinal data, particularly when several Likert scale questions are grouped to give a more balanced score.  To this end, we have aggregated the questions regarding each series into a scoring metric for each series, and used conventional methods to analyse the data with these scores.
 
+
 In our survey, we asked those who indicated that they were a 5 in either Star Trek or Star Wars knowledge to answer an obscure trivia question to prove that they were as knowledgable as they claimed. Of those who were asked, only one person correctly answered the Star Wars question, and two correctly answered the Star Trek question. We have adjusted these scores upwards to a 6, which will slightly impact their aggregated score.
-**EXPAND THIS PART!!!**
+
 
 ## Analysis and Results
 
