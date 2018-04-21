@@ -136,14 +136,63 @@ main <- function(){
   
   # Star Wars and Star Trek score related to geekiness and desert island
   p5 <- dat %>% 
-    ggplot(aes(x = desert_island, fill = familiar)) +
-    geom_bar(colour = "black") +
-    theme_bw() +
-    scale_fill_manual(values = c("darkolivegreen3", "dodgerblue3", "darkgoldenrod2", "firebrick3")) +
-    guides(fill=guide_legend(title="Most Familiar With")) +
-    labs(title = "Desert Island Picks by Familiarity", y="Count", x="Desert Island Choice")
+    gather("serie", "score", sw_score, st_score) %>% 
+    ggplot(aes(score, colour = desert_island)) +
+      stat_ecdf(geom = "line") +
+      facet_wrap(~ serie, 
+                 labeller = labeller(serie = c("sw_score" = "Star Wars", "st_score" = "Star Trek"))) +
+      theme_bw() +
+      scale_colour_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
+      labs(title = "Score Cumulative Density Function by Universe",
+           x = "Score", y = "Cumulative Density", colour = "Desert \nIsland ") 
   
-  ggsave("results/figures/distributions-scores.png", p5)
+  ggsave("results/figures/scores-desert_island.png", p5)
+  
+  
+  # Score distribution for desert island
+  p6 <- dat %>% 
+    gather("serie", "score", sw_score, st_score) %>% 
+    ggplot(aes(score, colour = factor(geeky))) +
+      stat_ecdf(geom = "line") +
+      facet_wrap(~ serie, 
+                 labeller = labeller(serie = c("sw_score" = "Star Wars", "st_score" = "Star Trek"))) +
+      theme_bw() +
+      scale_colour_brewer(palette = "Dark2") +
+      labs(title = "Score Cumulative Density Function by Universe",
+           x = "Score", y = "Cumulative Density", colour = "Geekiness") 
+  
+  ggsave("results/figures/scores-geekiness.png", p6)
+  
+  
+  # Average scores
+  avg_geeky <- dat %>% 
+    mutate(avg = (sw_score + st_score)/2) %>% 
+    ggplot(aes(avg, colour = factor(geeky))) +
+    stat_ecdf(geom = "line") +
+    theme_bw() +
+    scale_colour_brewer("", palette = "Dark2") +
+    labs(title = "Self-reported Geekiness",
+         x = "Aerage Score", y = "Cumulative Density") +
+    theme(legend.position = c(.83, .35),
+          legend.background = element_blank())
+  
+  avg_desert <- dat %>% 
+    mutate(avg = (sw_score + st_score)/2) %>% 
+    ggplot(aes(avg, colour = desert_island)) +
+    stat_ecdf(geom = "line") +
+    theme_bw() +
+    scale_colour_manual(values = c("firebrick3", "darkgoldenrod2", "dodgerblue3")) +
+    labs(title = "Desert Island Choice", x = "Average Score", y = "", colour = "") +
+    theme(legend.position = c(.73, .26),
+          legend.background = element_blank()) +
+    theme(plot.margin = unit(c(.3,.2,.2,-.5), "cm"))
+  
+  # Display both plots at once
+  p7 <- cowplot::plot_grid(avg_geeky, avg_desert, 
+                     rel_widths = c(1, .9))
+  
+  ggsave("results/figures/scores-average.png", p7)
+  
   
 }
 
