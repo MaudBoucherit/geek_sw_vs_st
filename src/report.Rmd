@@ -199,7 +199,15 @@ Nearly 50% of the people who chose Star Trek as their preferred series were loca
 When looking at these results, it is important to keep in mind that this plot does not capture the differences in total number of people who selected each series. So while most of the people who chose Star Trek identify as North Americans, the absolute number of these people is still lower than those from North America who chose Star Wars, and so on. Given this effect, continent is another confounder that we included in our analysis.
 
 
-#### Familiarity and Desert Island Choice
+#### Familiarity, knowledge and Desert Island Choice
+
+In order to properly account for the level of fandom and knowledge, we created a new variable that encompasses each universe. In order to do this we created a "Star Trek Score" which is:
+
+_Star Trek Score = [Star Trek Fandom level + Star Trek Knowledge level + 2.5(if familiar with Star Trek)]/12.5_
+
+and a "Star Wars Score" im a similar fashion.  By doing this we hoped to negate some of the effects of having likert scales, and have more finely calibrated categories.  In the end we have a score out of 10 for each, which summarizes their interaction with the universe.
+
+**[Add this:]** + 1(if got the extra trivia question) (If we add this)
 
 ***PREVIOUS COMMENT (some might be reusable)***
 It makes intuitive sense that a person's familiarity with various series would influence their choice of series, and indeed it seems to be so.
@@ -226,8 +234,11 @@ Comment HERE !!!
 
 ## discussion of  results
 
+
+
+
 ## discussion of  survey/study design
 
-In our original survey, we did not leave a space for "the arts" underemployment sector.  As a result, we had a lot of write-in "other" categories, thus making analysis difficult. We also chose to narrow our focus to Star Trek vs Star Wars and not to include other science fiction series such as _Doctor Who_.  This did annoy some of our respondents who did not want to choose.  Also, some respondents felt that we should have dealt with the _geek_ vs _nerd_ dichotomy, which is not something we have an opinion on. But apparently, people do.
+In our original survey, we did not leave a space for "the arts" or the underemployment sector.  As a result, we had a lot of write-in "other" categories, thus making analysis difficult. We also chose to narrow our focus to Star Trek vs Star Wars and not to include other science fiction series such as _Doctor Who_.  This did annoy some of our respondents who did not want to choose.  Also, some respondents felt that we should have dealt with the _geek_ vs _nerd_ dichotomy, which is not something we have an opinion on. But apparently, people do.
 
 **expand**
