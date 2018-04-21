@@ -14,8 +14,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-
-
 ## Introduction
 
 The series "Star Wars" and "Star Trek" attract a lot of comparisons, possibly because they both start with the word "Star".  In our personal experience, we feel that the geekier a person identifies as, the more strongly they feel about this question.  In order to explore this, we created a survey to gather data about the subject that we can then analyse.  After looking at the data, we explored a model that we like to call the "rare disease" model, in which we posit that while preferring Star Trek is in the minority across all categories, being geekier increases the odds of choosing Star Trek over other alternatives.  We borrowed the methodology from statistical methods developed for studying relatively rare diseases, hence the name.  In this vein, we will use mosaic plots to explore the data and log odds ratios as an analytical tool.
@@ -238,8 +236,8 @@ We wanted to deal with our confounding variables outside of our main model, so w
 After looking at various models, we chose a plain linear mode for our propensity scores.  Despite the fact that we have ordinal data, we found that modelling it as a continuous variable gave us the most sensible results for analysis.  We are looking for a correlation between geekiness and confounding variables, so we don't have multi-correlation later in our main model.
 
 ```{r propensity_lm}
-## Create a linear model using our main explanatory variable against the confounders.
-propensity <- lm(geeky ~ age + continent + gender, data = clean_data)
+# Linear model of self-reported geekiness against the confounders
+propensity <- lm(geeky ~ gender + age + continent, data = clean_data)
 summary(propensity)
 ```
 
@@ -248,7 +246,6 @@ We note that none of the results from this analysis is especially significant, b
 ```{r add_scores, echo = FALSE}
 # Add propensity score to the data
 pred <- predict(propensity, newdata = clean_data)
-
 clean_data <- clean_data %>%
   mutate(propensity = pred)
 
@@ -272,7 +269,7 @@ These results show that once we adjust for our confounding variables, there is n
 
 ```{r plain_model, echo = FALSE}
 
-summary(MASS::polr(desert_island ~ geeky, data = clean_data, method = "logistic", Hess = TRUE))
+summary(MASS::polr(desert_island ~ geeky + sw_score + st_score, data = clean_data, method = "logistic", Hess = TRUE))
 ```
  Above are the results of fitting a polr model to the geekiness value, without accounting for the confounders.  In this model, there seems to be an effect, but our analysis above shows that this is, in fact, the result of confounding variables.
 
