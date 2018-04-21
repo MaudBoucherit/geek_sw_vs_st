@@ -13,21 +13,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
-```{r loading, include = FALSE}
-## load libraries
-library(tidyverse)
-library(scales)
-library(cowplot)  ### maybe try a different one?
- 
-## load in data
-dat <- read.csv("../results/clean_data.csv")
-
-
-#dat$desert_island <- factor(dat$desert_island, levels=rev(levels(dat$desert_island)))
-
-## I'm manually making Star Trek be number 2.
-dat$desert_island <- factor(dat$desert_island, levels=c("neither", "Star Wars", "Star Trek"))
-```
 
 
 
@@ -205,7 +190,7 @@ In order to properly account for the level of fandom and knowledge, we created a
 
 _Star Trek Score = [Star Trek Fandom level + Star Trek Knowledge level + 2.5(if familiar with Star Trek)]/12.5_
 
-and a "Star Wars Score" im a similar fashion.  By doing this we hoped to negate some of the effects of having likert scales, and have more finely calibrated categories.  In the end we have a score out of 10 for each, which summarizes their interaction with the universe.
+and a "Star Wars Score" im a similar fashion.  By doing this we hoped to negate some of the effects of having likert scales, and have more finely calibrated categories.  In the end we have a score out of 1 for each, which summarizes their interaction with the universe.
 
 **[Add this:]** + 1(if got the extra trivia question) (If we add this)
 
@@ -232,12 +217,104 @@ Comment HERE !!!!
 Comment HERE !!!
 
 
-## discussion of  results
+## Discussion of  Results
+
+```{r loading, include = FALSE}
+
+## load libraries
+library(tidyverse)
+
+## load in data
+clean_data <- read.csv("../results/clean_data.csv")
+
+
+## I'm manually making Star Trek be number 2.
+clean_data$desert_island <- factor(dat$desert_island, levels=c("neither", "Star Wars", "Star Trek"))
+```
+
+
+If you would like to see the code for any of the models in this section, please view the [Rmd file](../src/report.Rmd) for this report.  
+
+We wanted to deal with our confounding variables outside of our main model, and so we used teh technique of Propensity Score Matching.  In this method, we first created a propensity model, which plots our main explanatory variable (Geekiness) against all of the confounders which we explored above.
+
+After looking at various models, we chose a plain linear mode for our propensity scores.  Despite the fact that we have ordianl data, we found that by modeling it as a continuous variable, we got the most sensible results for analysis.  In this case, we are looking for a 
+
+```{r propensity_lm}
+
+## Create a linear model using our main explanatory variable agains the confounders.
+propensity <- lm(geeky~ age+ familiar+continent+ sw_score + st_score, data =clean_data)
+
+
+```
+
+
+We note that non of the results from this analysis are especially significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced dataset.
+
+
+```{R DELETE_THIS, include = FALSE}
+
+### NOTE TO MAUD AND TYLER:  I'm just getting this set up, feel free to change!  I just want more structure!
+
+#summary(propensity)
+
+#propensity
+
+
+
+### NOTE TO M& T:  how does this differ from a Poisson regression
+pois_model <- glm(geeky~ age+ familiar+continent+ sw_score + st_score,family = poisson, data =clean_data)
+
+#summary(pois_model)
+
+## Not too different, so I say use above.
+
+
+
+###Now I'm just being silly.  What if we just do a regular lm???
+lm_model <- lm(geeky~ age+ familiar+continent+ sw_score + st_score, data =clean_data)
+
+summary(lm_model)
+
+lm_pred <- predict(lm_model, newdata = clean_data)
+
+lm_pred
+
+```
 
 
 
 
-## discussion of  survey/study design
+```{r add_scores, echo = FALSE}
+
+# Add propensity score to the data
+pred <- predict(propensity, newdata = clean_data)
+
+clean_data <- clean_data %>% 
+  mutate(propensity = pred)
+
+```
+
+Now we use the (continuous) propensity scores as a factor in our analysis.  This model uses _propotional odds logistic regression_, as an ordered logistic regression. We chose this model to take into account that there is an ordering to the desert island scores, with neither being the lowest, and Star Trek being the highest.  We  explored other methods, but in the end feel that ignoring the ordered nature of this variable lost too much data:  Below is the result of our model:
+
+```{r polr_model, echo = FALSE}
+polr_model <- MASS::polr(desert_island ~ geeky +propensity, data = clean_data, method = "logistic", Hess = TRUE)
+
+summary(polr_model)
+```
+
+#### Interpretation of these results
+
+
+Looking at these results, it is clear that once we adjust for our confounding variables, there is not enough evidence to show that geekiness has an effect on choice of desert island viewing material.
+
+```{r}
+exp(coef(polr_model))
+```
+
+
+
+
+## Discussion of  Survey/Study Design
 
 In our original survey, we did not leave a space for "the arts" or the underemployment sector.  As a result, we had a lot of write-in "other" categories, thus making analysis difficult. We also chose to narrow our focus to Star Trek vs Star Wars and not to include other science fiction series such as _Doctor Who_.  This did annoy some of our respondents who did not want to choose.  Also, some respondents felt that we should have dealt with the _geek_ vs _nerd_ dichotomy, which is not something we have an opinion on. But apparently, people do.
 
