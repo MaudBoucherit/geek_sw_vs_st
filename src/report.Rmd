@@ -13,9 +13,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
-
-
-
 ## Introduction
 
 The series "Star Wars" and "Star Trek" attract a lot of comparisons, possibly because they both start with the word "Star".  In our personal experience, we feel that the geekier a person identifies as, the more strongly they feel about this question.  In order to explore this, we created a survey to gather data about the subject that we can then analyse.  After looking at the data, we explored a model that we like to call the "rare disease" model, in which we posit that while preferring Star Trek is in the minority across all categories, being geekier increases the odds of choosing Star Trek over other alternatives.  We borrowed the methodology from statistical methods developed for studying relatively rare diseases, hence the name.  In this vein, we will use mosaic plots to explore the data and log odds ratios as an analytical tool.
@@ -243,7 +240,7 @@ On the desert island plot, we see that the Star Trek CDF is a little more unifor
 library(tidyverse)
 
 ## load in data
-clean_data <- read.csv("../results/clean_data.csv")
+clean_data <- read.csv("results/clean_data.csv")
 
 ## I'm manually making Star Trek be number 2.
 clean_data$desert_island <- factor(clean_data$desert_island, levels=c("neither", "Star Wars", "Star Trek"))
@@ -332,6 +329,11 @@ By including confounding variables, we were not able to show a significant effec
 
 ## Discussion of  Survey/Study Design
 
-In our original survey, we did not leave a space for "the arts" or the underemployment sector.  As a result, we had a lot of write-in "other" categories, thus making analysis difficult. We also chose to narrow our focus to Star Trek vs Star Wars and not to include other science fiction series such as _Doctor Who_.  This did annoy some of our respondents who did not want to choose.  Also, some respondents felt that we should have dealt with the _geek_ vs _nerd_ dichotomy, which is not something we have an opinion on. But apparently, people do.
+In our original survey, we did not leave a space for "the arts" or under/unemployment, among others.  As a result, we had a lot of write-in "other" categories, thus making analysis of the sector details very difficult due to the number of groups with very small sample sizes. In the future we think that spending some more time working out the details for our confounding variables would have made it easier to control for these things, and helped in our propensity analysis.
 
-**expand**
+We also chose to narrow our focus to Star Trek vs Star Wars and not to include other science fiction series such as _Doctor Who_.  This did annoy some of our respondents who did not want to choose, however for the sake of the time we had available, and because we were unsure how large our final sample would be, we felt that a narrower focus would be best. 
+
+In a future, better funded study it may be interesting to explore some of these other series, and perhaps include other genres that geeks are known to love such as fantasy. We feel that not including an alternative such as Lord of the Rings was a missed opportunity, because it may have reduced the amount of "neither" responses that we got from people who are just not interested in sci-fi.
+
+Also, some respondents felt that we should have dealt with the _geek_ vs _nerd_ dichotomy, which is not something we have an opinion on. In hindsight, we realize that some of this could have been mitigated by better defining what we meant by "geekiness" in the initial question where we asked for a self-reported score.
+
