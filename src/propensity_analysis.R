@@ -94,12 +94,6 @@ clean_data <- clean_data %>%
 ## Make a new model!
 #################################
 
-# Creating score variables summarizing information related to SW & ST
-clean_data$sw_score <- clean_data$StarWars_fandom + clean_data$StarWars_knowledge + 
-            2.5*(clean_data$familiar %in% c("Star Wars", "both"))
-clean_data$st_score <- clean_data$StarTrek_fandom + clean_data$StarTrek_knowledge + 
-            2.5*(clean_data$familiar %in% c("Star Trek", "both"))
-
 # Fit a model where the success is Star Wars
 clean_data$sw_success <- (clean_data$desert_island == "Star Wars")
 sw_success <- glm(sw_success ~ geeky + sw_score + st_score, 

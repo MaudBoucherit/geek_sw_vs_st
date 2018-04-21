@@ -68,7 +68,15 @@ main <- function(){
       gender = as.factor(ifelse(test=(as.character(gender) %in% c("Male", "Female")), yes = as.character(gender), no = "Other")),
       
       # Cast MDS as a boolean
-      MDS = (word(MDS, 1) == "Yes"))
+      MDS = (word(MDS, 1) == "Yes"),
+      
+      # Creating score variables summarizing information related to SW & ST
+      sw_score = StarWars_fandom + StarWars_knowledge + 
+        2.5*(familiar %in% c("Star Wars", "both")),
+      st_score <- StarTrek_fandom + StarTrek_knowledge + 
+        2.5*(familiar %in% c("Star Trek", "both"))
+      
+      )
   
   # Convert age to numeric (Part 2)
   data$age[!data$age %in% c("18", "25", "35", "45", "55")] <- NA
