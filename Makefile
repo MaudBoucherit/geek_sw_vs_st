@@ -2,18 +2,18 @@
 
 ## Amy, Tyler and Maud
 
-### Cleans the data and produces some EDA plots and....
+### Cleans the data and produces some EDA plots and creates a report
 
 ##run top to bottom
-all: doc/EDA.md doc/report.md
+all:  doc/report.md doc/EDA.md
 
 ## clean data,
 results/clean_data.csv:  src/data_wrang.R data/Geekiness_Survey.csv
 	Rscript src/data_wrang.R data/Geekiness_Survey.csv
 
 ## create EDA plots,
-eda_figs: src/image_ag.R results/clean_data.csv
-	Rscript src/image_ag.R results/clean_data.csv
+eda_figs: src/eda_plots.R results/clean_data.csv
+	Rscript src/eda_plots.R results/clean_data.csv
 
 doc/EDA.md: src/EDA.Rmd eda_figs
 	Rscript -e "ezknitr::ezknit('src/EDA.Rmd', out_dir = 'doc')"
