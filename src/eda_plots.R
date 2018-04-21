@@ -1,4 +1,4 @@
-# image_ag.R
+# eda_plot.R
 # Amy Goldlist, Tyler Roberts, Maud Boucherit
 # April 2018
 #
@@ -8,7 +8,7 @@
 # Input: a csv file, the clean data set
 # Output: few png image, the visualisations
 #
-# Usage: Rscript src/image_ag.R results/clean_data.csv
+# Usage: Rscript src/eda_plot.R results/clean_data.csv
 
 # Libraries
 library(tidyverse)
