@@ -27,27 +27,30 @@ make clean
 
 #### With Docker
 
-To avoid any software dependency errors, you might prefer like to work in a Docker container, you can locally build a Docker image by  navigating to the `geek_sw_vs_st` folder in your terminal and running the following command:
+To avoid any software dependency errors, you can pull the Docker image for this project, by running the command:
+
 
 ```
-docker build --tag geek_sw_vs_st .
+docker pull goldlist/geek_sw_vs_st
 
 ```
 
 To run any of the scripts interactively, use
 ```
-docker run --rm -it -v  C:\Path\to\cloned\repo:/home/geek_sw_vs_st geek_sw_vs_st  /bin/bash
+docker run --rm -it -v  C:\Path\to\cloned\repo:/home/geek_sw_vs_st goldlist/geek_sw_vs_st  /bin/bash
 ```
 
-To run the full script, use
+and navigate to the directory via `cd home\geek_sw_vs_st`.
+
+To run the full script, use:
 ```
-docker run --rm -it -v  C:\Path\to\cloned\repo:/home/geek_sw_vs_st geek_sw_vs_st make -C 'home/geek_sw_vs_st' all
+docker run --rm -it -v  C:\Path\to\cloned\repo:/home/geek_sw_vs_st goldlist/geek_sw_vs_st make -C 'home/geek_sw_vs_st' all
 ```
 
 and to delete all of the new files:
 
 ```
-docker run --rm -it -v  C:\Path\to\cloned\repo:/home/geek_sw_vs_st geek_sw_vs_st make -C 'home/geek_sw_vs_st' clean
+docker run --rm -it -v  C:\Path\to\cloned\repo:/home/geek_sw_vs_st goldlist/geek_sw_vs_st make -C 'home/geek_sw_vs_st' clean
 ```
 
 Make sure to replace `C:\Path\to\cloned\repo` with the path to the cloned repo on your own computer.  If you are working with Windows PowerShell, be sure to check the direction of your backslashes.
