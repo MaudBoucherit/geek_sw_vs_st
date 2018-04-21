@@ -231,7 +231,7 @@ _Star Trek Score = [Star Trek Fandom level + Star Trek Knowledge level + 2.5(if 
 
 We designed the Star Wars score in a similar fashion.  By doing this, we hoped to negate some of the effects of having Likert scales, and have more finely calibrated categories.  In the end, we have a score out of 1 for each, which summarizes their interaction with the universe.
 
-We also asked those who indicated that they were a 5 in either Star Trek or Star Wars knowledge to answer an obscure trivia question to prove that they were as knowledgable as they claimed. We then adjusted the knowledge scores of those who correctly answered upwards to a 6 to better reflect their degree of knowledge about the series. Of those who were asked, only one person correctly answered the Star Wars question, and two correctly answered the Star Trek question. This will slightly impact their aggregated score as calculated above.
+We also asked those who indicated that they were a 5 in either Star Trek or Star Wars knowledge to answer an obscure trivia question to prove that they were as knowledgeable as they claimed. We then increased by 1 the knowledge scores of those who correctly answered upwards to better reflect their degree of knowledge about the series. Of those who were asked, only one person correctly answered the Star Wars question, and two correctly answered the Star Trek question. This will slightly impact their aggregated score as calculated above.
 
 Throughout the rest of this report, we will refer to these scores as "awareness" or "attitude towards <series>".
 
@@ -245,9 +245,9 @@ Throughout the rest of this report, we will refer to these scores as "awareness"
 
 The left box in the figure above shows the CDF for Star Trek scores for each of the three desert island choices. We can see that for those who choose neither or Star Wars, the vast majority (75%) of respondents scored below 0.25. On the other hand, those who chose Star Trek were more uniformly distributed; with 75% of respondents falling below 0.75 rather than 0.25.
 
-The right box instead shows the Star Wars scores, and contrary to the previous plot, each of the CDFs appear to be relatively uniform. Unsurprisingly, the 'neither' group has a larger proportion of people with lower scores, but Star Wars and Star Trek are very similar for nearly all scores.
+The right box instead shows the Star Wars scores, and contrary to the previous plot, each of the CDFs appears to be relatively uniform. Unsurprisingly, the 'neither' group has a larger proportion of people with lower scores, but Star Wars and Star Trek are very similar for nearly all scores.
 
-One thing that this plot suggests is that people who prefer Star Trek may be more of sci-fi fans in general, rather than just enjoying a particular series, as they appear to be equally knowledgeable about both series (in fact, these plots suggest that on average, Star Trek fans have higher Star Wars scores than they do Star Trek scores). People who chose Star Wars on the other hand scored only marginally better than the 'neither' group for Star Trek familiar
+One thing that this plot suggests is that people who prefer Star Trek may be more of sci-fi fans in general, rather than just enjoying a particular series, as they appear to be equally knowledgeable about both series (in fact, these plots suggest that on average, Star Trek fans have higher Star Wars scores than they do Star Trek scores). People who chose Star Wars, on the other hand, scored only marginally better than the 'neither' group for Star Trek familiar.
 
 <h5 align="center">
   <br>
@@ -344,7 +344,7 @@ By including confounding variables, we were not able to show a significant effec
 
 ## Discussion of  Survey/Study Design
 
-In our original survey, we did not leave a space for "the arts" or under/unemployment, among others.  As a result, we had a lot of write-in "other" categories, thus making analysis of the sector details very difficult due to the number of groups with very small sample sizes. In the future we think that spending some more time working out the details for our confounding variables would have made it easier to control for these things, and helped in our propensity analysis.
+In our original survey, we did not leave a space for "the arts" or under/unemployment, among others.  As a result, we had a lot of write-in "other" categories, thus making any analysis of the sector details very difficult due to the number of groups with very small sample sizes. In the future, we think that spending some more time working out the details for our confounding variables would have made it easier to control for these things, and helped in our propensity analysis.
 
 We also chose to narrow our focus to Star Trek vs Star Wars and not to include other science fiction series such as _Doctor Who_.  This did annoy some of our respondents who did not want to choose, however for the sake of the time we had available, and because we were unsure how large our final sample would be, we felt that a narrower focus would be best.
 
