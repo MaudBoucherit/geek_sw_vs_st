@@ -333,7 +333,7 @@ paste("The AIC score for the model not including propensity is: ", extractAIC(po
 
 
 ```{r}
-polr_df <- as.data.frame(test$coefficients)
+polr_df <- as.data.frame(polr_summ$coefficients)
 
 polr_df %>% 
   mutate(Coefficients= c("geeky", "st_score", "sw_score", "propensity", "neither | Star Wars", "Star Wars | Star Trek"), p_value = 1 - pt(`t value`, 176)) %>% 
