@@ -70,13 +70,10 @@ main <- function(){
       # Cast MDS as a boolean
       MDS = (word(MDS, 1) == "Yes"),
       
-      # Creating score variables summarizing information related to SW & ST
-      sw_score = StarWars_fandom + StarWars_knowledge + 
-        2.5*(familiar %in% c("Star Wars", "both")),
-      st_score <- StarTrek_fandom + StarTrek_knowledge + 
-        2.5*(familiar %in% c("Star Trek", "both"))
-      
-      )
+      # Extracting obscure answers
+      StarWars_obscure = (StarWars_obscure == "Leia, Empire Strikes Back"),
+      StarTrek_obscure = (StarTrek_obscure %in% c("Qui'Tu", "qui'tu 4 life"))
+    )
   
   # Convert age to numeric (Part 2)
   data$age[!data$age %in% c("18", "25", "35", "45", "55")] <- NA
@@ -89,11 +86,11 @@ main <- function(){
   
   ## create combined scores.
   data$sw_score <- (as.numeric(paste(data$StarWars_fandom)) + 
-    as.numeric(paste(data$StarWars_knowledge)) + 
-    2.5*(data$familiar %in% c("Star Wars", "both")))/12.5
+    as.numeric(paste(data$StarWars_knowledge)) + data$StarWars_obscure +
+    2.5*(data$familiar %in% c("Star Wars", "both")))/13.5
   data$st_score <- (as.numeric(paste(data$StarTrek_fandom)) + 
-    as.numeric(paste(data$StarTrek_knowledge)) + 
-    2.5*(data$familiar %in% c("Star Trek", "both")))/12.5
+    as.numeric(paste(data$StarTrek_knowledge)) + data$StarWars_obscure +
+    2.5*(data$familiar %in% c("Star Trek", "both")))/13.5
   
   # save the clean data set
   write_csv(data, "results/clean_data.csv")
