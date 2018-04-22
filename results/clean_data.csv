@@ -1,181 +1,181 @@
 geeky,StarWars_fandom,StarWars_knowledge,StarTrek_fandom,StarTrek_knowledge,StarWars_obscure,StarTrek_obscure,familiar,desert_island,age,gender,continent,sector,MDS,sw_score,st_score
-4,3,4,3,3,,,Star Wars,Star Trek,25,Male,North America,Finance/Economics/Business,TRUE,0.76,0.48
-3,3,3,2,2,,,Star Wars,Star Wars,35,Female,North America,Math/Statistics,TRUE,0.68,0.32
-4,4,3,4,2,,,Star Wars,Star Trek,25,Female,Europe,Tech,TRUE,0.76,0.48
-3,3,3,2,2,,,Star Wars,Star Trek,25,Other,Europe,Math/Statistics,FALSE,0.68,0.32
-3,2,2,2,1,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.52,0.24
-3,4,4,3,2,,,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.84,0.4
-4,1,2,4,4,,,Star Trek,Star Trek,35,Female,North America,Administration/Education,FALSE,0.24,0.84
-4,5,5,3,1,Amiral Ackbar ; Star Wars VI - Le Retour du Jedi,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,1,0.32
-4,3,4,2,1,,,Star Wars,Star Wars,25,Other,Europe,Math/Statistics,FALSE,0.76,0.24
-4,3,4,4,3,,,Star Wars,Star Trek,45,Male,North America,Finance/Economics/Business,FALSE,0.76,0.56
-2,4,3,2,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.76,0.32
-2,2,1,1,1,,,neither,neither,35,Male,North America,Administration/Education,FALSE,0.24,0.16
-4,3,3,2,1,,,Star Wars,Star Wars,45,Female,North America,Tech,FALSE,0.68,0.24
-4,3,3,3,3,,,Star Wars,Star Wars,45,Other,North America,Math/Statistics,FALSE,0.68,0.48
-4,3,3,2,3,,,Star Wars,Star Wars,45,Male,North America,Tech,FALSE,0.68,0.4
-3,4,3,3,2,,,Star Wars,Star Wars,25,Other,Europe,Math/Statistics,FALSE,0.76,0.4
-5,5,5,3,2,"Admiral Ackbar in Star Wars VI, Return of the Jedi",,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,1,0.4
-2,3,2,2,1,,,Star Wars,Star Wars,55,Female,North America,Biology/Medicine,FALSE,0.6,0.24
-3,4,2,3,2,,,Star Wars,Star Trek,35,Male,North America,Math/Statistics,FALSE,0.68,0.4
-5,4,3,2,2,,,Star Wars,neither,35,Male,North America,Biology/Medicine,TRUE,0.76,0.32
-3,3,3,3,3,,,Star Wars,Star Trek,45,Female,North America,Tech,FALSE,0.68,0.48
-3,2,1,4,4,,,Star Trek,Star Trek,35,Male,Asia,Finance/Economics/Business,FALSE,0.24,0.84
-4,5,4,2,2,,,Star Wars,Star Wars,25,Male,Europe,Tech,FALSE,0.92,0.32
-3,3,2,2,2,,,Star Wars,Star Wars,25,Other,Antarctica,Biology/Medicine,TRUE,0.6,0.32
-2,1,2,1,2,,,neither,neither,25,Female,North America,Earth science,TRUE,0.24,0.24
-3,1,3,3,2,,,Star Wars,neither,25,Male,North America,Engineering,TRUE,0.52,0.4
-1,1,2,1,1,,,Star Wars,neither,25,Female,North America,Chemistry/Physics,TRUE,0.44,0.16
-4,2,2,2,2,,,neither,Star Trek,25,Male,North America,Math/Statistics,TRUE,0.32,0.32
-5,4,4,2,2,,,Star Wars,Star Wars,25,Male,North America,Finance/Economics/Business,TRUE,0.84,0.32
-3,3,2,2,2,,,Star Wars,Star Wars,25,Male,North America,Biology/Medicine,TRUE,0.6,0.32
-3,2,1,1,1,,,neither,neither,25,Female,Asia,geology,TRUE,0.24,0.16
-4,3,3,2,1,,,Star Wars,Star Wars,25,Male,North America,Biology/Medicine,TRUE,0.68,0.24
-4,3,2,3,2,,,Star Wars,neither,25,Male,Asia,Chemistry/Physics,TRUE,0.6,0.4
-1,1,1,1,1,,,neither,neither,35,Male,Asia,business,TRUE,0.16,0.16
-2,3,4,1,1,,,Star Wars,Star Wars,25,Male,Europe,Finance/Economics/Business,TRUE,0.76,0.16
-5,5,3,5,4,,,Star Trek,Star Trek,35,Female,North America,Administration/Education,FALSE,0.64,0.92
-4,4,3,4,2,,,Star Wars,neither,25,Female,North America,Finance/Economics/Business,TRUE,0.76,0.48
-3,1,1,1,1,,,neither,neither,25,Female,North America,Biology/Medicine,TRUE,0.16,0.16
-4,3,1,3,1,,,neither,Star Wars,25,Female,Asia,Finance/Economics/Business,TRUE,0.32,0.32
-2,2,4,2,1,,,neither,Star Wars,25,Female,Asia,Math/Statistics,TRUE,0.48,0.24
-4,3,3,4,3,,,Star Trek,Star Trek,25,Female,Asia,Tech,TRUE,0.48,0.76
-4,2,2,1,1,,,neither,neither,25,Male,South America,Finance/Economics/Business,TRUE,0.32,0.16
-1,2,2,3,2,,,Star Wars,neither,25,Female,Asia,Math/Statistics,TRUE,0.52,0.4
-3,5,1,4,1,,,Star Trek,Star Wars,55,Female,Antarctica,Chemistry/Physics,FALSE,0.48,0.6
-3,3,2,3,1,,,Star Wars,Star Wars,25,Female,Asia,Math/Statistics,TRUE,0.6,0.32
-4,3,1,1,2,,,neither,neither,25,Female,Asia,Tech,TRUE,0.32,0.24
-4,1,1,1,1,,,neither,neither,35,Male,Asia,Chemistry/Physics,TRUE,0.16,0.16
-3,5,5,1,2,Luke,,Star Wars,Star Wars,25,Female,Asia,Math/Statistics,TRUE,1,0.24
-3,3,4,3,2,,,neither,Star Wars,25,Male,Asia,Finance/Economics/Business,TRUE,0.56,0.4
-3,4,3,3,2,,,Star Wars,Star Wars,25,Male,Asia,Tech,TRUE,0.76,0.4
-2,3,4,1,1,,,Star Wars,Star Wars,25,Female,North America,Tech,TRUE,0.76,0.16
-5,4,5,2,2,?,,Star Wars,Star Trek,25,Other,Africa,Tech,TRUE,0.92,0.32
-4,1,4,3,1,,,Star Wars,neither,25,Female,Europe,Finance/Economics/Business,TRUE,0.6,0.32
-3,3,1,3,1,,,neither,neither,25,Male,Asia,Math/Statistics,TRUE,0.32,0.32
-2,2,4,2,1,,,neither,neither,25,Male,Asia,Tech,TRUE,0.48,0.24
-3,1,1,1,1,,,neither,neither,25,Male,Africa,Math/Statistics,TRUE,0.16,0.16
-4,3,2,4,2,,,neither,Star Trek,25,Male,Asia,Tech,TRUE,0.4,0.48
-4,3,1,3,1,,,Star Wars,Star Trek,25,Male,Asia,Tech,FALSE,0.52,0.32
-1,5,3,3,1,,,Star Wars,neither,35,Male,North America,Tech,TRUE,0.84,0.32
-3,3,4,3,1,,,neither,Star Wars,25,Female,Asia,Tech,TRUE,0.56,0.32
-2,2,1,2,1,,,neither,Star Wars,25,Female,Asia,Tech,TRUE,0.24,0.24
-3,1,1,1,1,,,neither,neither,25,Male,North America,Biology/Medicine,TRUE,0.16,0.16
-2,3,2,3,1,,,neither,Star Wars,NA,Other,Asia,Finance/Economics/Business,TRUE,0.4,0.32
-4,3,3,2,1,,,Star Wars,Star Wars,35,Male,North America,Tech,FALSE,0.68,0.24
-3,4,3,1,1,,,Star Wars,Star Wars,35,Female,North America,Finance/Economics/Business,FALSE,0.76,0.16
-3,3,1,1,1,,,neither,neither,35,Male,Oceania,Tech,TRUE,0.32,0.16
-2,3,4,3,1,,,Star Wars,Star Trek,25,Female,North America,Engineering,TRUE,0.76,0.32
-2,2,2,1,1,,,Star Wars,Star Wars,35,Female,North America,Administration/Education,FALSE,0.52,0.16
-2,4,3,4,3,,,Star Wars,Star Trek,45,Female,North America,Administration/Education,FALSE,0.76,0.56
-4,4,4,4,3,,,Star Wars,Star Trek,45,Male,North America,Administration/Education,FALSE,0.84,0.56
-4,5,4,4,3,,,Star Wars,Star Wars,35,Female,North America,Tech,FALSE,0.92,0.56
-3,3,3,2,3,,,Star Wars,Star Trek,35,Female,North America,Tech,FALSE,0.68,0.4
-3,3,3,4,4,,,Star Trek,Star Trek,35,Female,North America,Personal Trainer,FALSE,0.48,0.84
-4,4,3,2,2,,,Star Wars,Star Wars,45,Female,North America,Administration/Education,FALSE,0.76,0.32
-1,3,2,1,1,,,Star Wars,Star Wars,35,Female,North America,arts ,FALSE,0.6,0.16
-3,5,4,4,3,,,Star Wars,Star Wars,35,Male,North America,Film/TV,FALSE,0.92,0.56
-4,3,3,2,2,,,Star Wars,Star Trek,35,Female,North America,Genealogy ,FALSE,0.68,0.32
-3,4,4,4,4,,,Star Wars,Star Trek,35,Male,North America,Marketing,FALSE,0.84,0.64
-5,4,5,5,4,"Leia, Empire Strikes Back",,Star Wars,Star Wars,35,Male,North America,Administration/Education,FALSE,0.92,0.72
-2,2,2,1,1,,,neither,neither,35,Female,North America,Administration/Education,FALSE,0.32,0.16
-3,2,4,3,3,,,neither,Star Trek,45,Male,North America,Finance/Economics/Business,FALSE,0.48,0.48
-4,3,2,2,1,,,Star Wars,Star Wars,45,Female,North America,Administration/Education,FALSE,0.6,0.24
-5,5,5,5,5,Admiral Ackbar,sto-vo-kor,both,Star Trek,45,Other,Asia,Starfleet Officer,FALSE,1,1
-3,2,5,5,5,The first stormtrooper who got killed in the movie.,There was no life before Kayless.,neither,neither,18,Other,Antarctica,I am a simple Tailor.,TRUE,0.56,0.8
-3,3,3,4,4,,,Star Trek,Star Trek,55,Male,North America,Administration/Education,FALSE,0.48,0.84
-4,1,3,5,5,,Qui'Tu,Star Trek,Star Trek,25,Other,North America,Math/Statistics,TRUE,0.32,1
-5,2,3,2,4,,,Star Trek,Star Trek,35,Male,North America,Math/Statistics,FALSE,0.4,0.68
-5,4,3,5,4,,,both,Star Wars,35,Other,North America,Horticulture/Linguistics,FALSE,0.76,0.92
-5,4,3,3,4,,,Star Wars,Star Wars,35,Female,North America,It's complicated,FALSE,0.76,0.56
-3,3,3,1,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.68,0.24
-4,4,3,3,3,,,Star Wars,Star Wars,35,Female,North America,Administration/Education,FALSE,0.76,0.48
-4,5,3,2,2,,,Star Wars,Star Wars,25,Male,Antarctica,Chemistry/Physics,FALSE,0.84,0.32
-2,2,2,3,3,,,Star Trek,Star Trek,35,Female,North America,Administration/Education,FALSE,0.32,0.68
-3,3,3,4,4,,,Star Trek,Star Wars,35,Female,North America,Tech,FALSE,0.48,0.84
-4,2,2,4,3,,,Star Trek,Star Trek,35,Male,North America,Tech,FALSE,0.32,0.76
-1,1,2,1,1,,,neither,neither,25,Male,Europe,Math/Statistics,FALSE,0.24,0.16
-1,2,2,2,1,,,neither,Star Trek,25,Female,Europe,Math/Statistics,FALSE,0.32,0.24
-4,3,3,3,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.68,0.32
-5,4,4,5,5,,qui'tu 4 life,Star Trek,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.64,1
-1,1,1,1,1,,,neither,neither,25,Female,Europe,Math/Statistics,FALSE,0.16,0.16
-4,3,3,1,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.68,0.16
-3,3,3,1,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.68,0.24
-4,4,3,1,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.76,0.16
-3,1,2,1,1,,,Star Wars,Star Trek,25,Female,Europe,Math/Statistics,FALSE,0.44,0.16
-2,2,2,2,1,,,Star Wars,neither,25,Other,Europe,Math/Statistics,FALSE,0.52,0.24
-2,3,2,3,1,,,Star Wars,Star Wars,35,Female,Europe,Math/Statistics,FALSE,0.6,0.32
-3,5,4,2,1,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.92,0.24
-5,2,2,1,1,,,Star Wars,neither,18,Female,Europe,Math/Statistics,FALSE,0.52,0.16
-2,3,4,3,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.76,0.4
-2,2,2,2,1,,,Star Wars,Star Trek,25,Other,Europe,Math/Statistics,FALSE,0.52,0.24
-3,3,2,2,1,,,Star Wars,neither,25,Male,Europe,Math/Statistics,FALSE,0.6,0.24
-3,3,2,1,1,,,Star Wars,Star Wars,45,Male,Europe,Math/Statistics,FALSE,0.6,0.16
-1,3,3,3,3,,,Star Wars,neither,45,Female,North America,Social Sciences,FALSE,0.68,0.48
-3,2,2,2,1,,,Star Wars,Star Wars,18,Female,Europe,Math/Statistics,FALSE,0.52,0.24
-3,4,4,2,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.84,0.32
-2,2,2,2,1,,,Star Wars,Star Trek,25,Female,Europe,Math/Statistics,FALSE,0.52,0.24
-3,3,3,3,3,,,Star Trek,Star Trek,45,Male,North America,Administration/Education,FALSE,0.48,0.68
-3,2,4,1,1,,,Star Wars,Star Wars,25,Other,Europe,Math/Statistics,FALSE,0.68,0.16
-1,1,2,1,1,,,neither,neither,25,Male,Europe,Math/Statistics,FALSE,0.24,0.16
-3,3,2,2,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.6,0.32
-3,2,2,1,1,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.52,0.16
-4,3,4,1,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.76,0.24
-5,5,4,2,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.92,0.32
-3,3,2,1,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.6,0.16
-3,3,3,2,2,,,Star Wars,Star Wars,35,Male,Europe,Math/Statistics,FALSE,0.68,0.32
-5,5,4,3,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.92,0.4
-4,4,4,1,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.84,0.16
-5,5,4,2,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.92,0.32
-4,2,2,2,1,,,neither,neither,18,Female,Europe,Sociology/Philosophy/Economy,FALSE,0.32,0.24
-1,4,2,2,1,,,Star Wars,neither,25,Female,Asia,Math/Statistics,FALSE,0.68,0.24
-3,4,3,2,2,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.76,0.32
-2,1,2,1,1,,,neither,neither,25,Female,Europe,Math/Statistics,FALSE,0.24,0.16
-3,2,2,2,1,,,neither,neither,25,Female,Europe,Math/Statistics,FALSE,0.32,0.24
-2,4,3,3,1,,,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.76,0.32
-5,4,4,2,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.84,0.32
-3,4,3,2,1,,,Star Wars,Star Trek,25,Female,Europe,Math/Statistics,FALSE,0.76,0.24
-3,2,2,2,1,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.52,0.24
-5,3,3,2,1,,,Star Wars,Star Wars,18,Male,Europe,Math/Statistics,FALSE,0.68,0.24
-4,5,4,3,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.92,0.4
-3,3,2,2,2,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.6,0.32
-4,2,4,1,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.68,0.24
-5,4,4,5,3,,,Star Trek,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.64,0.84
-3,5,4,2,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.92,0.24
-4,2,2,3,1,,,Star Trek,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.32,0.52
-3,2,2,1,1,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.52,0.16
-2,3,3,2,2,,,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.68,0.32
-4,3,3,2,2,,,Star Wars,Star Trek,25,Female,Europe,Math/Statistics,FALSE,0.68,0.32
-4,3,3,2,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.68,0.32
-1,3,2,1,1,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.6,0.16
-4,4,5,2,2,admiral ackbar in the return of the jedi,,Star Wars,Star Wars,35,Male,Europe,Tech,FALSE,0.92,0.32
-4,3,3,3,2,,,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.68,0.4
-2,4,4,3,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.84,0.32
-3,5,4,2,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.92,0.24
-2,3,3,1,1,,,Star Wars,Star Wars,25,Female,Europe,Finance/Economics/Business,FALSE,0.68,0.16
-1,2,2,2,1,,,Star Wars,Star Wars,25,Female,Europe,Administration/Education,FALSE,0.52,0.24
-4,3,3,3,1,,,Star Wars,neither,25,Male,Europe,Math/Statistics,FALSE,0.68,0.32
-2,2,1,1,1,,,neither,neither,25,Female,Europe,Math/Statistics,FALSE,0.24,0.16
-3,3,4,3,2,,,Star Wars,Star Trek,18,Female,Europe,Math/Statistics,FALSE,0.76,0.4
-2,3,2,4,2,,,Star Wars,neither,25,Male,Europe,Finance/Economics/Business,FALSE,0.6,0.48
-4,3,4,2,2,,,Star Wars,neither,25,Male,Europe,Math/Statistics,FALSE,0.76,0.32
-3,1,2,1,1,,,neither,neither,25,Male,Europe,Math/Statistics,FALSE,0.24,0.16
-5,3,4,3,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.76,0.32
-2,3,3,2,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.68,0.24
-3,3,2,3,1,,,neither,neither,25,Male,Europe,Math/Statistics,FALSE,0.4,0.32
-2,2,4,1,1,,,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.68,0.16
-4,4,3,3,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.76,0.4
-3,3,3,2,1,,,Star Wars,Star Wars,18,Female,Europe,Math/Statistics,FALSE,0.68,0.24
-4,4,4,5,5,,qo'nos,Star Trek,Star Trek,35,Male,Europe,Math/Statistics,FALSE,0.64,1
-3,4,3,2,2,,,Star Wars,neither,25,Male,Europe,Math/Statistics,FALSE,0.76,0.32
-3,1,2,1,1,,,neither,neither,25,Female,Europe,Math/Statistics,FALSE,0.24,0.16
-4,4,3,2,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.76,0.32
-4,3,3,2,1,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.68,0.24
-3,4,3,1,1,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.76,0.16
-1,4,3,3,1,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.76,0.32
-3,2,2,2,2,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.52,0.32
-2,2,2,3,3,,,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.52,0.48
-4,3,4,3,2,,,Star Wars,Star Trek,35,Male,North America,Administration/Education,FALSE,0.76,0.4
-2,1,2,1,1,,,neither,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.24,0.16
-4,3,3,2,2,,,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.68,0.32
-2,4,3,2,1,,,Star Wars,neither,35,Male,Europe,Math/Statistics,FALSE,0.76,0.24
+4,3,4,3,3,FALSE,FALSE,Star Wars,Star Trek,25,Male,North America,Finance/Economics/Business,TRUE,0.7037037037037037,0.4444444444444444
+3,3,3,2,2,FALSE,FALSE,Star Wars,Star Wars,35,Female,North America,Math/Statistics,TRUE,0.6296296296296297,0.2962962962962963
+4,4,3,4,2,FALSE,FALSE,Star Wars,Star Trek,25,Female,Europe,Tech,TRUE,0.7037037037037037,0.4444444444444444
+3,3,3,2,2,FALSE,FALSE,Star Wars,Star Trek,25,Other,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2962962962962963
+3,2,2,2,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.48148148148148145,0.2222222222222222
+3,4,4,3,2,FALSE,FALSE,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.7777777777777778,0.37037037037037035
+4,1,2,4,4,FALSE,FALSE,Star Trek,Star Trek,35,Female,North America,Administration/Education,FALSE,0.2222222222222222,0.7777777777777778
+4,5,5,3,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.9259259259259259,0.2962962962962963
+4,3,4,2,1,FALSE,FALSE,Star Wars,Star Wars,25,Other,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2222222222222222
+4,3,4,4,3,FALSE,FALSE,Star Wars,Star Trek,45,Male,North America,Finance/Economics/Business,FALSE,0.7037037037037037,0.5185185185185185
+2,4,3,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2962962962962963
+2,2,1,1,1,FALSE,FALSE,neither,neither,35,Male,North America,Administration/Education,FALSE,0.2222222222222222,0.14814814814814814
+4,3,3,2,1,FALSE,FALSE,Star Wars,Star Wars,45,Female,North America,Tech,FALSE,0.6296296296296297,0.2222222222222222
+4,3,3,3,3,FALSE,FALSE,Star Wars,Star Wars,45,Other,North America,Math/Statistics,FALSE,0.6296296296296297,0.4444444444444444
+4,3,3,2,3,FALSE,FALSE,Star Wars,Star Wars,45,Male,North America,Tech,FALSE,0.6296296296296297,0.37037037037037035
+3,4,3,3,2,FALSE,FALSE,Star Wars,Star Wars,25,Other,Europe,Math/Statistics,FALSE,0.7037037037037037,0.37037037037037035
+5,5,5,3,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.9259259259259259,0.37037037037037035
+2,3,2,2,1,FALSE,FALSE,Star Wars,Star Wars,55,Female,North America,Biology/Medicine,FALSE,0.5555555555555556,0.2222222222222222
+3,4,2,3,2,FALSE,FALSE,Star Wars,Star Trek,35,Male,North America,Math/Statistics,FALSE,0.6296296296296297,0.37037037037037035
+5,4,3,2,2,FALSE,FALSE,Star Wars,neither,35,Male,North America,Biology/Medicine,TRUE,0.7037037037037037,0.2962962962962963
+3,3,3,3,3,FALSE,FALSE,Star Wars,Star Trek,45,Female,North America,Tech,FALSE,0.6296296296296297,0.4444444444444444
+3,2,1,4,4,FALSE,FALSE,Star Trek,Star Trek,35,Male,Asia,Finance/Economics/Business,FALSE,0.2222222222222222,0.7777777777777778
+4,5,4,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Tech,FALSE,0.8518518518518519,0.2962962962962963
+3,3,2,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Other,Antarctica,Biology/Medicine,TRUE,0.5555555555555556,0.2962962962962963
+2,1,2,1,2,FALSE,FALSE,neither,neither,25,Female,North America,Earth science,TRUE,0.2222222222222222,0.2222222222222222
+3,1,3,3,2,FALSE,FALSE,Star Wars,neither,25,Male,North America,Engineering,TRUE,0.48148148148148145,0.37037037037037035
+1,1,2,1,1,FALSE,FALSE,Star Wars,neither,25,Female,North America,Chemistry/Physics,TRUE,0.4074074074074074,0.14814814814814814
+4,2,2,2,2,FALSE,FALSE,neither,Star Trek,25,Male,North America,Math/Statistics,TRUE,0.2962962962962963,0.2962962962962963
+5,4,4,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,North America,Finance/Economics/Business,TRUE,0.7777777777777778,0.2962962962962963
+3,3,2,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,North America,Biology/Medicine,TRUE,0.5555555555555556,0.2962962962962963
+3,2,1,1,1,FALSE,FALSE,neither,neither,25,Female,Asia,geology,TRUE,0.2222222222222222,0.14814814814814814
+4,3,3,2,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,North America,Biology/Medicine,TRUE,0.6296296296296297,0.2222222222222222
+4,3,2,3,2,FALSE,FALSE,Star Wars,neither,25,Male,Asia,Chemistry/Physics,TRUE,0.5555555555555556,0.37037037037037035
+1,1,1,1,1,FALSE,FALSE,neither,neither,35,Male,Asia,business,TRUE,0.14814814814814814,0.14814814814814814
+2,3,4,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Finance/Economics/Business,TRUE,0.7037037037037037,0.14814814814814814
+5,5,3,5,4,FALSE,FALSE,Star Trek,Star Trek,35,Female,North America,Administration/Education,FALSE,0.5925925925925926,0.8518518518518519
+4,4,3,4,2,FALSE,FALSE,Star Wars,neither,25,Female,North America,Finance/Economics/Business,TRUE,0.7037037037037037,0.4444444444444444
+3,1,1,1,1,FALSE,FALSE,neither,neither,25,Female,North America,Biology/Medicine,TRUE,0.14814814814814814,0.14814814814814814
+4,3,1,3,1,FALSE,FALSE,neither,Star Wars,25,Female,Asia,Finance/Economics/Business,TRUE,0.2962962962962963,0.2962962962962963
+2,2,4,2,1,FALSE,FALSE,neither,Star Wars,25,Female,Asia,Math/Statistics,TRUE,0.4444444444444444,0.2222222222222222
+4,3,3,4,3,FALSE,FALSE,Star Trek,Star Trek,25,Female,Asia,Tech,TRUE,0.4444444444444444,0.7037037037037037
+4,2,2,1,1,FALSE,FALSE,neither,neither,25,Male,South America,Finance/Economics/Business,TRUE,0.2962962962962963,0.14814814814814814
+1,2,2,3,2,FALSE,FALSE,Star Wars,neither,25,Female,Asia,Math/Statistics,TRUE,0.48148148148148145,0.37037037037037035
+3,5,1,4,1,FALSE,FALSE,Star Trek,Star Wars,55,Female,Antarctica,Chemistry/Physics,FALSE,0.4444444444444444,0.5555555555555556
+3,3,2,3,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Asia,Math/Statistics,TRUE,0.5555555555555556,0.2962962962962963
+4,3,1,1,2,FALSE,FALSE,neither,neither,25,Female,Asia,Tech,TRUE,0.2962962962962963,0.2222222222222222
+4,1,1,1,1,FALSE,FALSE,neither,neither,35,Male,Asia,Chemistry/Physics,TRUE,0.14814814814814814,0.14814814814814814
+3,5,5,1,2,FALSE,FALSE,Star Wars,Star Wars,25,Female,Asia,Math/Statistics,TRUE,0.9259259259259259,0.2222222222222222
+3,3,4,3,2,FALSE,FALSE,neither,Star Wars,25,Male,Asia,Finance/Economics/Business,TRUE,0.5185185185185185,0.37037037037037035
+3,4,3,3,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Asia,Tech,TRUE,0.7037037037037037,0.37037037037037035
+2,3,4,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,North America,Tech,TRUE,0.7037037037037037,0.14814814814814814
+5,4,5,2,2,FALSE,FALSE,Star Wars,Star Trek,25,Other,Africa,Tech,TRUE,0.8518518518518519,0.2962962962962963
+4,1,4,3,1,FALSE,FALSE,Star Wars,neither,25,Female,Europe,Finance/Economics/Business,TRUE,0.5555555555555556,0.2962962962962963
+3,3,1,3,1,FALSE,FALSE,neither,neither,25,Male,Asia,Math/Statistics,TRUE,0.2962962962962963,0.2962962962962963
+2,2,4,2,1,FALSE,FALSE,neither,neither,25,Male,Asia,Tech,TRUE,0.4444444444444444,0.2222222222222222
+3,1,1,1,1,FALSE,FALSE,neither,neither,25,Male,Africa,Math/Statistics,TRUE,0.14814814814814814,0.14814814814814814
+4,3,2,4,2,FALSE,FALSE,neither,Star Trek,25,Male,Asia,Tech,TRUE,0.37037037037037035,0.4444444444444444
+4,3,1,3,1,FALSE,FALSE,Star Wars,Star Trek,25,Male,Asia,Tech,FALSE,0.48148148148148145,0.2962962962962963
+1,5,3,3,1,FALSE,FALSE,Star Wars,neither,35,Male,North America,Tech,TRUE,0.7777777777777778,0.2962962962962963
+3,3,4,3,1,FALSE,FALSE,neither,Star Wars,25,Female,Asia,Tech,TRUE,0.5185185185185185,0.2962962962962963
+2,2,1,2,1,FALSE,FALSE,neither,Star Wars,25,Female,Asia,Tech,TRUE,0.2222222222222222,0.2222222222222222
+3,1,1,1,1,FALSE,FALSE,neither,neither,25,Male,North America,Biology/Medicine,TRUE,0.14814814814814814,0.14814814814814814
+2,3,2,3,1,FALSE,FALSE,neither,Star Wars,NA,Other,Asia,Finance/Economics/Business,TRUE,0.37037037037037035,0.2962962962962963
+4,3,3,2,1,FALSE,FALSE,Star Wars,Star Wars,35,Male,North America,Tech,FALSE,0.6296296296296297,0.2222222222222222
+3,4,3,1,1,FALSE,FALSE,Star Wars,Star Wars,35,Female,North America,Finance/Economics/Business,FALSE,0.7037037037037037,0.14814814814814814
+3,3,1,1,1,FALSE,FALSE,neither,neither,35,Male,Oceania,Tech,TRUE,0.2962962962962963,0.14814814814814814
+2,3,4,3,1,FALSE,FALSE,Star Wars,Star Trek,25,Female,North America,Engineering,TRUE,0.7037037037037037,0.2962962962962963
+2,2,2,1,1,FALSE,FALSE,Star Wars,Star Wars,35,Female,North America,Administration/Education,FALSE,0.48148148148148145,0.14814814814814814
+2,4,3,4,3,FALSE,FALSE,Star Wars,Star Trek,45,Female,North America,Administration/Education,FALSE,0.7037037037037037,0.5185185185185185
+4,4,4,4,3,FALSE,FALSE,Star Wars,Star Trek,45,Male,North America,Administration/Education,FALSE,0.7777777777777778,0.5185185185185185
+4,5,4,4,3,FALSE,FALSE,Star Wars,Star Wars,35,Female,North America,Tech,FALSE,0.8518518518518519,0.5185185185185185
+3,3,3,2,3,FALSE,FALSE,Star Wars,Star Trek,35,Female,North America,Tech,FALSE,0.6296296296296297,0.37037037037037035
+3,3,3,4,4,FALSE,FALSE,Star Trek,Star Trek,35,Female,North America,Personal Trainer,FALSE,0.4444444444444444,0.7777777777777778
+4,4,3,2,2,FALSE,FALSE,Star Wars,Star Wars,45,Female,North America,Administration/Education,FALSE,0.7037037037037037,0.2962962962962963
+1,3,2,1,1,FALSE,FALSE,Star Wars,Star Wars,35,Female,North America,arts ,FALSE,0.5555555555555556,0.14814814814814814
+3,5,4,4,3,FALSE,FALSE,Star Wars,Star Wars,35,Male,North America,Film/TV,FALSE,0.8518518518518519,0.5185185185185185
+4,3,3,2,2,FALSE,FALSE,Star Wars,Star Trek,35,Female,North America,Genealogy ,FALSE,0.6296296296296297,0.2962962962962963
+3,4,4,4,4,FALSE,FALSE,Star Wars,Star Trek,35,Male,North America,Marketing,FALSE,0.7777777777777778,0.5925925925925926
+5,4,5,5,4,TRUE,FALSE,Star Wars,Star Wars,35,Male,North America,Administration/Education,FALSE,0.9259259259259259,0.7407407407407407
+2,2,2,1,1,FALSE,FALSE,neither,neither,35,Female,North America,Administration/Education,FALSE,0.2962962962962963,0.14814814814814814
+3,2,4,3,3,FALSE,FALSE,neither,Star Trek,45,Male,North America,Finance/Economics/Business,FALSE,0.4444444444444444,0.4444444444444444
+4,3,2,2,1,FALSE,FALSE,Star Wars,Star Wars,45,Female,North America,Administration/Education,FALSE,0.5555555555555556,0.2222222222222222
+5,5,5,5,5,FALSE,FALSE,both,Star Trek,45,Other,Asia,Starfleet Officer,FALSE,0.9259259259259259,0.9259259259259259
+3,2,5,5,5,FALSE,FALSE,neither,neither,18,Other,Antarctica,I am a simple Tailor.,TRUE,0.5185185185185185,0.7407407407407407
+3,3,3,4,4,FALSE,FALSE,Star Trek,Star Trek,55,Male,North America,Administration/Education,FALSE,0.4444444444444444,0.7777777777777778
+4,1,3,5,5,FALSE,TRUE,Star Trek,Star Trek,25,Other,North America,Math/Statistics,TRUE,0.2962962962962963,0.9259259259259259
+5,2,3,2,4,FALSE,FALSE,Star Trek,Star Trek,35,Male,North America,Math/Statistics,FALSE,0.37037037037037035,0.6296296296296297
+5,4,3,5,4,FALSE,FALSE,both,Star Wars,35,Other,North America,Horticulture/Linguistics,FALSE,0.7037037037037037,0.8518518518518519
+5,4,3,3,4,FALSE,FALSE,Star Wars,Star Wars,35,Female,North America,It's complicated,FALSE,0.7037037037037037,0.5185185185185185
+3,3,3,1,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2222222222222222
+4,4,3,3,3,FALSE,FALSE,Star Wars,Star Wars,35,Female,North America,Administration/Education,FALSE,0.7037037037037037,0.4444444444444444
+4,5,3,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Antarctica,Chemistry/Physics,FALSE,0.7777777777777778,0.2962962962962963
+2,2,2,3,3,FALSE,FALSE,Star Trek,Star Trek,35,Female,North America,Administration/Education,FALSE,0.2962962962962963,0.6296296296296297
+3,3,3,4,4,FALSE,FALSE,Star Trek,Star Wars,35,Female,North America,Tech,FALSE,0.4444444444444444,0.7777777777777778
+4,2,2,4,3,FALSE,FALSE,Star Trek,Star Trek,35,Male,North America,Tech,FALSE,0.2962962962962963,0.7037037037037037
+1,1,2,1,1,FALSE,FALSE,neither,neither,25,Male,Europe,Math/Statistics,FALSE,0.2222222222222222,0.14814814814814814
+1,2,2,2,1,FALSE,FALSE,neither,Star Trek,25,Female,Europe,Math/Statistics,FALSE,0.2962962962962963,0.2222222222222222
+4,3,3,3,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2962962962962963
+5,4,4,5,5,FALSE,TRUE,Star Trek,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.5925925925925926,0.9259259259259259
+1,1,1,1,1,FALSE,FALSE,neither,neither,25,Female,Europe,Math/Statistics,FALSE,0.14814814814814814,0.14814814814814814
+4,3,3,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.14814814814814814
+3,3,3,1,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2222222222222222
+4,4,3,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.14814814814814814
+3,1,2,1,1,FALSE,FALSE,Star Wars,Star Trek,25,Female,Europe,Math/Statistics,FALSE,0.4074074074074074,0.14814814814814814
+2,2,2,2,1,FALSE,FALSE,Star Wars,neither,25,Other,Europe,Math/Statistics,FALSE,0.48148148148148145,0.2222222222222222
+2,3,2,3,1,FALSE,FALSE,Star Wars,Star Wars,35,Female,Europe,Math/Statistics,FALSE,0.5555555555555556,0.2962962962962963
+3,5,4,2,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.8518518518518519,0.2222222222222222
+5,2,2,1,1,FALSE,FALSE,Star Wars,neither,18,Female,Europe,Math/Statistics,FALSE,0.48148148148148145,0.14814814814814814
+2,3,4,3,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.37037037037037035
+2,2,2,2,1,FALSE,FALSE,Star Wars,Star Trek,25,Other,Europe,Math/Statistics,FALSE,0.48148148148148145,0.2222222222222222
+3,3,2,2,1,FALSE,FALSE,Star Wars,neither,25,Male,Europe,Math/Statistics,FALSE,0.5555555555555556,0.2222222222222222
+3,3,2,1,1,FALSE,FALSE,Star Wars,Star Wars,45,Male,Europe,Math/Statistics,FALSE,0.5555555555555556,0.14814814814814814
+1,3,3,3,3,FALSE,FALSE,Star Wars,neither,45,Female,North America,Social Sciences,FALSE,0.6296296296296297,0.4444444444444444
+3,2,2,2,1,FALSE,FALSE,Star Wars,Star Wars,18,Female,Europe,Math/Statistics,FALSE,0.48148148148148145,0.2222222222222222
+3,4,4,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7777777777777778,0.2962962962962963
+2,2,2,2,1,FALSE,FALSE,Star Wars,Star Trek,25,Female,Europe,Math/Statistics,FALSE,0.48148148148148145,0.2222222222222222
+3,3,3,3,3,FALSE,FALSE,Star Trek,Star Trek,45,Male,North America,Administration/Education,FALSE,0.4444444444444444,0.6296296296296297
+3,2,4,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Other,Europe,Math/Statistics,FALSE,0.6296296296296297,0.14814814814814814
+1,1,2,1,1,FALSE,FALSE,neither,neither,25,Male,Europe,Math/Statistics,FALSE,0.2222222222222222,0.14814814814814814
+3,3,2,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.5555555555555556,0.2962962962962963
+3,2,2,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.48148148148148145,0.14814814814814814
+4,3,4,1,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2222222222222222
+5,5,4,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.8518518518518519,0.2962962962962963
+3,3,2,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.5555555555555556,0.14814814814814814
+3,3,3,2,2,FALSE,FALSE,Star Wars,Star Wars,35,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2962962962962963
+5,5,4,3,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.8518518518518519,0.37037037037037035
+4,4,4,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7777777777777778,0.14814814814814814
+5,5,4,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.8518518518518519,0.2962962962962963
+4,2,2,2,1,FALSE,FALSE,neither,neither,18,Female,Europe,Sociology/Philosophy/Economy,FALSE,0.2962962962962963,0.2222222222222222
+1,4,2,2,1,FALSE,FALSE,Star Wars,neither,25,Female,Asia,Math/Statistics,FALSE,0.6296296296296297,0.2222222222222222
+3,4,3,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2962962962962963
+2,1,2,1,1,FALSE,FALSE,neither,neither,25,Female,Europe,Math/Statistics,FALSE,0.2222222222222222,0.14814814814814814
+3,2,2,2,1,FALSE,FALSE,neither,neither,25,Female,Europe,Math/Statistics,FALSE,0.2962962962962963,0.2222222222222222
+2,4,3,3,1,FALSE,FALSE,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2962962962962963
+5,4,4,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7777777777777778,0.2962962962962963
+3,4,3,2,1,FALSE,FALSE,Star Wars,Star Trek,25,Female,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2222222222222222
+3,2,2,2,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.48148148148148145,0.2222222222222222
+5,3,3,2,1,FALSE,FALSE,Star Wars,Star Wars,18,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2222222222222222
+4,5,4,3,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.8518518518518519,0.37037037037037035
+3,3,2,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.5555555555555556,0.2962962962962963
+4,2,4,1,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2222222222222222
+5,4,4,5,3,FALSE,FALSE,Star Trek,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.5925925925925926,0.7777777777777778
+3,5,4,2,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.8518518518518519,0.2222222222222222
+4,2,2,3,1,FALSE,FALSE,Star Trek,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.2962962962962963,0.48148148148148145
+3,2,2,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.48148148148148145,0.14814814814814814
+2,3,3,2,2,FALSE,FALSE,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2962962962962963
+4,3,3,2,2,FALSE,FALSE,Star Wars,Star Trek,25,Female,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2962962962962963
+4,3,3,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2962962962962963
+1,3,2,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.5555555555555556,0.14814814814814814
+4,4,5,2,2,FALSE,FALSE,Star Wars,Star Wars,35,Male,Europe,Tech,FALSE,0.8518518518518519,0.2962962962962963
+4,3,3,3,2,FALSE,FALSE,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.37037037037037035
+2,4,4,3,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7777777777777778,0.2962962962962963
+3,5,4,2,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.8518518518518519,0.2222222222222222
+2,3,3,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Finance/Economics/Business,FALSE,0.6296296296296297,0.14814814814814814
+1,2,2,2,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Administration/Education,FALSE,0.48148148148148145,0.2222222222222222
+4,3,3,3,1,FALSE,FALSE,Star Wars,neither,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2962962962962963
+2,2,1,1,1,FALSE,FALSE,neither,neither,25,Female,Europe,Math/Statistics,FALSE,0.2222222222222222,0.14814814814814814
+3,3,4,3,2,FALSE,FALSE,Star Wars,Star Trek,18,Female,Europe,Math/Statistics,FALSE,0.7037037037037037,0.37037037037037035
+2,3,2,4,2,FALSE,FALSE,Star Wars,neither,25,Male,Europe,Finance/Economics/Business,FALSE,0.5555555555555556,0.4444444444444444
+4,3,4,2,2,FALSE,FALSE,Star Wars,neither,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2962962962962963
+3,1,2,1,1,FALSE,FALSE,neither,neither,25,Male,Europe,Math/Statistics,FALSE,0.2222222222222222,0.14814814814814814
+5,3,4,3,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2962962962962963
+2,3,3,2,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2222222222222222
+3,3,2,3,1,FALSE,FALSE,neither,neither,25,Male,Europe,Math/Statistics,FALSE,0.37037037037037035,0.2962962962962963
+2,2,4,1,1,FALSE,FALSE,Star Wars,Star Trek,25,Male,Europe,Math/Statistics,FALSE,0.6296296296296297,0.14814814814814814
+4,4,3,3,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.37037037037037035
+3,3,3,2,1,FALSE,FALSE,Star Wars,Star Wars,18,Female,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2222222222222222
+4,4,4,5,5,FALSE,FALSE,Star Trek,Star Trek,35,Male,Europe,Math/Statistics,FALSE,0.5925925925925926,0.9259259259259259
+3,4,3,2,2,FALSE,FALSE,Star Wars,neither,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2962962962962963
+3,1,2,1,1,FALSE,FALSE,neither,neither,25,Female,Europe,Math/Statistics,FALSE,0.2222222222222222,0.14814814814814814
+4,4,3,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2962962962962963
+4,3,3,2,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2222222222222222
+3,4,3,1,1,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.7037037037037037,0.14814814814814814
+1,4,3,3,1,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2962962962962963
+3,2,2,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.48148148148148145,0.2962962962962963
+2,2,2,3,3,FALSE,FALSE,Star Wars,Star Wars,25,Male,Europe,Math/Statistics,FALSE,0.48148148148148145,0.4444444444444444
+4,3,4,3,2,FALSE,FALSE,Star Wars,Star Trek,35,Male,North America,Administration/Education,FALSE,0.7037037037037037,0.37037037037037035
+2,1,2,1,1,FALSE,FALSE,neither,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.2222222222222222,0.14814814814814814
+4,3,3,2,2,FALSE,FALSE,Star Wars,Star Wars,25,Female,Europe,Math/Statistics,FALSE,0.6296296296296297,0.2962962962962963
+2,4,3,2,1,FALSE,FALSE,Star Wars,neither,35,Male,Europe,Math/Statistics,FALSE,0.7037037037037037,0.2222222222222222
