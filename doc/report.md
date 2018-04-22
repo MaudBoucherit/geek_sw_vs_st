@@ -327,19 +327,32 @@ Now we use the continuous propensity scores as a factor in our analysis.  This m
 
 
 ```
-## [1] "The residual deviance for our model not including propensity is: 306.146283841842"
+## [1] "The residual deviance for our model not including propensity is: 307.323103616207"
 ```
 
 ```
-## [1] "The AIC score for the model not including propensity is:  318.146283841842"
+## [1] "The AIC score for the model not including propensity is:  319.323103616207"
+```
+
+
+
+```r
+polr_df <- as.data.frame(polr_summ$coefficients)
+
+## add the p-values
+polr_df %>% 
+  mutate(Coefficients= c("geeky", "st_score", "sw_score", "propensity", "neither | Star Wars", "Star Wars | Star Trek"), p_value = 1 - pt(`t value`, 176)) %>% 
+  select(Coefficients, Value, `Std. Error`, `t value`, p_value)
 ```
 
 ```
-## Error in as.data.frame(polr_sum$coefficients): object 'polr_sum' not found
-```
-
-```
-## Error in eval(lhs, parent, parent): object 'polr_df' not found
+##            Coefficients        Value Std. Error     t value      p_value
+## 1                 geeky -0.007353139  0.1652011 -0.04451023 5.177259e-01
+## 2              st_score  6.339279621  1.0796666  5.87151573 1.052528e-08
+## 3              sw_score  3.028272607  0.8682990  3.48759189 3.077955e-04
+## 4            propensity -0.597576531  0.5279684 -1.13184138 8.703796e-01
+## 5   neither | Star Wars  0.366448693  1.5791171  0.23205923 4.083808e-01
+## 6 Star Wars | Star Trek  3.263282261  1.6078750  2.02956219 2.195354e-02
 ```
 
 #### Interpretation of these results
@@ -352,11 +365,11 @@ Looking at our computed p-values, neither geekiness, nor propensity was signific
 
 
 ```
-## [1] "The residual deviance for our model not including propensity is: 308.550096304548"
+## [1] "The residual deviance for our model not including propensity is: 309.708112757339"
 ```
 
 ```
-## [1] "The AIC score for the model not including propensity is:  318.550096304548"
+## [1] "The AIC score for the model not including propensity is:  319.708112757339"
 ```
  
 Above are the results of fitting a polr model to the geekiness value, without accounting for the confounders.  In this model, there seems to be an effect, but the one above shows that this is in fact just the result of confounding variables. 
