@@ -317,9 +317,9 @@ After looking at various models, we chose a plain linear mode for our propensity
 ## F-statistic: 1.702 on 9 and 169 DF,  p-value: 0.09202
 ```
 
-We note that most of the results from this analysis is particularly significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced data-set. 
+We note that most of the results from this analysis is not particularly significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced data-set. 
 
-However, there do appear to be significant effects as a result of gender. Both GenderMale and GenderOther are significant, indicating that there is some negative correlation with being female and geekiness, at least in our sample.
+However, there does appear to be significant effects as a result of gender. Both GenderMale and GenderOther are significant, indicating that there is some negative correlation with being female and geekiness, at least in our sample.
 
 
 
@@ -361,7 +361,7 @@ We have two intercepts.  This is because the regression is modelling the probabi
 
 These results show that once we adjust for our confounding variables, there is not enough evidence to show that geekiness has an effect on the choice of desert island viewing material. The log odds ratio increases by only 0.014 for a unit increase in geekiness. With a standard error of 0.1598, there is no statistical result here. Most of the perceived effect of fitting a model just with geekiness scores is due to the confounding variables.
 
-Looking at our computed p-values, neither geekiness, nor propensity was significant, indicating that neither of the main effects we sought to identify caused a significant amount of variation in the response. On the other hand, we do see a significant coefficient for `st_score` and `sw_score  suggesting to us that people who score highly in these categories are likely to pick at least one of the series to watch on a desert island, as opposed to neither. However, this result is not particularly surprising, as these people who scored highly in awareness for a series are likely to consider themselves fans of that series.
+Looking at our computed p-values, neither geekiness nor propensity was significant, indicating that neither of the main effects we sought to identify caused a significant amount of variation in the response. On the other hand, we do see a significant coefficient for `st_score` and `sw_score` suggesting to us that people who score highly in these categories are likely to pick at least one of the series to watch on a desert island, as opposed to neither. However, this result is not particularly surprising, as these people who scored highly in awareness for a series are likely to consider themselves fans of that series.
 
 
 ```
@@ -396,6 +396,6 @@ In our original survey, we did not leave a space for "the arts" or under/unemplo
 
 We also chose to narrow our focus to _Star Trek_ vs _Star Wars_ and to notinclude other science fiction series such as _Doctor Who_.  This did annoy some of our respondents who did not want to choose, however for the sake of the time we had available, and because we were unsure how large our final sample would be, we felt that a narrower focus would be best.
 
-In a future, better funded study it may be interesting to explore some of these other series, and perhaps include other genres that geeks are known to love such as fantasy. We feel that not including an alternative such as _Lord of the Rings_ was a missed opportunity, because it may have reduced the amount of "neither" responses that we got from people who are just not interested in sci-fi.
+In a future, better-funded study, it may be interesting to explore these other series, and perhaps include other genres that geeks are known to love such as fantasy. We feel that not including an alternative such as _Lord of the Rings_ was a missed opportunity, because it may have reduced the amount of "neither" responses that we got from people who are just not interested in sci-fi.
 
 Also, some respondents felt that we should have dealt with the _geek_ vs _nerd_ dichotomy, which is not something we have an opinion on. In hindsight, we realize that some of this could have been mitigated by better defining what we meant by "geekiness" in the initial question where we asked for a self-reported score.
