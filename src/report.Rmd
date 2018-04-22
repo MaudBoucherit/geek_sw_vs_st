@@ -333,8 +333,11 @@ paste("The residual deviance for our model not including propensity is:", polr_s
 
 paste("The AIC score for the model not including propensity is: ", extractAIC(polr_model)[2])
 
-## create a dataframe
-polr_df <- as.data.frame(polr_sum$coefficients)
+```
+
+
+```{r}
+polr_df <- as.data.frame(polr_summ$coefficients)
 
 ## add the p-values
 polr_df %>% 
