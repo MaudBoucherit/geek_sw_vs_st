@@ -336,7 +336,7 @@ paste("The AIC score for the model not including propensity is: ", extractAIC(po
 ```
 
 
-```{r}
+```{r, echo = FALSE}
 polr_df <- as.data.frame(polr_summ$coefficients)
 
 ## add the p-values

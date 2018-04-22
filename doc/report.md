@@ -336,15 +336,6 @@ Now we use the continuous propensity scores as a factor in our analysis.  This m
 
 
 
-```r
-polr_df <- as.data.frame(polr_summ$coefficients)
-
-## add the p-values
-polr_df %>% 
-  mutate(Coefficients= c("geeky", "st_score", "sw_score", "propensity", "neither | Star Wars", "Star Wars | Star Trek"), p_value = 1 - pt(`t value`, 176)) %>% 
-  select(Coefficients, Value, `Std. Error`, `t value`, p_value)
-```
-
 ```
 ##            Coefficients        Value Std. Error     t value      p_value
 ## 1                 geeky -0.007353139  0.1652011 -0.04451023 5.177259e-01
