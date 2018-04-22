@@ -124,9 +124,9 @@ The raw survey data can be found [here](../data/Geekiness_Survey.csv).  In order
 
 We decided to incorporate confounding variables gender, age, continent and sector of activity because we want to have information about who answered our survey so we can identify any possible bias in the sample. We suspected that most younger people would prefer Star Wars over Star Trek, because of when these series were released, and the video quality of the original releases. We also suspected that people in the tech industry or sciences would be likely to have a high geekiness score, as well as an affinity for at least one of the two sci-fi series. We included gender and continent as well, because, while we didn't have any particular hypotheses about these factors, we wanted to ensure that we were able to capture any effect that they might have had, and controlled for it in our experiment.
 
-So first, we looked at relationships between our response and explanatory variables and how to model the effect of these confounding variables to decrease any bias. The confounding variables we used are age, continent and gender.   
+First, we looked at relationships between our response and explanatory variables and how to model the effect of these confounding variables to decrease any bias. The confounding variables we used are age, continent and gender.   
 
-The response we were most interested in was the respondent's choice in sci-fi series if they were stranded on a desert island. We felt that posing the question in this way would encourage even those respondent's who did not particularly enjoy either series to make a decision between the two, at the risk of being bored for all eternity.   
+The response we were most interested in was the respondent's choice in sci-fi series if they were stranded on a desert island. We felt that posing the question in this way would encourage even those respondents who did not particularly enjoy either series to make a decision between the two, at the risk of being bored for all eternity.   
 
 The explanatory variables are the self-reported geekiness, and custom-made awareness scores for both Star Wars and Star Trek.
 
@@ -135,7 +135,7 @@ Methods we explored are logistic regressions, both binomial, ordinal and multino
 Since we were asking subjective questions, we chose to use Likert scales for many variables.  Dealing with Likert scales can be difficult as ordinal data can be both categorical or quantitative data depending on the analysis used.  In our research, we found that there is no clear consensus as to how to treat such data in the analysis.  In recent years, there have been more arguments in favour of using parametric methods to deal with ordinal data, particularly when several Likert scale questions are grouped to give a more balanced score.  To this end, we have aggregated the questions regarding each series into a scoring metric for each series, and used conventional methods to analyse the data with these scores.
 
 
-In our survey, we asked those who indicated that they were a 5 in either Star Trek or Star Wars knowledge to answer an obscure trivia question to prove that they were as knowledgable as they claimed. Of those who were asked, only one person correctly answered the Star Wars question, and two correctly answered the Star Trek question. We have adjusted these scores upwards to a 6, which will slightly impact their aggregated score.
+In our survey, we asked those who indicated that they were a 5 in either Star Trek or Star Wars knowledge to answer an obscure trivia question to prove that they were as knowledgeable as they claimed. Of those who were asked, only one person correctly answered the Star Wars question, and two correctly answered the Star Trek question. We have adjusted these scores upwards to a 6, which will slightly impact their aggregated score.
 
 
 ## Analysis and Results
@@ -167,7 +167,7 @@ Unsurprisingly, those who chose neither, and who would prefer to stare at patter
 
 Over 35% of those who chose Star Wars rated themselves a 3/5 on the geekiness scale. The distribution seems to be left-skewed, with 15% more people in this group rating themselves 4 than those rating themselves 2.
 
-The mode of the Star Trek distribution is 4, unlike the other two groups. This might suggest that on average people who prefer Star Trek are geekier or at least consider themselves to be geeks more often. We could formalise this by measuring the kurtosis in these distributions.
+The mode of the Star Trek distribution is 4, unlike the other two groups. This might suggest that on average people who prefer Star Trek are geekier or at least consider themselves to be geeks more often. We could formalize this by measuring the kurtosis in these distributions.
 
 This is where we will focus our attention during our analysis, in explaining the differing shapes of these distributions.
 
@@ -223,11 +223,11 @@ Nearly 50% of the people who chose Star Trek as their preferred series were loca
 When looking at these results, it is important to keep in mind that this plot does not capture the differences in total number of people who selected each series. So while most of the people who chose Star Trek identify as North Americans, the absolute number of these people is still lower than those from North America who chose Star Wars, and so on. Given this effect, continent is another confounder that we included in our analysis.
 
 
-#### Familiarity, knowledge and Desert Island Choice
+#### Familiarity, Knowledge and Desert Island Choice
 
 For each universe, we created a new variable that properly measures the level of fandom and knowledge. For Star Trek, this score is:
 
-_Star Trek Score = [Star Trek Fandom level + Star Trek Knowledge level + 2.5(if familiar with Star Trek)]/12.5_
+_Star Trek /Wars Score = [Fandom level + Knowledge level + 2.5(if familiar with) + 1(for obscure trivia)]/13.5_
 
 We designed the Star Wars score in a similar fashion.  By doing this, we hoped to negate some of the effects of having Likert scales, and have more finely calibrated categories.  In the end, we have a score out of 1 for each, which summarizes their interaction with the universe.
 
@@ -298,13 +298,13 @@ We wanted to deal with our confounding variables outside of our main model, so w
 
 After looking at various models, we chose a plain linear mode for our propensity scores.  Despite the fact that we have ordinal data, we found that modelling it as a continuous variable gave us the most sensible results for analysis.  We are looking for a correlation between geekiness and confounding variables, so we don't have multi-correlation later in our main model.
 
-```{r propensity_lm}
+```{r propensity_lm, echo = FALSE}
 # Linear model of self-reported geekiness against the confounders
 propensity <- lm(geeky ~ gender + age + continent, data = clean_data)
 summary(propensity)
 ```
 
-We note that most of the results from this analysis is particulraly significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced dataset. 
+We note that most of the results from this analysis is particularly significant, but the hope is that by including this term, we can account for some of the confounders introduced by the fact that we have an unbalanced data-set. 
 
 However, there do appear to be significant effects as a result of gender. Both GenderMale and GenderOther are significant, indicating that there is some negative correlation with being female and geekiness, at least in our sample.
 
@@ -318,13 +318,17 @@ clean_data <- clean_data %>%
 
 Now we use the continuous propensity scores as a factor in our analysis.  This model uses _proportional odds logistic regression (polr)_. We chose this model to take into account that there is an ordering to the desert island scores, with neither being the lowest.  According to our belief, Star Trek would be the highest because it is more correlated with the level of self-reported geekiness.  We  explored other methods, but in the end feel that ignoring the ordered nature of this variable lost too much data.  Below is the result of our model:
 
-```{r polr_model}
+```{r polr_model, echo = FALSE}
+
+## create the polr model
 polr_model <- MASS::polr(
   desert_island ~ geeky + st_score + sw_score + propensity,
   data = clean_data, method = "logistic", Hess = TRUE)
 
+##summarize to extract data
 polr_summ <- summary(polr_model)
 
+##print results
 paste("The residual deviance for our model not including propensity is:", polr_summ$deviance)
 
 paste("The AIC score for the model not including propensity is: ", extractAIC(polr_model)[2])
@@ -335,6 +339,7 @@ paste("The AIC score for the model not including propensity is: ", extractAIC(po
 ```{r}
 polr_df <- as.data.frame(polr_summ$coefficients)
 
+## add the p-values
 polr_df %>% 
   mutate(Coefficients= c("geeky", "st_score", "sw_score", "propensity", "neither | Star Wars", "Star Wars | Star Trek"), p_value = 1 - pt(`t value`, 176)) %>% 
   select(Coefficients, Value, `Std. Error`, `t value`, p_value)
@@ -346,7 +351,7 @@ We have two intercepts.  This is because the regression is modelling the probabi
 
 These results show that once we adjust for our confounding variables, there is not enough evidence to show that geekiness has an effect on the choice of desert island viewing material. The log odds ratio increases by only 0.014 for a unit increase in geekiness. With a standard error of 0.1598, there is no statistical result here. Most of the perceived effect of fitting a model just with geekiness scores is due to the confounding variables.
 
-Looking at our computed p-values, neither geekiness, nor propensity was significant, inidicating that neither of the main effects we sought to identify caused a significant amount of variation in the response. On the other hand, we do see a significant coefficient for `st_score` and `sw_score  suggesting to us that people who score highly in these categories are likely to pick at least one of the series to watch on a desert island, as opposed to neither. However, this result is not particularly surprising, as these people who scored highly in awareness for a series are likely to consider themselves fans of that series.
+Looking at our computed p-values, neither geekiness, nor propensity was significant, indicating that neither of the main effects we sought to identify caused a significant amount of variation in the response. On the other hand, we do see a significant coefficient for `st_score` and `sw_score  suggesting to us that people who score highly in these categories are likely to pick at least one of the series to watch on a desert island, as opposed to neither. However, this result is not particularly surprising, as these people who scored highly in awareness for a series are likely to consider themselves fans of that series.
 
 ```{r plain_model, echo = FALSE}
 
@@ -374,15 +379,15 @@ In modelling our propensity score we chose to use a standard linear model. Some 
 
 While selecting the model to use for our final analysis, we tried out a number of different types of models which can be found in [this script](../src/propensity_analysis.R). 
 
-We settled on the polr model for a few reasons. First of all, we used AIC to compare a number of different models and this seemed to get the lowest score. Moreover, it was a relatively simple extension to logistic regression and seemed to do a good job at encorporating the ordinal nature of the data, while not significantly changing our results. It was also relatively simple to interpret; similar to logistic regression, which is probably one of the most important factors for an analysis like this.
+We settled on the polr model for a few reasons. First of all, we used AIC to compare a number of different models and this seemed to get the lowest score. Moreover, it was a relatively simple extension to logistic regression and seemed to do a good job at incorporating the ordinal nature of the data, while not significantly changing our results. It was also relatively simple to interpret; similar to logistic regression, which is probably one of the most important factors for an analysis like this.
 
 
 ## Discussion of  Survey/Study Design
 
 In our original survey, we did not leave a space for "the arts" or under/unemployment, among others.  As a result, we had a lot of write-in "other" categories, thus making any analysis of the sector details very difficult due to the number of groups with very small sample sizes. In the future, we think that spending some more time working out the details for our confounding variables would have made it easier to control for these things, and helped in our propensity analysis.
 
-We also chose to narrow our focus to Star Trek vs Star Wars and not to include other science fiction series such as _Doctor Who_.  This did annoy some of our respondents who did not want to choose, however for the sake of the time we had available, and because we were unsure how large our final sample would be, we felt that a narrower focus would be best.
+We also chose to narrow our focus to _Star Trek_ vs _Star Wars_ and to notinclude other science fiction series such as _Doctor Who_.  This did annoy some of our respondents who did not want to choose, however for the sake of the time we had available, and because we were unsure how large our final sample would be, we felt that a narrower focus would be best.
 
-In a future, better funded study it may be interesting to explore some of these other series, and perhaps include other genres that geeks are known to love such as fantasy. We feel that not including an alternative such as Lord of the Rings was a missed opportunity, because it may have reduced the amount of "neither" responses that we got from people who are just not interested in sci-fi.
+In a future, better funded study it may be interesting to explore some of these other series, and perhaps include other genres that geeks are known to love such as fantasy. We feel that not including an alternative such as _Lord of the Rings_ was a missed opportunity, because it may have reduced the amount of "neither" responses that we got from people who are just not interested in sci-fi.
 
 Also, some respondents felt that we should have dealt with the _geek_ vs _nerd_ dichotomy, which is not something we have an opinion on. In hindsight, we realize that some of this could have been mitigated by better defining what we meant by "geekiness" in the initial question where we asked for a self-reported score.
